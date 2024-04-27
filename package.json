@@ -1,0 +1,12 @@
+{
+  "name": "usingbytes-dsa",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Vanja Petkovic (vanja.petkovic@gmail.com)",
+  "license": "ISC",
+  "description": ""
+}
