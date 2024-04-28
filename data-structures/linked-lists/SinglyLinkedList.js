@@ -7,7 +7,7 @@ class Node {
     }
 }
 
-export class SinglyLinkedList {
+class SinglyLinkedList {
     constructor() {
         this.head = null;
         this.tail = null; // We track tail to speed up add data to the end of list
@@ -108,6 +108,26 @@ export class SinglyLinkedList {
         return this.head == null && this.tail == null;
     }
 
+    [Symbol.iterator](){
+        let current = this.head;
+        return {
+            next(){
+                if (!current) {
+                    return {
+                        done: true,
+                        value: undefined
+                    }
+                }
+                const returnValue = {
+                    done: false,
+                    value: current.data
+                };
+                current = current.next;
+                return returnValue
+            }
+        }
+    }
+
     toArray() {
         let current = this.head;
         const result = [];
@@ -118,3 +138,5 @@ export class SinglyLinkedList {
         return result;
     }
 }
+
+export {SinglyLinkedList}

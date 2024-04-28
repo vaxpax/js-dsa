@@ -4,9 +4,9 @@ import { SinglyLinkedList } from "./data-structures/linked-lists/SinglyLinkedLis
 
 export {SinglyLinkedList}
 
-
+/*
 // Playground (delete at end)
-/*let singlyLinkedList = new SinglyLinkedList();
+let singlyLinkedList = new SinglyLinkedList();
 singlyLinkedList.addFirst(5);
 singlyLinkedList.addFirst(7);
 singlyLinkedList.addFirst("Vanja");
@@ -16,17 +16,7 @@ singlyLinkedList.addFirst(100);
 let array = singlyLinkedList.toArray();
 console.log(array);
 
-let v = singlyLinkedList.set(1, 250);
-console.log('Replaced: ' + v);
-array = singlyLinkedList.toArray();
-console.log(array);
-
-v = singlyLinkedList.set(4, 'Vanja');
-console.log('Replaced: ' + v);
-
-
-array = singlyLinkedList.toArray();
-console.log(array);
-console.log('Head: ' + singlyLinkedList.head?.data);
-console.log('Tail: ' + singlyLinkedList.tail?.data);
+for (const a of singlyLinkedList) {
+    console.log(a);
+}
 */
