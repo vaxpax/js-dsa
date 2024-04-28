@@ -1,12 +1,17 @@
 {
   "name": "usingbytes-dsa",
   "version": "0.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/data-structures/linked-lists/SinglyLinkedList.test.js"
   },
   "keywords": [],
   "author": "Vanja Petkovic (vanja.petkovic@gmail.com)",
-  "license": "ISC",
-  "description": ""
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "mocha": "^10.4.0"
+  }
 }
