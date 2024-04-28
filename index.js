@@ -1,22 +1,26 @@
 "use strict";
 
 import { SinglyLinkedList } from "./data-structures/linked-lists/SinglyLinkedList.js";
+import { OrderedSinglyLinkedList } from "./data-structures/linked-lists/OrderedSinglyLinkedList.js";
 
-export {SinglyLinkedList}
-
-/*
-// Playground (delete at end)
-let singlyLinkedList = new SinglyLinkedList();
-singlyLinkedList.addFirst(5);
-singlyLinkedList.addFirst(7);
-singlyLinkedList.addFirst("Vanja");
-singlyLinkedList.add(45);
-singlyLinkedList.addFirst(100);
-
-let array = singlyLinkedList.toArray();
-console.log(array);
-
-for (const a of singlyLinkedList) {
-    console.log(a);
+import { defaultCompare, order} from "./utils/Utils.js";
+export {
+    SinglyLinkedList,
+    OrderedSinglyLinkedList,
+    defaultCompare,
+    order,
 }
-*/
+
+
+
+
+// Playground (delete at end)
+//  const list = new OrderedSinglyLinkedList();
+//  const array = [99, 4, 6, 7, 55];
+//  list.addAll(array);
+//
+//  list.set(0, 12);
+//
+// for(let item of list) {
+//     console.log(item);
+// }

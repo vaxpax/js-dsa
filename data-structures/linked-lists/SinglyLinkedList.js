@@ -25,6 +25,13 @@ class SinglyLinkedList {
         }
     }
 
+    // Append all elements of provided array
+    addAll(dataArray) {
+        for (let data of dataArray) {
+            this.add(data);
+        }
+    }
+
     // Inserts the specified element at the beginning of this list.
     addFirst(data) {
         const node = new Node(data);
@@ -43,9 +50,52 @@ class SinglyLinkedList {
         this.tail = null;
     }
 
+    // Returns true if this list contains the specified data.
+    contains(data) {
+        let index = this.indexOf(data);
+        return index !== -1;
+    }
+
+    // Returns the index of the first occurrence of the data in this list,
+    // or -1 if this list does not contain the element.
+    indexOf(data) {
+        let index = -1;
+        let counter = 0;
+        let current = this.head;
+        while (current) {
+            if (current.data === data) {
+                index = counter;
+                break;
+            }
+            counter++;
+            current = current.next;
+        }
+        return index;
+    }
+
+    isEmpty() {
+        return this.head == null && this.tail == null;
+    }
+
+    // Returns the index of the last occurrence of the data in this list,
+    // or -1 if this list does not contain the element.
+    lastIndexOf(data) {
+        let index = -1;
+        let counter = 0;
+        let current = this.head;
+        while (current) {
+            if (current.data === data) {
+                index = counter;
+            }
+            counter++;
+            current = current.next;
+        }
+        return index;
+    }
+
     // Retrieves and removes the head of this list
     remove() {
-        if (this.head == null) {
+        if (!this.head) {
             return null;
         }
 
@@ -68,23 +118,62 @@ class SinglyLinkedList {
         if (this.head === this.tail) {
             this.clear();
             return current.data;
-        } else {
-            let previous = current;
-            current = current.next;
-            while (current.next) {
-                previous = current;
-                current = current.next;
-            }
-            previous.next = null;
-            this.tail = previous;
-            return current.data;
         }
+        let previous = current;
+        current = current.next;
+        while (current.next) {
+            previous = current;
+            current = current.next;
+        }
+        previous.next = null;
+        this.tail = previous;
+        return current.data;
     }
+
+    // Removes the first occurrence of the specified data from list, if it is present
+    removeData(data) {
+        if (!this.head) {
+            return true;
+        }
+
+        let previous = null;
+        let current = this.head;
+        let found = false;
+        while (current) {
+            if (current.data === data) {
+                found = true;
+                break;
+            }
+            previous = current;
+            current = current.next;
+        }
+        if (!found) {
+            return false;
+        }
+
+        if(previous == null) {  // we found it on head
+            if (this.tail === this.head) {
+                clear();
+                return true;
+            }
+            this.head = this.head.next;
+            return true;
+        }
+
+        previous.next = current.next;
+        if (current === this.tail) {
+            this.tail = previous;
+        }
+        return true;
+    }
+
 
     // Replaces the data at the specified position in list with the specified data
     // Returns previous data on specific index
     set(index, data) {
-        if (this.head == null) {
+        if (!this.head) {
+            let node = new Node(data);
+            this.head = node;
             return null;
         } else {
             let current = this.head;
@@ -101,11 +190,6 @@ class SinglyLinkedList {
                 return foundData;
             }
         }
-
-    }
-
-    isEmpty() {
-        return this.head == null && this.tail == null;
     }
 
     [Symbol.iterator](){
@@ -139,4 +223,7 @@ class SinglyLinkedList {
     }
 }
 
-export {SinglyLinkedList}
+export {
+    SinglyLinkedList,
+    Node
+};
