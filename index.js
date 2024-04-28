@@ -2,7 +2,11 @@
 
 import { SinglyLinkedList } from "./data-structures/linked-lists/SinglyLinkedList.js";
 
-let singlyLinkedList = new SinglyLinkedList();
+export {SinglyLinkedList}
+
+
+// Playground (delete at end)
+/*let singlyLinkedList = new SinglyLinkedList();
 singlyLinkedList.addFirst(5);
 singlyLinkedList.addFirst(7);
 singlyLinkedList.addFirst("Vanja");
@@ -25,6 +29,4 @@ array = singlyLinkedList.toArray();
 console.log(array);
 console.log('Head: ' + singlyLinkedList.head?.data);
 console.log('Tail: ' + singlyLinkedList.tail?.data);
-
-
-
+*/

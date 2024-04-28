@@ -4,7 +4,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/data-structures/linked-lists/SinglyLinkedList.test.js"
+    "test": "mocha test/all.test.js"
   },
   "keywords": [],
   "author": "Vanja Petkovic (vanja.petkovic@gmail.com)",
