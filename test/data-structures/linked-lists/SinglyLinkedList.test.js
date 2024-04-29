@@ -1,6 +1,7 @@
 "use strict";
 
 import { assert } from "chai";
+import {asserHeadAndTail, assertIterator, assertArrays} from "../../TestHelpers.js";
 import { SinglyLinkedList } from "../../../index.js";
 
 export default function test() {
@@ -32,7 +33,7 @@ export default function test() {
             assert.equal(list.isEmpty(), true);
         });
 
-        it('add, addFirst, isEmpty, contains, iterator ', () => {
+        it('add, addFirst, isEmpty, contains ', () => {
             const list = new SinglyLinkedList();
             assert.equal(list.isEmpty(), true);
 
@@ -66,7 +67,6 @@ export default function test() {
             list.remove();
             list.removeLast();
             assert.equal(list.isEmpty(), true);
-
         });
 
         it('removeData', () => {
@@ -135,26 +135,6 @@ export default function test() {
             asserHeadAndTail(list, array[0], array[9999]);
         });
     });
-}
-
-function asserHeadAndTail(list, head, tail) {
-    assert.equal(list.head.data, head);
-    assert.equal(list.tail.data, tail);
-}
-
-function assertIterator(list, array) {
-    let counter = 0;
-    for (let item of list) {
-        assert.equal(item, array[counter]);
-        counter++;
-    }
-}
-
-function assertArrays(arrayA, arrayB) {
-    assert.equal(arrayA.length, arrayB.length);
-    for (let i = 0; i < arrayA.length; i++) {
-        assert.equal(arrayA[i], arrayB[i]);
-    }
 }
 
 // describe('SinglyLinkedList', () => {

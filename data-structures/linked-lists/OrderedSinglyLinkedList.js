@@ -34,6 +34,12 @@ class OrderedSinglyLinkedList extends SinglyLinkedList {
                 node.next = current;
                 previous.next = node;
             }
+
+            // fix tail
+            if (current == null) {
+                // previous is tail
+                this.tail = node;
+            }
         }
     }
 
