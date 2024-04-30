@@ -10,7 +10,7 @@ class OrderedSinglyLinkedList extends SinglyLinkedList {
         this.ordering = ordering;
     }
 
-    add(data) {
+    append(data) {
         const node = new Node(data);
         if (!this.head) {
             this.head = node;

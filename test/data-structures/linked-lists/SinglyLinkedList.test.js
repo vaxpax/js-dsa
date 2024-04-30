@@ -13,7 +13,7 @@ export default function test() {
 
         it('one element list', () => {
             const list = new SinglyLinkedList();
-            list.add(1);
+            list.append(1);
             asserHeadAndTail(list, 1, 1);
 
             list.remove();
@@ -26,7 +26,7 @@ export default function test() {
         it('addAll and iterator', () => {
             const list = new SinglyLinkedList();
             const array = [99, 4, 6, 7, 55];
-            list.addAll(array);
+            list.appendAll(array);
             asserHeadAndTail(list, array[0], array[4]);
             assertIterator(list, array);
             list.clear();
@@ -37,11 +37,11 @@ export default function test() {
             const list = new SinglyLinkedList();
             assert.equal(list.isEmpty(), true);
 
-            list.add(5);
+            list.append(5);
             assert.equal(list.isEmpty(), false);
 
             list.addFirst(7)
-            list.add(6);
+            list.append(6);
             assert.equal(list.indexOf(7), 0);
             assert.equal(list.indexOf(5), 1);
             assert.equal(list.indexOf(6), 2);
@@ -55,7 +55,7 @@ export default function test() {
         it('remove, removeLast ', () => {
             const list = new SinglyLinkedList();
             const array = [99, 4, 6, 7, 55];
-            list.addAll(array);
+            list.appendAll(array);
 
             list.remove();
             assertIterator(list, [4, 6, 7, 55]);
@@ -72,7 +72,7 @@ export default function test() {
         it('removeData', () => {
             const list = new SinglyLinkedList();
             const array = [99, 4, 6, 7, 55];
-            list.addAll(array);
+            list.appendAll(array);
 
             list.removeData(99);
             assertIterator(list, [4, 6, 7, 55]);
@@ -91,7 +91,7 @@ export default function test() {
         it('set', () => {
             const list = new SinglyLinkedList();
             const array = [99, 4, 6, 7, 55];
-            list.addAll(array);
+            list.appendAll(array);
 
             list.set(0, 12);
             assertIterator(list, [12, 4, 6, 7, 55])
@@ -108,7 +108,7 @@ export default function test() {
         it('indexOf, lastIndexOf', () => {
             const list = new SinglyLinkedList();
             const array = [99, 7, 4, 6, 7, 55, 99, 3, 6, 44, 99, 1, 2];
-            list.addAll(array);
+            list.appendAll(array);
             assert.equal(list.indexOf(99), 0);
             assert.equal(list.lastIndexOf(99), 10);
             assert.equal(list.indexOf(1), 11);
@@ -119,7 +119,7 @@ export default function test() {
         it('toArray', () => {
             const list = new SinglyLinkedList();
             const array = [55, 99, 3, 6, 5];
-            list.addAll(array);
+            list.appendAll(array);
             assertArrays(array, list.toArray());
 
         });
@@ -129,7 +129,7 @@ export default function test() {
             let array = [];
             for (let index = 0; index < 10000; index++) {
                 array[index] = Math.random();
-                list.add(array[index]);
+                list.append(array[index]);
             }
             assertIterator(list, array);
             asserHeadAndTail(list, array[0], array[9999]);

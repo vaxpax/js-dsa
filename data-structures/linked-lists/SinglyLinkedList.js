@@ -14,7 +14,7 @@ class SinglyLinkedList {
     }
 
     // Appends data to the end of this list.
-    add(data) {
+    append(data) {
         const node = new Node(data);
         if (!this.head) {
             this.head = node;
@@ -26,9 +26,9 @@ class SinglyLinkedList {
     }
 
     // Append all elements of provided array
-    addAll(dataArray) {
+    appendAll(dataArray) {
         for (let data of dataArray) {
-            this.add(data);
+            this.append(data);
         }
     }
 
