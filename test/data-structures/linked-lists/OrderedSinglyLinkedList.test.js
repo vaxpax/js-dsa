@@ -133,6 +133,18 @@ export default function test() {
             assertArrays(array, list.toArray());
         });
 
+        it('DESC order with strings', () => {
+            function compare (str1, str2) {
+                return str1.localeCompare(str2);
+            }
+
+            const list = new OrderedSinglyLinkedList(compare, order.DESC);
+            let array = ['Vanja', 'Petkovic', 'Vesna', 'Pas', 'Novine'];
+            list.addAll(array);
+            array = [ 'Vesna', 'Vanja', 'Petkovic', 'Pas', 'Novine' ]
+            assertArrays(array, list.toArray());
+        });
+
         it('10000 items ', () => {
             const list = new OrderedSinglyLinkedList();
             let min, max, random;
