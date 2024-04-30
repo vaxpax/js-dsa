@@ -133,7 +133,7 @@ class SinglyLinkedList {
     // Removes the first occurrence of the specified data from list, if it is present
     removeData(data) {
         if (!this.head) {
-            return true;
+            return false;
         }
 
         let previous = null;
