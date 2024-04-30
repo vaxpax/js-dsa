@@ -52,6 +52,12 @@ class DoublyLinkedList {
         this.tail = null;
     }
 
+    // Returns true if this list contains the specified data.
+    contains(data) {
+        let index = this.indexOf(data);
+        return index !== -1;
+    }
+
     // Returns the index of the first occurrence of the data in this list,
     // or -1 if this list does not contain the element.
     indexOf(data) {

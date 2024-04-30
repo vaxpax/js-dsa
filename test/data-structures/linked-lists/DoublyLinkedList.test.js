@@ -53,6 +53,14 @@ export default function test() {
             assert.equal(list.isEmpty(), true);
         });
 
+        it('contain', () => {
+            const list = new DoublyLinkedList();
+            const array = [1, 5, 25, 125, 625];
+            list.appendAll(array);
+            assert.equal(list.contains(5), true);
+            assert.equal(list.contains(7), false);
+        });
+
         it('indexOf', () => {
             const list = new DoublyLinkedList();
             const array = [1, 5, 25, 125, 625];
