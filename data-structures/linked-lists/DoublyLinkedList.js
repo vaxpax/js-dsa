@@ -1,3 +1,5 @@
+"use strict";
+
 class Node {
     constructor(data) {
         this.data = data;
@@ -233,4 +235,5 @@ class DoublyLinkedList {
 
 export {
     DoublyLinkedList,
+    Node,
 };

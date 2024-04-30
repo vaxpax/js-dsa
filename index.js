@@ -3,12 +3,15 @@
 import { SinglyLinkedList } from "./data-structures/linked-lists/SinglyLinkedList.js";
 import { OrderedSinglyLinkedList } from "./data-structures/linked-lists/OrderedSinglyLinkedList.js";
 import { DoublyLinkedList } from "./data-structures/linked-lists/DoublyLinkedList.js";
+import { OrderedDoublyLinkedList } from "./data-structures/linked-lists/OrderedDoublyLinkedList.js";
+
 
 import { defaultCompare, order} from "./utils/Utils.js";
 export {
     SinglyLinkedList,
     OrderedSinglyLinkedList,
     DoublyLinkedList,
+    OrderedDoublyLinkedList,
     defaultCompare,
     order,
 }
