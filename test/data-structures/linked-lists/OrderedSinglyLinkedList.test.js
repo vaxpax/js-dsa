@@ -14,7 +14,7 @@ export default function test() {
 
         it('one element list', () => {
             const list = new OrderedSinglyLinkedList();
-            list.append(1);
+            list.insert(1);
             assert.equal(list.head.data, 1);
             assert.equal(list.tail.data, 1);
 
@@ -22,10 +22,10 @@ export default function test() {
             assert.equal(list.isEmpty(), true);
         });
 
-        it('ASC addAll and iterator ', () => {
+        it('ASC insertAll and iterator ', () => {
             const list = new OrderedSinglyLinkedList();
             let array = [99, 4, 6, 7, 55];
-            list.appendAll(array);
+            list.insertAll(array);
             // order is not ASC
             array = [4, 6, 7, 55, 99];
             asserHeadAndTail(list, array[0], array[4]);
@@ -34,10 +34,10 @@ export default function test() {
             assert.equal(list.isEmpty(), true);
         });
 
-        it('DESC addAll and iterator ', () => {
+        it('DESC insertAll and iterator ', () => {
             const list = new OrderedSinglyLinkedList(defaultCompare, order.DESC);
             let array = [99, 4, 6, 7, 55];
-            list.appendAll(array);
+            list.insertAll(array);
             // order is not ASC
             array = [99, 55, 7, 6, 4];
             asserHeadAndTail(list, array[0], array[4]);
@@ -50,13 +50,27 @@ export default function test() {
             const list = new OrderedSinglyLinkedList(defaultCompare, order.DESC);
             assert.equal(list.isEmpty(), true);
             let array = [99, 4, 6, 7, 55];
-            list.appendAll(array);
+            list.insertAll(array);
 
             assert.equal(list.isEmpty(), false);
             asserHeadAndTail(list, 99, 4);
 
             assert.equal(list.contains(7), true);
             assert.equal(list.contains(-1), false);
+        });
+
+        it(' append', () => {
+            const list = new OrderedSinglyLinkedList();
+            assert.equal(list.isEmpty(), true);
+            let array = [1, 2, 3, 4];
+            list.insertAll(array);
+            array[4] = 5
+            assert.equal(list.append(array[4]), true);
+            assert.equal(list.append(array[0]), false);
+
+            asserHeadAndTail(list, 1, 5);
+            assertArrays(array, list.toArray());
+
         });
 
         it('not supported methods: addFirst, set', () => {
@@ -72,12 +86,18 @@ export default function test() {
             } catch (error) {
                 assert.equal(error instanceof NotSupportedError, true);
             }
+            try {
+                list.appendAll([10, 100]);
+            } catch (error) {
+                assert.equal(error instanceof NotSupportedError, true);
+            }
+
         });
 
         it('remove, removeLast ', () => {
             const list = new OrderedSinglyLinkedList();
             const array = [99, 4, 6, 7, 55];
-            list.appendAll(array);
+            list.insertAll(array);
 
             list.remove();
             assertIterator(list, [6, 7, 55, 99]);
@@ -94,7 +114,7 @@ export default function test() {
         it('removeData', () => {
             const list = new OrderedSinglyLinkedList(defaultCompare, order.DESC);
             const array = [99, 4, 6, 7, 55];
-            list.appendAll(array);
+            list.insertAll(array);
 
             list.removeData(99);
             assertIterator(list, [55, 7, 6, 4]);
@@ -112,7 +132,7 @@ export default function test() {
         it('indexOf, lastIndexOf', () => {
             const list = new OrderedSinglyLinkedList();
             let array = [99, 7, 4, 6, 7, 55, 99, 3, 6, 44, 99, 1, 2];
-            list.appendAll(array);
+            list.insertAll(array);
 
             array = [1, 2, 3, 4, 6, 6, 7, 7, 44, 55, 99, 99, 99]
             assertArrays(array, list.toArray());
@@ -128,7 +148,7 @@ export default function test() {
         it('DESC toArray', () => {
             const list = new OrderedSinglyLinkedList(defaultCompare, order.DESC);
             let array = [99, 7, 4, 6, 7, 55, 99, 3, 6, 44, 99, 1, 2];
-            list.appendAll(array);
+            list.insertAll(array);
             array = [99, 99, 99, 55, 44, 7, 7, 6, 6, 4, 3, 2, 1];
             assertArrays(array, list.toArray());
         });
@@ -140,7 +160,7 @@ export default function test() {
 
             const list = new OrderedSinglyLinkedList(compare, order.DESC);
             let array = ['Vanja', 'Petkovic', 'Vesna', 'Pas', 'Novine'];
-            list.appendAll(array);
+            list.insertAll(array);
             array = [ 'Vesna', 'Vanja', 'Petkovic', 'Pas', 'Novine' ]
             assertArrays(array, list.toArray());
         });
@@ -164,7 +184,7 @@ export default function test() {
                     }
                 }
                 array[index] = random;
-                list.append(array[index]);
+                list.insert(array[index]);
             }
 
             let compareTo;
@@ -181,7 +201,7 @@ export default function test() {
     });
 }
 
-// describe('SinglyLinkedList', () => {
-//     test();
-// });
+describe('SinglyLinkedList', () => {
+    test();
+});
 

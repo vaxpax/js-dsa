@@ -15,6 +15,28 @@ class OrderedSinglyLinkedList extends SinglyLinkedList {
         if (!this.head) {
             this.head = node;
             this.tail = node;
+            return true;
+        }
+
+        if ( (this.compare(this.tail.data, data) < 0 && this.ordering === order.ASC)
+            || (this.compare(this.tail.data, data) > 0) && (this.ordering === order.DESC) ) {
+            this.tail.next = node;
+            this.tail = node;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    appendAll(dataArray) {
+        throw new NotSupportedError('OrderedSinglyLinkedList.appendAll()');
+    }
+
+    insert(data) {
+        const node = new Node(data);
+        if (!this.head) {
+            this.head = node;
+            this.tail = node;
         } else {
             let previous = null;
             let current = this.head;
@@ -40,6 +62,12 @@ class OrderedSinglyLinkedList extends SinglyLinkedList {
                 // previous is tail
                 this.tail = node;
             }
+        }
+    }
+
+    insertAll(dataArray) {
+        for (let item of dataArray) {
+            this.insert(item);
         }
     }
 
