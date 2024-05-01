@@ -12,6 +12,12 @@ class NotSupportedError extends Error {
     }
 }
 
+class IndexOutOfBounds extends Error {
+    constructor(message) {
+        super(message);
+        this.name = "IndexOutOfBounds";
+    }
+}
 
 export {
     NotImplementedError,

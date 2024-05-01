@@ -5,6 +5,11 @@ function asserHeadAndTail(list, head, tail) {
     assert.equal(list.tail.data, tail);
 }
 
+function assertHeadAndLast(list, head, last) {
+    assert.equal(list.head.data, head);
+    assert.equal(list.last.data, last);
+}
+
 function assertIterator(list, array) {
     let counter = 0;
     for (let item of list) {
@@ -22,6 +27,7 @@ function assertArrays(arrayA, arrayB) {
 
 export {
     asserHeadAndTail,
+    assertHeadAndLast,
     assertIterator,
     assertArrays,
 };
