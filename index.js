@@ -4,6 +4,7 @@ import { SinglyLinkedList } from "./data-structures/linked-lists/SinglyLinkedLis
 import { OrderedSinglyLinkedList } from "./data-structures/linked-lists/OrderedSinglyLinkedList.js";
 import { DoublyLinkedList } from "./data-structures/linked-lists/DoublyLinkedList.js";
 import { OrderedDoublyLinkedList } from "./data-structures/linked-lists/OrderedDoublyLinkedList.js";
+import { CircularLinkedList } from "./data-structures/linked-lists/CircularLinkedList.js";
 
 
 import { defaultCompare, order} from "./utils/Utils.js";
@@ -12,6 +13,7 @@ export {
     OrderedSinglyLinkedList,
     DoublyLinkedList,
     OrderedDoublyLinkedList,
+    CircularLinkedList,
     defaultCompare,
     order,
 }
