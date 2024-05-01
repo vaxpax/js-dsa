@@ -16,6 +16,27 @@ class OrderedDoublyLinkedList extends DoublyLinkedList {
         if (!this.head) {
             this.head = node;
             this.tail = node;
+            return true;
+        }
+
+        if ( (this.compare(this.tail.data, data) <= 0 && this.ordering === order.ASC)
+            || (this.compare(this.tail.data, data) >= 0) && (this.ordering === order.DESC) ) {
+            node.previous = this.tail.previous;
+            this.tail.next = node;
+            this.tail = node;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
+    insert(data) {
+        const node = new Node(data);
+        if (!this.head) {
+            this.head = node;
+            this.tail = node;
         } else {
             let previous = null;
             let current = this.head;
@@ -42,6 +63,16 @@ class OrderedDoublyLinkedList extends DoublyLinkedList {
                 this.tail = node;
             }
         }
+    }
+
+    insertAll(dataArray) {
+        for (let item of dataArray) {
+            this.insert(item);
+        }
+    }
+
+    appendAll(dataArray) {
+        throw new NotSupportedError('OrderedDoublyLinkedList.appendAll()');
     }
 
     addFirst(data) {
