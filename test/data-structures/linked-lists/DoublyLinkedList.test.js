@@ -66,6 +66,9 @@ export default function test() {
             const array = [1, 5, 25, 125, 625];
             list.appendAll(array);
             assert.equal(list.indexOf(25), 2);
+            assert.equal(list.indexOf(1), 0);
+            assert.equal(list.indexOf(625), 4);
+            assert.equal(list.indexOf(30), -1);
         });
 
         it('lastIndexOf', () => {

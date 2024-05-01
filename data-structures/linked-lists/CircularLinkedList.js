@@ -109,10 +109,34 @@ class CircularLinkedList {
         return current.data;
     }
 
+    // Removes from this list all of the elements whose indexes are between fromIndex inclusive and toIndex exclusive
+    removeRange(fromIndex, toIndex) {
+        // TODO
+        // let fromNode = this.head, toNode;
+        // let counter = 0;
+        // while (counter < fromIndex) {
+        //     fromNode = fromNode.next;
+        //     counter++;
+        // }
+        // toNode = fromNode;
+        // while (counter < index) {
+        //     toNode = toNode.next;
+        //     counter++;
+        // }
+        //
+        // if (fromIndex < toIndex) {
+        // fromNode.previous.next = toNode;
+        // toNode.previous = fromNode.previous;
+    }
+
 
     clear() {
         this.head = null;
         this.last = null;
+    }
+
+    contains(data) {
+        return this.indexOf(data) != -1;
     }
 
     isCircular() {
@@ -122,6 +146,69 @@ class CircularLinkedList {
 
     isEmpty() {
         return this.head == null && this.last == null;
+    }
+
+    // returns index of data starting from list head
+    indexOf(data) {
+        if (this.head == null) {
+            return -1;
+        }
+
+        let current = this.head;
+        let index = -1;
+        let counter = 0;
+        while (current) {
+            if (current.data === data) {
+                index = counter;
+                break;
+            }
+            if (current.next === this.head) {
+                break;
+            } else {
+                current = current.next;
+                counter++;
+            }
+        }
+        return index;
+    }
+
+    lastIndexOf(data) {
+        if (this.head == null) {
+            return -1;
+        }
+
+        let current = this.head;
+        let index = -1;
+        let counter = 0;
+
+        while (current) {
+            if (current.data === data) {
+                index = counter;
+            }
+            if (current.next === this.head) {
+                break;
+            } else {
+                current = current.next;
+                counter++;
+            }
+        }
+        return index;
+    }
+
+
+    set(index, data) {
+        if (this.head == null) {
+            return null;
+        }
+        let counter = 0;
+        let current = this.head;
+        while (counter < index) {
+            current = current.next;
+            counter++;
+        }
+        const value = current.data;
+        current.data = data;
+        return value;
     }
 
     toArray() {
