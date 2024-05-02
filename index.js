@@ -6,6 +6,8 @@ import { DoublyLinkedList } from "./data-structures/linked-lists/DoublyLinkedLis
 import { OrderedDoublyLinkedList } from "./data-structures/linked-lists/OrderedDoublyLinkedList.js";
 import { CircularLinkedList } from "./data-structures/linked-lists/CircularLinkedList.js";
 
+import { BinarySearchTree } from "./data-structures/trees/BinarySearchTree.js";
+
 
 import { defaultCompare, order} from "./utils/Utils.js";
 export {
@@ -14,6 +16,9 @@ export {
     DoublyLinkedList,
     OrderedDoublyLinkedList,
     CircularLinkedList,
+
+    BinarySearchTree,
+
     defaultCompare,
     order,
 }
