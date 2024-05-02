@@ -11,6 +11,21 @@ export default function test() {
             const tree = new BinarySearchTree();
             assert.equal(tree.isEmpty(), true);
         });
+        it('insert one value', () => {
+            const tree = new BinarySearchTree();
+            tree.insert(5);
+            assert.equal(tree.isEmpty(), false);
+            assert.equal(tree.root.value, 5);
+        });
+        it('insertAll', () => {
+            const tree = new BinarySearchTree();
+            const array = [4, 5, 2, 3, 6, 1];
+            tree.insertAll(array);
+            assert.equal(tree.isEmpty(), false);
+            assert.equal(tree.root.value, 5);
+        });
+
+
     });
 }
 
