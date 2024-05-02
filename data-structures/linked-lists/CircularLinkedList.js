@@ -32,29 +32,20 @@ class CircularLinkedList {
         }
     }
 
+    // index is positive int
     removeAt(index) {
         if (this.head == null) {
             return null;
         }
-
-        if (this.head === this.head.next) {
+        if (this.head === this.head.next && index === 0) {
             const data = this.head.data;
             this.clear();
             return data;
         }
-
-        let increment = (index === 0) ? 0 : (index < 0) ? -1 : 1;
         let counter = 0;
         let current = this.head;
         while (counter < index) {
-            if (increment === 0) {
-                break;
-            }
-            if (increment < 0) {
-                current = current.previous;
-            } else {
-                current = current.next;
-            }
+            current = current.next;
             counter++;
         }
 
@@ -109,24 +100,47 @@ class CircularLinkedList {
         return current.data;
     }
 
-    // Removes from this list all of the elements whose indexes are between fromIndex inclusive and toIndex exclusive
-    removeRange(fromIndex, toIndex) {
-        // TODO
-        // let fromNode = this.head, toNode;
-        // let counter = 0;
-        // while (counter < fromIndex) {
-        //     fromNode = fromNode.next;
-        //     counter++;
-        // }
-        // toNode = fromNode;
-        // while (counter < index) {
-        //     toNode = toNode.next;
-        //     counter++;
-        // }
-        //
-        // if (fromIndex < toIndex) {
-        // fromNode.previous.next = toNode;
-        // toNode.previous = fromNode.previous;
+    // Removes nodes from the list starting with fromIndex (inclusive) and then for length
+    // length can't be negative or zero
+    // fromIndex must pe positive
+    removeRange(fromIndex, length) {
+        if (fromIndex < 0 || length <= 0) {
+            return false;
+        }
+        let fromNode = this.head, toNode;
+        let counter = 0;
+        let correctHead = false, correctLast = false;
+        while (counter < fromIndex) {
+            fromNode = fromNode.next;
+            counter++;
+        }
+        toNode = fromNode;
+        counter = 0;
+        while (counter < length) {
+            if (toNode.next === fromNode) {
+                // full cycle
+                this.clear();
+                return true;
+            }
+            if (toNode === this.head) {
+                correctHead = true;
+            }
+            if (toNode === this.last) {
+                correctLast = true;
+            }
+            toNode = toNode.next;
+            counter++;
+        }
+
+        fromNode.previous.next = toNode;
+        toNode.previous = fromNode.previous;
+        if (correctHead) {
+            this.head = toNode;
+        }
+        if (correctLast) {
+            this.last = fromNode.previous;
+        }
+        return true;
     }
 
 
@@ -136,12 +150,12 @@ class CircularLinkedList {
     }
 
     contains(data) {
-        return this.indexOf(data) != -1;
+        return this.indexOf(data) !== -1;
     }
 
     isCircular() {
-        return ((this.head === this.last.next) || (this.head === this.last))
-             && (this.last === this.head.previous);
+        return ( (this.head === this.last) ||
+                    ((this.head.previous === this.last) && (this.last.next === this.head)))
     }
 
     isEmpty() {
@@ -153,7 +167,6 @@ class CircularLinkedList {
         if (this.head == null) {
             return -1;
         }
-
         let current = this.head;
         let index = -1;
         let counter = 0;
@@ -180,7 +193,6 @@ class CircularLinkedList {
         let current = this.head;
         let index = -1;
         let counter = 0;
-
         while (current) {
             if (current.data === data) {
                 index = counter;
@@ -218,7 +230,9 @@ class CircularLinkedList {
             result.push(current.data);
             current = current.next;
         }
-        result.push(current.data);
+        if (current) {
+            result.push(current.data);
+        }
         return result;
     }
 }

@@ -3,8 +3,6 @@
 import { assert } from "chai";
 import {assertHeadAndLast, assertIterator, assertArrays} from "../../TestHelpers.js";
 import {CircularLinkedList, defaultCompare, order} from "../../../index.js";
-import {NotSupportedError} from "../../../utils/Errors.js";
-
 
 export default function test() {
     describe('CircularLinkedList Tests', () => {
@@ -38,7 +36,7 @@ export default function test() {
 
         it('removeAt', () => {
             const list = new CircularLinkedList();
-            const array = [1, 2, 3, 4, 5, 6, 7];
+            let array = [1, 2, 3, 4, 5, 6, 7];
             list.appendAll(array);
 
             list.removeAt(6);
@@ -74,14 +72,16 @@ export default function test() {
             list.clear();
             list.appendAll([100, 200]);
             list.removeAt(1);
-            assertArrays([100], list.toArray());
+            array = [100, 200]
+            array.pop();
+            assertArrays(array, list.toArray());
             assert.equal(list.isCircular(), true);
             assertHeadAndLast(list, 100, 100);
         });
 
         it('removeData', () => {
             const list = new CircularLinkedList();
-            const array = [1, 2, 3, 4, 5, 6, 7];
+            let array = [1, 2, 3, 4, 5, 6, 7];
             list.appendAll(array);
 
             list.removeData(7);
@@ -108,18 +108,22 @@ export default function test() {
             list.removeData(300);
             assert.equal(list.isEmpty(), true);
 
+            array = [100, 200];
             list.appendAll([100, 200]);
             list.removeData(100);
-            assertArrays([200], list.toArray());
+            array.splice(0, 1);
+            assertArrays(array, list.toArray());
             assert.equal(list.isCircular(), true);
-            assertHeadAndLast(list, 200, 200);
+            assertHeadAndLast(list, array[0], array[0]);
 
             list.clear();
+            array = [100, 200];
             list.appendAll([100, 200]);
+            array.pop()
             list.removeData(200);
-            assertArrays([100], list.toArray());
+            assertArrays(array, list.toArray());
             assert.equal(list.isCircular(), true);
-            assertHeadAndLast(list, 100, 100);
+            assertHeadAndLast(list, array[0], array[0]);
         });
 
         it('indexOf', () => {
@@ -171,10 +175,70 @@ export default function test() {
             assertArrays(array, list.toArray());
         });
 
+        it('removeRange', () => {
+            const list = new CircularLinkedList();
+            let array = [1, 2, 3, 4, 5];
+            list.appendAll(array);
+
+            // from middle of the list
+            list.clear();
+            array = [1, 2, 3, 4, 5];
+            list.appendAll(array);
+            list.removeRange(1, 3);
+            array.splice(1, 3)
+            assertArrays(array, list.toArray());
+            assertHeadAndLast(list, array[0], array[array.length-1]);
+
+            // head included but not last, + direction
+            list.clear();
+            array = [1, 2, 3, 4, 5];
+            list.appendAll(array);
+            list.removeRange(0, 2);
+            array.splice(0, 2);
+            assertArrays(array, list.toArray());
+            assertHeadAndLast(list, array[0], array[array.length-1]);
+
+            // remove exact lenght of list
+            list.clear();
+            array = [1, 2, 3, 4, 5];
+            list.appendAll(array);
+            list.removeRange(0, 5);
+            array.splice(0, 5)
+            assertArrays(array, list.toArray());
+            assert.equal(list.isEmpty(), true);
+
+            // remove bigger than length of list
+            list.clear();
+            array = [1, 2, 3, 4, 5];
+            list.appendAll(array);
+            list.removeRange(0, 8);
+            array.splice(0, 8)
+            assertArrays(array, list.toArray());
+            assert.equal(list.isEmpty(), true);
+
+            // remove starting fom last element - without hed
+            list.clear();
+            array = [1, 2, 3, 4, 5];
+            list.appendAll(array);
+            list.removeRange(4, 1);
+            array.splice(4, 1)
+            assertArrays(array, list.toArray());
+            assertHeadAndLast(list, array[0], array[array.length-1]);
+
+            // remove starting fom last element include head
+            list.clear();
+            array = [1, 2, 3, 4, 5];
+            list.appendAll(array);
+            list.removeRange(4, 3);
+            array.splice(4, 3)
+            assertArrays([3,4], list.toArray());
+            assertHeadAndLast(list, 3, 4);
+
+        });
     });
 }
 
-describe('SinglyLinkedList', () => {
-    test();
-});
+// describe('SinglyLinkedList', () => {
+//     test();
+// });
 
