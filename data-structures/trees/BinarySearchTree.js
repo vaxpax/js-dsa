@@ -7,6 +7,7 @@ class TreeNode {
         this.key = key;
         this.left = null;
         this.right = null;
+        this.parent = null;
     }
 }
 
@@ -20,8 +21,12 @@ class BinarySearchTree {
         return this.root === null;
     }
 
+    clear() {
+        this.root = null;
+    }
+
     insert(key) {
-        this.root = this.insertValue(this.root, key);
+        this.root = this.insertKey(this.root, null, key);
     }
 
     insertAll(keysArray) {
@@ -30,15 +35,16 @@ class BinarySearchTree {
         }
     }
 
-    insertValue(node, key) {
+    insertKey(node, parent, key) {
         if (node === null) {
             node = new TreeNode(key);
+            node.parent = parent;
             return node;
         }
         if (this.compare(key, node.key) < 0) {
-            node.left = this.insertValue(node.left, key);
+            node.left = this.insertKey(node.left, node, key);
         } else if (this.compare(key, node.key) > 0) {
-            node.right = this.insertValue(node.right, key)
+            node.right = this.insertKey(node.right, node, key)
         }
         return node;
     }
@@ -116,6 +122,65 @@ class BinarySearchTree {
             node = node.right;
         }
         return node;
+    }
+
+    successor(node) {
+        if (node.right != null) {
+            return this.minNode(node.right);
+        }
+
+        let key = node.key;
+        let parent = node.parent;
+        while(parent != null && node === parent.right) {
+            node = parent;
+            parent = node.parent;
+        }
+        return parent;
+    }
+
+    predecessor(node) {
+        if (node.left != null) {
+            return this.maxNode(node.left);
+        }
+
+        let parent = node.parent;
+        while(parent != null && node === parent.left) {
+            node = parent;
+            parent = node.parent;
+        }
+        return parent;
+    }
+
+    delete(node) {
+        if (node.left === null) {
+            this.transplant(node, node.right);
+        } else if (node.right === null) {
+            this.transplant(node, node.left)
+        } else {
+            let temp = this.minNode(node.right);
+            if (temp.parent !== node) {
+                this.transplant(temp, temp.right);
+                temp.right = node.right;
+                temp.right.parent = temp;
+            }
+            this.transplant(node, temp);
+            temp.left = node.left;
+            temp.left.parent = temp;
+        }
+    }
+
+    transplant(nodeU, nodeV) {
+        if (nodeU.parent == null) {
+            this.root = nodeV;
+        } else if (nodeU === nodeU.parent.left) {
+            nodeU.parent.left = nodeV;
+        } else {
+            nodeU.parent.right = nodeV;
+        }
+
+        if (nodeV !== null) {
+            nodeV.parent = nodeU.parent
+        }
     }
 }
 
