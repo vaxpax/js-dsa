@@ -27,7 +27,8 @@ export default function test() {
             tree.insertAll(array);
             assert.equal(tree.isEmpty(), false);
             assert.equal(tree.root.key, 4);
-            assertArrays(array.sort(), tree.toInOrderArray());
+            array.sort((a, b) => a - b);
+            assertArrays(array, tree.toInOrderArray());
             assertArrays(array.reverse(), tree.toReverseOrderArray());
         });
 

@@ -3,11 +3,17 @@ function defaultCompare(a, b) {
 }
 
 const order = Object.freeze({
-    ASC: 1,
-    DESC: 2
+    ASC: 0,
+    DESC: 1
+})
+
+const color = Object.freeze({
+    RED: 0,
+    BLACK: 1
 })
 
 export {
     defaultCompare,
-    order
+    order,
+    color,
 };
