@@ -189,8 +189,8 @@ class RedBlackTree {
             if (x === x.parent.left) {
                 s = x.parent.right;
                 if (s.color === color.RED) {
-                    s.color = color.RED;
-                    x.parent.color = color.BLACK;
+                    s.color = color.BLACK;
+                    x.parent.color = color.RED;
                     this.leftRotate(x.parent);
                     s = x.parent.right;
                 }
@@ -212,9 +212,9 @@ class RedBlackTree {
                 }
             } else {
                 s = x.parent.left;
-                if (s.color === color.BLACK) {
-                    s.color = color.RED;
-                    x.parent.color = color.BLACK;
+                if (s.color === color.RED) {
+                    s.color = color.BLACK;
+                    x.parent.color = color.RED;
                     this.rightRotate(x.parent);
                     s = x.parent.left;
                 }

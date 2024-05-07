@@ -141,11 +141,11 @@ export default function test() {
             assertArrays(array, tree.toInOrderArray());
             assert.equal(isRedBlackTree(tree), true);
 
-            // node = tree.search(5);
-            // tree.delete(node);
-            // array.splice(array.indexOf(5), 1);
-            // assertArrays(array, tree.toInOrderArray());
-            // assert.equal(isRedBlackTree(tree), true);
+            node = tree.search(5);
+            tree.delete(node);
+            array.splice(array.indexOf(5), 1);
+            assertArrays(array, tree.toInOrderArray());
+            assert.equal(isRedBlackTree(tree), true);
         });
     });
 }
@@ -161,7 +161,6 @@ function isRedBlackTree(tree) {
     let rootIsBlackValue = rootIsBlack(tree);
     let parentNodesRulesValue = parentNodesRules(tree, tree.root);
     let numberOfBlackNodesValue = sameNumberOfBlackNodes(tree, tree.root);
-
     return eachNodeIsRedOrBlackValue && rootIsBlackValue && parentNodesRulesValue && numberOfBlackNodesValue;
 }
 
