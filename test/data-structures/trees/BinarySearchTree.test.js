@@ -30,6 +30,7 @@ export default function test() {
             array.sort((a, b) => a - b);
             assertArrays(array, tree.toInOrderArray());
             assertArrays(array.reverse(), tree.toReverseOrderArray());
+            assertArrays(array.reverse(), tree.toReverseOrderArray());
         });
 
         it('search', () => {

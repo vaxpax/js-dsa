@@ -170,14 +170,13 @@ class BinarySearchTree {
     }
 
     transplant(nodeU, nodeV) {
-        if (nodeU.parent == null) {
+        if (nodeU.parent === null) {
             this.root = nodeV;
         } else if (nodeU === nodeU.parent.left) {
             nodeU.parent.left = nodeV;
         } else {
             nodeU.parent.right = nodeV;
         }
-
         if (nodeV !== null) {
             nodeV.parent = nodeU.parent
         }

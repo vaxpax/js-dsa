@@ -4,6 +4,7 @@ import { assert } from "chai";
 import { assertArrays } from "../../TestHelpers.js";
 import { RedBlackTree, RedBlackTreeNode } from "../../../data-structures/trees/RedBlackTree.js";
 import {color} from "../../../utils/Utils.js";
+import {BinarySearchTree} from "../../../data-structures/trees/BinarySearchTree.js";
 
 export default function test() {
     describe('RedBlackTree Tests', () => {
@@ -31,7 +32,6 @@ export default function test() {
             assert.equal(isRedBlackTree(tree), true);
             array.sort((a, b) => a - b);
             assertArrays(array, tree.toInOrderArray());
-
         });
         it('insertAll', () => {
             const tree = new RedBlackTree();
@@ -43,6 +43,110 @@ export default function test() {
             array.reverse();
             assertArrays(array, tree.toReverseOrderArray());
         });
+        it('min', () => {
+            const tree = new BinarySearchTree();
+            const array = [4, 5, 2, 3, 6, 1];
+            tree.insertAll(array);
+            assert.equal(tree.min().key, 1);
+        });
+
+        it('max', () => {
+            const tree = new BinarySearchTree();
+            const array = [4, 5, 2, 3, 6, 1];
+            tree.insertAll(array);
+            assert.equal(tree.max().key, 6);
+        });
+
+        it('successor', () => {
+            const tree = new BinarySearchTree();
+            let array = [4, 5, 2, 3, 6, 1];
+            tree.insertAll(array);
+            let node= tree.search(2);
+            assert.equal(tree.successor(node).key, 3);
+
+            tree.clear();
+            array = [6, 5, 7, 2, 1, 3, 4];
+            tree.insertAll(array);
+            node= tree.search(5);
+            assert.equal(tree.successor(node).key, 6);
+            node= tree.search(7);
+            assert.equal(tree.successor(node), null);
+
+            tree.clear();
+            array = [10, 2, 15, 12, 13, 14];
+            tree.insertAll(array);
+            node= tree.search(14);
+            assert.equal(tree.successor(node).key, 15);
+            node= tree.search(2);
+            assert.equal(tree.successor(node).key, 10);
+        });
+
+        it('predecessor', () => {
+            const tree = new BinarySearchTree();
+            let array = [4, 5, 2, 3, 6, 1];
+            tree.insertAll(array);
+            let node= tree.search(2);
+            assert.equal(tree.predecessor(node).key, 1);
+            node= tree.search(3);
+            assert.equal(tree.predecessor(node).key, 2);
+
+            tree.clear();
+            array = [10, 2, 15, 12, 13, 14];
+            tree.insertAll(array);
+            node= tree.search(2);
+            assert.equal(tree.predecessor(node), null);
+            node= tree.search(12);
+            assert.equal(tree.predecessor(node).key, 10);
+        });
+
+        it('delete', () => {
+            const tree = new RedBlackTree();
+            assert.equal(tree.isEmpty(), true);
+            tree.insert(5);
+            let node = tree.search(5);
+            tree.delete(node);
+            assert.equal(tree.isEmpty(), true);
+            assert.equal(isRedBlackTree(tree), true);
+
+            const array= [100, 50, 3, 25, 78, 5, 9, 12, 34, 53, 7, 4, 1, 18];
+            tree.insertAll(array);
+            array.sort((a, b) => a - b);
+            node = tree.search(18);
+            tree.delete(node);
+            array.splice(array.indexOf(18), 1);
+            assertArrays(array, tree.toInOrderArray());
+            assert.equal(isRedBlackTree(tree), true);
+
+            node = tree.search(100);
+            tree.delete(node);
+            array.splice(array.indexOf(100), 1);
+            assertArrays(array, tree.toInOrderArray());
+            assert.equal(isRedBlackTree(tree), true);
+
+            node = tree.search(78);
+            tree.delete(node);
+            array.splice(array.indexOf(78), 1);
+            assertArrays(array, tree.toInOrderArray());
+            assert.equal(isRedBlackTree(tree), true);
+
+            node = tree.search(9);
+            tree.delete(node);
+            array.splice(array.indexOf(9), 1);
+            assertArrays(array, tree.toInOrderArray());
+            assert.equal(isRedBlackTree(tree), true);
+
+            node = tree.search(4);
+            tree.delete(node);
+            array.splice(array.indexOf(4), 1);
+            assertArrays(array, tree.toInOrderArray());
+            assert.equal(isRedBlackTree(tree), true);
+
+            // node = tree.search(5);
+            // tree.delete(node);
+            // array.splice(array.indexOf(5), 1);
+            // assertArrays(array, tree.toInOrderArray());
+            // assert.equal(isRedBlackTree(tree), true);
+        });
     });
 }
 
@@ -53,19 +157,19 @@ describe('RedBlackTree', () => {
 // Helper method(s) to verify RedBlackTree properties.
 // To verify that tree is RedBlack.
 function isRedBlackTree(tree) {
-    let eachNodeIsRedOrBlackValue = eachNodeIsRedOrBlack(tree.root);
+    let eachNodeIsRedOrBlackValue = eachNodeIsRedOrBlack(tree, tree.root);
     let rootIsBlackValue = rootIsBlack(tree);
-    let parentNodesRulesValue = parentNodesRules(tree.root);
-    let numberOfBlackNodesValue = sameNumberOfBlackNodes(tree.root);
+    let parentNodesRulesValue = parentNodesRules(tree, tree.root);
+    let numberOfBlackNodesValue = sameNumberOfBlackNodes(tree, tree.root);
 
     return eachNodeIsRedOrBlackValue && rootIsBlackValue && parentNodesRulesValue && numberOfBlackNodesValue;
 }
 
 // Every node is either red or black
-function eachNodeIsRedOrBlack(node) {
-    if (node !== null) {
+function eachNodeIsRedOrBlack(tree, node) {
+    if (node !== tree.NULL) {
         if (node.color === color.RED || node.color === color.BLACK) {
-            return eachNodeIsRedOrBlack(node.left) && eachNodeIsRedOrBlack(node.right);
+            return eachNodeIsRedOrBlack(tree, node.left) && eachNodeIsRedOrBlack(tree, node.right);
         } else {
             return false;
         }
@@ -75,29 +179,29 @@ function eachNodeIsRedOrBlack(node) {
 
 // The root is black
 function rootIsBlack(tree) {
-    return !(tree.root != null && tree.root.color === color.RED);
+    return !(tree.root !== tree.NULL && tree.root.color === color.RED);
 }
 
 // If a node is red, then both its children are black
 // Red nodes must not be adjacent on any path from the root to a leaf
-function parentNodesRules(node) {
-    if (node !== null) {
-        if (node.color === color.RED && ( (node.left !== null && node.left.color === color.RED)
-                                            || (node.right != null &&node.right.color === color.RED))) {
+function parentNodesRules(tree, node) {
+    if (node !== tree.NULL) {
+        if (node.color === color.RED && ( (node.left !== tree.NULL && node.left.color === color.RED)
+                                            || (node.right !== tree.NULL &&node.right.color === color.RED))) {
             return false;
         } else if (node.color === color.RED && node.parent.color === color.RED) {
             return false;
         } else {
-            return parentNodesRules(node.left) && parentNodesRules(node.right);
+            return parentNodesRules(tree, node.left) && parentNodesRules(tree, node.right);
         }
     }
     return true;
 }
 
 // Every path from root to leaf has the same number of black nodes
-function sameNumberOfBlackNodes(node) {
-    let pathBlackCountToMin = pathBlackCountToMinNode(node);
-    let pathBlackCountToMax = pathBlackCountToMaxNode(node);
+function sameNumberOfBlackNodes(tree, node) {
+    let pathBlackCountToMin = pathBlackCountToMinNode(tree, node);
+    let pathBlackCountToMax = pathBlackCountToMaxNode(tree, node);
     if (pathBlackCountToMin !== pathBlackCountToMax) {
         // throw new TreePropertyException(String.format("Path black count to first %d does not match path black " +
         //     "count" +
@@ -105,27 +209,26 @@ function sameNumberOfBlackNodes(node) {
         //     pathBlackCountToMin, pathBlackCountToMax));
         return false;
     } else {
-        return verifyNumberOfBlackNodes(node, pathBlackCountToMax, 0);
+        return verifyNumberOfBlackNodes(tree, node, pathBlackCountToMax, 0);
     }
 }
 
-function verifyNumberOfBlackNodes(node, blackCount, pathBlackCount) {
-    if (node === null && blackCount !== pathBlackCount) {
+function verifyNumberOfBlackNodes(tree, node, blackCount, pathBlackCount) {
+    if (node === tree.NULL && blackCount !== pathBlackCount) {
         // throw new TreePropertyException(String.format("Patch black count expected %d, patch black count found %d.",
         //     blackCount, pathBlackCount));
         return false;
-    } else if (node != null) {
+    } else if (node !== tree.NULL) {
         pathBlackCount += (node.color === color.BLACK) ? 1 : 0;
-        return verifyNumberOfBlackNodes(node.left, blackCount, pathBlackCount)
-                && verifyNumberOfBlackNodes(node.right, blackCount, pathBlackCount);
+        return verifyNumberOfBlackNodes(tree, node.left, blackCount, pathBlackCount)
+                && verifyNumberOfBlackNodes(tree, node.right, blackCount, pathBlackCount);
     }
-
     return true;
 }
 
-function pathBlackCountToMinNode(node) {
+function pathBlackCountToMinNode(tree, node) {
     let blackCount = -1;
-    while (node !== null) {
+    while (node !== tree.NULL) {
         if (node.color === color.BLACK) {
             blackCount++;
         }
@@ -139,9 +242,9 @@ function pathBlackCountToMinNode(node) {
     return blackCount;
 }
 
-function pathBlackCountToMaxNode(node) {
+function pathBlackCountToMaxNode(tree, node) {
     let blackCount = -1;
-    while (node !== null) {
+    while (node !== tree.NULL) {
         if (node.color === color.BLACK) {
             blackCount++;
         }
