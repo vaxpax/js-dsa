@@ -151,7 +151,14 @@ class BinarySearchTree {
         return parent;
     }
 
-    delete(node) {
+    delete(key) {
+        const node = this.search(key);
+        if (node) {
+            this.deleteNode(node);
+        }
+    }
+
+    deleteNode(node) {
         if (node.left === null) {
             this.transplant(node, node.right);
         } else if (node.right === null) {

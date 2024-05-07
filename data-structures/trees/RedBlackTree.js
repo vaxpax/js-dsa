@@ -152,7 +152,14 @@ class RedBlackTree {
         node.parent = nodeY;
     }
 
-    delete(z) {
+    delete(key) {
+        let node = this.search(key);
+        if (node !== this.NULL) {
+            this.deleteNode(node)
+        }
+    }
+
+    deleteNode(z) {
         let y = z, x = this.NULL;
         let yOriginalColor = y.color;
         if (z.left === this.NULL) {

@@ -30,7 +30,6 @@ export default function test() {
             array.sort((a, b) => a - b);
             assertArrays(array, tree.toInOrderArray());
             assertArrays(array.reverse(), tree.toReverseOrderArray());
-            assertArrays(array.reverse(), tree.toReverseOrderArray());
         });
 
         it('search', () => {
@@ -103,25 +102,24 @@ export default function test() {
             const tree = new BinarySearchTree();
             const array = [100, 8, 9, 18, 4, 5, 2, 3, 6, 1, 50, 17];
             tree.insertAll(array);
-            let node = tree.search(17);
-            tree.delete(node);
+            tree.delete(17);
             array.pop();
             array.sort((a, b) => a - b);
             assertArrays(array, tree.toInOrderArray());
 
+            tree.delete(1000);
+            assertArrays(array, tree.toInOrderArray());
+
             array.splice(array.indexOf(5), 1);
-            node = tree.search(5);
-            tree.delete(node);
+            tree.delete(5);
             assertArrays(array, tree.toInOrderArray());
 
             array.splice(array.indexOf(100), 1);
-            node = tree.search(100);
-            tree.delete(node);
+            tree.delete(100);
             assertArrays(array, tree.toInOrderArray());
 
             array.splice(array.indexOf(8), 1);
-            node = tree.search(8);
-            tree.delete(node);
+            tree.delete(8);
             assertArrays(array, tree.toInOrderArray());
         });
     });

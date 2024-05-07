@@ -103,56 +103,50 @@ export default function test() {
             const tree = new RedBlackTree();
             assert.equal(tree.isEmpty(), true);
             tree.insert(5);
-            let node = tree.search(5);
-            tree.delete(node);
+            tree.delete(5);
             assert.equal(tree.isEmpty(), true);
             assert.equal(isRedBlackTree(tree), true);
 
             const array= [100, 50, 3, 25, 78, 5, 9, 12, 34, 53, 7, 4, 1, 18];
             tree.insertAll(array);
             array.sort((a, b) => a - b);
-            node = tree.search(18);
-            tree.delete(node);
+
+            tree.delete(18);
             array.splice(array.indexOf(18), 1);
             assertArrays(array, tree.toInOrderArray());
             assert.equal(isRedBlackTree(tree), true);
 
-            node = tree.search(100);
-            tree.delete(node);
+            tree.delete(1000);
+            assertArrays(array, tree.toInOrderArray());
+            assert.equal(isRedBlackTree(tree), true);
+
+            tree.delete(100);
             array.splice(array.indexOf(100), 1);
             assertArrays(array, tree.toInOrderArray());
             assert.equal(isRedBlackTree(tree), true);
 
-            node = tree.search(78);
-            tree.delete(node);
+            tree.delete(78);
             array.splice(array.indexOf(78), 1);
             assertArrays(array, tree.toInOrderArray());
             assert.equal(isRedBlackTree(tree), true);
 
-            node = tree.search(9);
-            tree.delete(node);
+            tree.delete(9);
             array.splice(array.indexOf(9), 1);
             assertArrays(array, tree.toInOrderArray());
             assert.equal(isRedBlackTree(tree), true);
 
-            node = tree.search(4);
-            tree.delete(node);
+            tree.delete(4);
             array.splice(array.indexOf(4), 1);
             assertArrays(array, tree.toInOrderArray());
             assert.equal(isRedBlackTree(tree), true);
 
-            node = tree.search(5);
-            tree.delete(node);
+            tree.delete(5);
             array.splice(array.indexOf(5), 1);
             assertArrays(array, tree.toInOrderArray());
             assert.equal(isRedBlackTree(tree), true);
         });
     });
 }
-
-describe('RedBlackTree', () => {
-    test();
-});
 
 // Helper method(s) to verify RedBlackTree properties.
 // To verify that tree is RedBlack.
@@ -256,3 +250,7 @@ function pathBlackCountToMaxNode(tree, node) {
     }
     return blackCount;
 }
+
+// describe('RedBlackTree', () => {
+//     test();
+// });
