@@ -176,16 +176,16 @@ class BinarySearchTree {
         }
     }
 
-    transplant(nodeU, nodeV) {
-        if (nodeU.parent === null) {
-            this.root = nodeV;
-        } else if (nodeU === nodeU.parent.left) {
-            nodeU.parent.left = nodeV;
+    transplant(x, y) {
+        if (x.parent === null) {
+            this.root = y;
+        } else if (x === x.parent.left) {
+            x.parent.left = y;
         } else {
-            nodeU.parent.right = nodeV;
+            x.parent.right = y;
         }
-        if (nodeV !== null) {
-            nodeV.parent = nodeU.parent
+        if (y !== null) {
+            y.parent = x.parent
         }
     }
 }
