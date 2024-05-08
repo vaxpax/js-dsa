@@ -7,7 +7,7 @@ const Order = Object.freeze({
     DESC: 1
 })
 
-const color = Object.freeze({
+const Color = Object.freeze({
     RED: 0,
     BLACK: 1
 })
@@ -15,5 +15,5 @@ const color = Object.freeze({
 export {
     defaultCompare,
     Order,
-    color,
+    Color,
 };

@@ -3,7 +3,7 @@
 import { assert } from "chai";
 import { assertArrays } from "../../TestHelpers.js";
 import { RedBlackTree, RedBlackTreeNode } from "../../../data-structures/trees/RedBlackTree.js";
-import {color} from "../../../utils/Utils.js";
+import {Color} from "../../../utils/Utils.js";
 import {BinarySearchTree} from "../../../data-structures/trees/BinarySearchTree.js";
 
 export default function test() {
@@ -161,7 +161,7 @@ function isRedBlackTree(tree) {
 // Every node is either red or black
 function eachNodeIsRedOrBlack(tree, node) {
     if (node !== tree.NULL) {
-        if (node.color === color.RED || node.color === color.BLACK) {
+        if (node.color === Color.RED || node.color === Color.BLACK) {
             return eachNodeIsRedOrBlack(tree, node.left) && eachNodeIsRedOrBlack(tree, node.right);
         } else {
             return false;
@@ -172,17 +172,17 @@ function eachNodeIsRedOrBlack(tree, node) {
 
 // The root is black
 function rootIsBlack(tree) {
-    return !(tree.root !== tree.NULL && tree.root.color === color.RED);
+    return !(tree.root !== tree.NULL && tree.root.color === Color.RED);
 }
 
 // If a node is red, then both its children are black
 // Red nodes must not be adjacent on any path from the root to a leaf
 function parentNodesRules(tree, node) {
     if (node !== tree.NULL) {
-        if (node.color === color.RED && ( (node.left !== tree.NULL && node.left.color === color.RED)
-                                            || (node.right !== tree.NULL &&node.right.color === color.RED))) {
+        if (node.color === Color.RED && ( (node.left !== tree.NULL && node.left.color === Color.RED)
+                                            || (node.right !== tree.NULL &&node.right.color === Color.RED))) {
             return false;
-        } else if (node.color === color.RED && node.parent.color === color.RED) {
+        } else if (node.color === Color.RED && node.parent.color === Color.RED) {
             return false;
         } else {
             return parentNodesRules(tree, node.left) && parentNodesRules(tree, node.right);
@@ -212,7 +212,7 @@ function verifyNumberOfBlackNodes(tree, node, blackCount, pathBlackCount) {
         //     blackCount, pathBlackCount));
         return false;
     } else if (node !== tree.NULL) {
-        pathBlackCount += (node.color === color.BLACK) ? 1 : 0;
+        pathBlackCount += (node.color === Color.BLACK) ? 1 : 0;
         return verifyNumberOfBlackNodes(tree, node.left, blackCount, pathBlackCount)
                 && verifyNumberOfBlackNodes(tree, node.right, blackCount, pathBlackCount);
     }
@@ -222,7 +222,7 @@ function verifyNumberOfBlackNodes(tree, node, blackCount, pathBlackCount) {
 function pathBlackCountToMinNode(tree, node) {
     let blackCount = -1;
     while (node !== tree.NULL) {
-        if (node.color === color.BLACK) {
+        if (node.color === Color.BLACK) {
             blackCount++;
         }
         node = node.left;
@@ -238,7 +238,7 @@ function pathBlackCountToMinNode(tree, node) {
 function pathBlackCountToMaxNode(tree, node) {
     let blackCount = -1;
     while (node !== tree.NULL) {
-        if (node.color === color.BLACK) {
+        if (node.color === Color.BLACK) {
             blackCount++;
         }
         node = node.right;

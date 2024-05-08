@@ -1,12 +1,12 @@
 "use strict";
 
 import {BinarySearchTree, TreeNode} from "./BinarySearchTree.js";
-import {defaultCompare, color} from "../../utils/Utils.js";
+import {defaultCompare, Color} from "../../utils/Utils.js";
 
 class RedBlackTreeNode extends TreeNode {
     constructor(key) {
         super(key);
-        this.color = color.BLACK;
+        this.color = Color.BLACK;
     }
 }
 
@@ -19,7 +19,7 @@ class RedBlackTree {
 
     createNullNode() {
         const NULLNode = new RedBlackTreeNode(null);
-        NULLNode.color = color.BLACK;
+        NULLNode.color = Color.BLACK;
         return NULLNode;
     }
 
@@ -70,48 +70,48 @@ class RedBlackTree {
         }
         z.left = this.NULL;
         z.right = this.NULL;
-        z.color = color.RED;
+        z.color = Color.RED;
         return this.insertFixup(z);
     }
 
     insertFixup(z) {
         let y;
-        while (z.parent.color === color.RED){
+        while (z.parent.color === Color.RED){
             if (z.parent === z.parent.parent.left) {
                 y = z.parent.parent.right;
-                if (y !== null && y.color === color.RED) {
-                    z.parent.color = color.BLACK;
-                    y.color = color.BLACK;
-                    z.parent.parent.color = color.RED;
+                if (y !== null && y.color === Color.RED) {
+                    z.parent.color = Color.BLACK;
+                    y.color = Color.BLACK;
+                    z.parent.parent.color = Color.RED;
                     z = z.parent.parent;
                 } else {
                     if (z === z.parent.right) {
                         z = z.parent;
                         this.leftRotate(z);
                     }
-                    z.parent.color = color.BLACK;
-                    z.parent.parent.color = color.RED;
+                    z.parent.color = Color.BLACK;
+                    z.parent.parent.color = Color.RED;
                     this.rightRotate(z.parent.parent);
                 }
             } else {
                 y = z.parent.parent.left;
-                if (y!== null && y.color === color.RED) {
-                    z.parent.color = color.BLACK;
-                    y.color = color.BLACK;
-                    z.parent.parent.color = color.RED;
+                if (y!== null && y.color === Color.RED) {
+                    z.parent.color = Color.BLACK;
+                    y.color = Color.BLACK;
+                    z.parent.parent.color = Color.RED;
                     z = z.parent.parent;
                 } else {
                     if (z = z.parent.left) {
                         z = z.parent;
                         this.rightRotate(z);
                     }
-                    z.parent.color = color.BLACK;
-                    z.parent.parent.color = color.RED;
+                    z.parent.color = Color.BLACK;
+                    z.parent.parent.color = Color.RED;
                     this.leftRotate(z.parent.parent);
                 }
             }
         }
-        this.root.color = color.BLACK;
+        this.root.color = Color.BLACK;
         return this.root;
     }
 
@@ -185,65 +185,65 @@ class RedBlackTree {
             y.left.parent = y;
             y.color = z.color;
         }
-        if (yOriginalColor === color.BLACK) {
+        if (yOriginalColor === Color.BLACK) {
             this.deleteFixup(x);
         }
     }
 
     deleteFixup(z) {
         let y;
-        while (z !== this.root && z.color === color.BLACK) {
+        while (z !== this.root && z.color === Color.BLACK) {
             if (z === z.parent.left) {
                 y = z.parent.right;
-                if (y.color === color.RED) {
-                    y.color = color.BLACK;
-                    z.parent.color = color.RED;
+                if (y.color === Color.RED) {
+                    y.color = Color.BLACK;
+                    z.parent.color = Color.RED;
                     this.leftRotate(z.parent);
                     y = z.parent.right;
                 }
-                if (y.left.color === color.BLACK && y.right.color === color.BLACK) {
-                    y.color = color.RED;
+                if (y.left.color === Color.BLACK && y.right.color === Color.BLACK) {
+                    y.color = Color.RED;
                     z = z.parent;
                 } else {
-                    if (y.right.color === color.BLACK) {
-                        y.left.color = color.BLACK;
-                        y.color = color.RED;
+                    if (y.right.color === Color.BLACK) {
+                        y.left.color = Color.BLACK;
+                        y.color = Color.RED;
                         this.rightRotate(y);
                         y = z.parent.right;
                     }
                     y.color = z.parent.color;
-                    z.parent.color = color.BLACK;
-                    y.right.color = color.BLACK;
+                    z.parent.color = Color.BLACK;
+                    y.right.color = Color.BLACK;
                     this.leftRotate(z.parent);
                     z = this.root;
                 }
             } else {
                 y = z.parent.left;
-                if (y.color === color.RED) {
-                    y.color = color.BLACK;
-                    z.parent.color = color.RED;
+                if (y.color === Color.RED) {
+                    y.color = Color.BLACK;
+                    z.parent.color = Color.RED;
                     this.rightRotate(z.parent);
                     y = z.parent.left;
                 }
-                if (y.left.color === color.BLACK && y.right.color === color.BLACK) {
-                    y.color = color.RED;
+                if (y.left.color === Color.BLACK && y.right.color === Color.BLACK) {
+                    y.color = Color.RED;
                     z = z.parent;
                 } else {
-                    if (y.left.color === color.BLACK) {
-                        y.right.color = color.BLACK;
-                        y.color = color.RED;
+                    if (y.left.color === Color.BLACK) {
+                        y.right.color = Color.BLACK;
+                        y.color = Color.RED;
                         this.leftRotate(y);
                         y = z.parent.left;
                     }
                     y.color = z.parent.color;
-                    z.parent.color = color.BLACK;
-                    y.left.color = color.BLACK;
+                    z.parent.color = Color.BLACK;
+                    y.left.color = Color.BLACK;
                     this.rightRotate(z.parent);
                     z = this.root;
                 }
             }
         }
-        z.color = color.BLACK;
+        z.color = Color.BLACK;
     }
 
     transplant(x, y) {
