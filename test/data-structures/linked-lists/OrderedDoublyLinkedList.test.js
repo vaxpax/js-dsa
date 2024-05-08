@@ -2,7 +2,7 @@
 
 import { assert } from "chai";
 import {asserHeadAndTail, assertIterator, assertArrays} from "../../TestHelpers.js";
-import {OrderedDoublyLinkedList, defaultCompare, order} from "../../../index.js";
+import {OrderedDoublyLinkedList, defaultCompare, Order} from "../../../index.js";
 import {NotSupportedError} from "../../../utils/Errors.js";
 
 
@@ -34,7 +34,7 @@ export default function test() {
                 return str1.localeCompare(str2);
             }
             let array = ['Zrikavac',  'Vanja', 'Pisac',  'Kuca',  'Brana', 'Auto'];
-            list = new OrderedDoublyLinkedList(compare, order.DESC);
+            list = new OrderedDoublyLinkedList(compare, Order.DESC);
             list.insert(array[5]);
             list.insert(array[3]);
             list.insert(array[2]);
@@ -60,7 +60,7 @@ export default function test() {
         });
 
         it(' DESC append', () => {
-            const list = new OrderedDoublyLinkedList(defaultCompare, order.DESC);
+            const list = new OrderedDoublyLinkedList(defaultCompare, Order.DESC);
             assert.equal(list.isEmpty(), true);
             let array = [1, 2, 3, 4];
             list.insertAll(array);

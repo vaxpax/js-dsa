@@ -22,4 +22,5 @@ class IndexOutOfBounds extends Error {
 export {
     NotImplementedError,
     NotSupportedError,
+    IndexOutOfBounds,
 }

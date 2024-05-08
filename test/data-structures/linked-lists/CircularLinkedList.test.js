@@ -1,8 +1,8 @@
 "use strict";
 
 import { assert } from "chai";
-import {assertHeadAndLast, assertIterator, assertArrays} from "../../TestHelpers.js";
-import {CircularLinkedList, defaultCompare, order} from "../../../index.js";
+import { assertHeadAndLast, assertArrays } from "../../TestHelpers.js";
+import { CircularLinkedList } from "../../../index.js";
 
 export default function test() {
     describe('CircularLinkedList Tests', () => {

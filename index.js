@@ -9,7 +9,7 @@ import { CircularLinkedList } from "./data-structures/linked-lists/CircularLinke
 import { BinarySearchTree } from "./data-structures/trees/BinarySearchTree.js";
 
 
-import { defaultCompare, order} from "./utils/Utils.js";
+import { defaultCompare, Order} from "./utils/Utils.js";
 export {
     SinglyLinkedList,
     OrderedSinglyLinkedList,
@@ -20,7 +20,7 @@ export {
     BinarySearchTree,
 
     defaultCompare,
-    order,
+    Order,
 }
 
 

@@ -1,10 +1,10 @@
 import { SinglyLinkedList, Node } from "./SinglyLinkedList.js";
-import { defaultCompare, order } from "../../utils/Utils.js";
+import { defaultCompare, Order } from "../../utils/Utils.js";
 import { NotSupportedError } from "../../utils/Errors.js";
 
 class OrderedSinglyLinkedList extends SinglyLinkedList {
 
-    constructor(compare = defaultCompare, ordering = order.ASC) {
+    constructor(compare = defaultCompare, ordering = Order.ASC) {
         super();
         this.compare = compare;
         this.ordering = ordering;
@@ -18,8 +18,8 @@ class OrderedSinglyLinkedList extends SinglyLinkedList {
             return true;
         }
 
-        if ( (this.compare(this.tail.data, data) < 0 && this.ordering === order.ASC)
-            || (this.compare(this.tail.data, data) > 0) && (this.ordering === order.DESC) ) {
+        if ( (this.compare(this.tail.data, data) < 0 && this.ordering === Order.ASC)
+            || (this.compare(this.tail.data, data) > 0) && (this.ordering === Order.DESC) ) {
             this.tail.next = node;
             this.tail = node;
             return true;
@@ -41,8 +41,8 @@ class OrderedSinglyLinkedList extends SinglyLinkedList {
             let previous = null;
             let current = this.head;
             while (current) {
-                if ( (this.compare(current.data, data) < 0 && this.ordering === order.ASC)
-                    || (this.compare(current.data, data) > 0) && (this.ordering === order.DESC) ) {
+                if ( (this.compare(current.data, data) < 0 && this.ordering === Order.ASC)
+                    || (this.compare(current.data, data) > 0) && (this.ordering === Order.DESC) ) {
                     previous = current;
                     current = current.next;
                 } else {

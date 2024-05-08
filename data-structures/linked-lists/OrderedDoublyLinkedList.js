@@ -1,11 +1,11 @@
 "use strict";
 
 import { DoublyLinkedList, Node } from "./DoublyLinkedList.js";
-import { defaultCompare, order } from "../../utils/Utils.js";
+import { defaultCompare, Order } from "../../utils/Utils.js";
 import { NotSupportedError } from "../../utils/Errors.js";
 
 class OrderedDoublyLinkedList extends DoublyLinkedList {
-    constructor(compare = defaultCompare, ordering = order.ASC) {
+    constructor(compare = defaultCompare, ordering = Order.ASC) {
         super();
         this.compare = compare;
         this.ordering = ordering;
@@ -19,8 +19,8 @@ class OrderedDoublyLinkedList extends DoublyLinkedList {
             return true;
         }
 
-        if ( (this.compare(this.tail.data, data) <= 0 && this.ordering === order.ASC)
-            || (this.compare(this.tail.data, data) >= 0) && (this.ordering === order.DESC) ) {
+        if ( (this.compare(this.tail.data, data) <= 0 && this.ordering === Order.ASC)
+            || (this.compare(this.tail.data, data) >= 0) && (this.ordering === Order.DESC) ) {
             node.previous = this.tail.previous;
             this.tail.next = node;
             this.tail = node;
@@ -41,8 +41,8 @@ class OrderedDoublyLinkedList extends DoublyLinkedList {
             let previous = null;
             let current = this.head;
             while (current) {
-                if ( (this.compare(current.data, data) < 0 && this.ordering === order.ASC)
-                    || (this.compare(current.data, data) > 0) && (this.ordering === order.DESC) ) {
+                if ( (this.compare(current.data, data) < 0 && this.ordering === Order.ASC)
+                    || (this.compare(current.data, data) > 0) && (this.ordering === Order.DESC) ) {
                     previous = current;
                     current = current.next;
                 } else {

@@ -2,7 +2,7 @@
 
 import { assert } from "chai";
 import { asserHeadAndTail, assertIterator, assertArrays } from "../../TestHelpers.js";
-import {OrderedSinglyLinkedList, defaultCompare, order} from "../../../index.js";
+import {OrderedSinglyLinkedList, defaultCompare, Order} from "../../../index.js";
 import { NotSupportedError } from "../../../utils/Errors.js";
 
 export default function test() {
@@ -35,7 +35,7 @@ export default function test() {
         });
 
         it('DESC insertAll and iterator ', () => {
-            const list = new OrderedSinglyLinkedList(defaultCompare, order.DESC);
+            const list = new OrderedSinglyLinkedList(defaultCompare, Order.DESC);
             let array = [99, 4, 6, 7, 55];
             list.insertAll(array);
             // order is not ASC
@@ -47,7 +47,7 @@ export default function test() {
         });
 
         it(' isEmpty, contains ', () => {
-            const list = new OrderedSinglyLinkedList(defaultCompare, order.DESC);
+            const list = new OrderedSinglyLinkedList(defaultCompare, Order.DESC);
             assert.equal(list.isEmpty(), true);
             let array = [99, 4, 6, 7, 55];
             list.insertAll(array);
@@ -112,7 +112,7 @@ export default function test() {
         });
 
         it('removeData', () => {
-            const list = new OrderedSinglyLinkedList(defaultCompare, order.DESC);
+            const list = new OrderedSinglyLinkedList(defaultCompare, Order.DESC);
             const array = [99, 4, 6, 7, 55];
             list.insertAll(array);
 
@@ -146,7 +146,7 @@ export default function test() {
         });
 
         it('DESC toArray', () => {
-            const list = new OrderedSinglyLinkedList(defaultCompare, order.DESC);
+            const list = new OrderedSinglyLinkedList(defaultCompare, Order.DESC);
             let array = [99, 7, 4, 6, 7, 55, 99, 3, 6, 44, 99, 1, 2];
             list.insertAll(array);
             array = [99, 99, 99, 55, 44, 7, 7, 6, 6, 4, 3, 2, 1];
@@ -158,7 +158,7 @@ export default function test() {
                 return str1.localeCompare(str2);
             }
 
-            const list = new OrderedSinglyLinkedList(compare, order.DESC);
+            const list = new OrderedSinglyLinkedList(compare, Order.DESC);
             let array = ['Vanja', 'Petkovic', 'Vesna', 'Pas', 'Novine'];
             list.insertAll(array);
             array = [ 'Vesna', 'Vanja', 'Petkovic', 'Pas', 'Novine' ]
