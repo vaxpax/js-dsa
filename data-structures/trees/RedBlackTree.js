@@ -1,6 +1,6 @@
 "use strict";
 
-import {BinarySearchTree, TreeNode} from "./BinarySearchTree.js";
+import { TreeNode } from "./BinarySearchTree.js";
 import {defaultCompare, Color} from "../../utils/Utils.js";
 
 class RedBlackTreeNode extends TreeNode {

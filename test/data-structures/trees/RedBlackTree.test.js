@@ -2,7 +2,7 @@
 
 import { assert } from "chai";
 import { assertArrays } from "../../TestHelpers.js";
-import { RedBlackTree, RedBlackTreeNode } from "../../../data-structures/trees/RedBlackTree.js";
+import { RedBlackTree } from "../../../data-structures/trees/RedBlackTree.js";
 import {Color} from "../../../utils/Utils.js";
 import {BinarySearchTree} from "../../../data-structures/trees/BinarySearchTree.js";
 
