@@ -4,18 +4,20 @@ import { SinglyLinkedList } from "./data-structures/linked-lists/SinglyLinkedLis
 import { OrderedSinglyLinkedList } from "./data-structures/linked-lists/OrderedSinglyLinkedList.js";
 import { DoublyLinkedList } from "./data-structures/linked-lists/DoublyLinkedList.js";
 import { OrderedDoublyLinkedList } from "./data-structures/linked-lists/OrderedDoublyLinkedList.js";
+import { CircularSinglyLinkedList } from "./data-structures/linked-lists/CircularSinglyLinkedList.js";
 import { CircularLinkedList } from "./data-structures/linked-lists/CircularLinkedList.js";
 
 import { BinarySearchTree } from "./data-structures/trees/BinarySearchTree.js";
 
-
 import { defaultCompare, Order} from "./utils/Utils.js";
+
 export {
     SinglyLinkedList,
     OrderedSinglyLinkedList,
     DoublyLinkedList,
     OrderedDoublyLinkedList,
     CircularLinkedList,
+    CircularSinglyLinkedList,
 
     BinarySearchTree,
 

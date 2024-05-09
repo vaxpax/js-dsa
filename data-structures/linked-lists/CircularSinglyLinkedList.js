@@ -1,9 +1,22 @@
 "use strict";
 
-import { Node } from "./DoublyLinkedList.js";
+import { Node } from "./SinglyLinkedList.js";
 
-class CircularLinkedList {
+class CircularSinglyLinkedList {
     constructor() {
+        this.head = null;
+        this.last = null;
+    }
+
+    isEmpty() {
+        return this.head == null && this.last == null;
+    }
+
+    isCircular() {
+        return this.head === null || this.last.next === this.head;
+    }
+
+    clear() {
         this.head = null;
         this.last = null;
     }
@@ -13,16 +26,11 @@ class CircularLinkedList {
         if (this.head == null) {
             this.head = node;
             this.last = node;
-            this.head.next = node;
-            this.head.previous = node;
-            this.last.previous = node;
-            this.last.previous = node;
+            this.head.next = this.last;
         } else {
-            node.previous = this.last
             this.last.next = node;
             this.last = node;
             this.last.next = this.head;
-            this.head.previous = this.last;
         }
     }
 
@@ -32,7 +40,6 @@ class CircularLinkedList {
         }
     }
 
-    // index is positive int
     removeAt(index) {
         if (this.head == null) {
             return null;
@@ -43,23 +50,22 @@ class CircularLinkedList {
             return data;
         }
         let counter = 0;
+        let previous = null
         let current = this.head;
         while (counter < index) {
+            previous = current;
             current = current.next;
             counter++;
         }
 
         if (current === this.head) {
             this.head = this.head.next;
-            this.head.previous = this.last;
             this.last.next = this.head;
         } else if (current === this.last) {
-            this.last = this.last.previous;
+            this.last = previous;
             this.last.next = this.head;
-            this.head.previous = this.last;
         } else {
-            current.previous.next = current.next;
-            current.next.previous = current.previous;
+            previous.next = current.next;
         }
         return current.data;
     }
@@ -77,27 +83,28 @@ class CircularLinkedList {
             return false;
         }
 
+        let previous = null;
         let current = this.head;
         while (current && current.next !== this.head) {
             if (current.data === data) {
                 break;
             }
+            previous = current;
             current = current.next;
+
         }
 
         if (current === this.head) {
             this.head = this.head.next;
-            this.head.previous = this.last;
             this.last.next = this.head;
         } else if (current === this.last) {
-            this.last = this.last.previous;
+            this.last = previous;
             this.last.next = this.head;
-            this.head.previous = this.last;
         } else {
-            current.previous.next = current.next;
-            current.next.previous = current.previous;
+            previous.next = current.next;
         }
-        return current.data;
+
+        return true;
     }
 
     // Removes nodes from the list starting with fromIndex (inclusive) and then for length
@@ -107,10 +114,12 @@ class CircularLinkedList {
         if (fromIndex < 0 || length <= 0) {
             return false;
         }
+        let previous = null;
         let fromNode = this.head, toNode;
         let counter = 0;
         let correctHead = false, correctLast = false;
         while (counter < fromIndex) {
+            previous = fromNode;
             fromNode = fromNode.next;
             counter++;
         }
@@ -132,34 +141,21 @@ class CircularLinkedList {
             counter++;
         }
 
-        fromNode.previous.next = toNode;
-        toNode.previous = fromNode.previous;
+        if (previous) {
+            previous.next = toNode;
+        }
         if (correctHead) {
             this.head = toNode;
+            this.last.next = this.head;
         }
         if (correctLast) {
-            this.last = fromNode.previous;
+            this.last = previous;
         }
         return true;
     }
 
-
-    clear() {
-        this.head = null;
-        this.last = null;
-    }
-
     contains(data) {
         return this.indexOf(data) !== -1;
-    }
-
-    isCircular() {
-        return ( (this.head === this.last) ||
-                    ((this.head.previous === this.last) && (this.last.next === this.head)))
-    }
-
-    isEmpty() {
-        return this.head == null && this.last == null;
     }
 
     // returns index of data starting from list head
@@ -207,7 +203,6 @@ class CircularLinkedList {
         return index;
     }
 
-
     set(index, data) {
         if (this.head == null) {
             return null;
@@ -238,6 +233,5 @@ class CircularLinkedList {
 }
 
 export {
-    CircularLinkedList,
+    CircularSinglyLinkedList,
 };
-
