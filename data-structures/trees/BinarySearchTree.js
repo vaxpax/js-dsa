@@ -1,12 +1,11 @@
 "use strict";
 
 import { defaultCompare } from "../../utils/Utils.js";
+import {TreeNode} from "./TreeNode.js";
 
-class TreeNode {
+class TreeNodeWithParent extends TreeNode {
     constructor(key) {
-        this.key = key;
-        this.left = null;
-        this.right = null;
+        super(key)
         this.parent = null;
     }
 }
@@ -37,7 +36,7 @@ class BinarySearchTree {
 
     insertKey(node, parent, key) {
         if (node === null) {
-            node = new TreeNode(key);
+            node = new TreeNodeWithParent(key);
             node.parent = parent;
             return node;
         }
@@ -192,5 +191,5 @@ class BinarySearchTree {
 
 export {
     BinarySearchTree,
-    TreeNode,
+    TreeNodeWithParent,
 };

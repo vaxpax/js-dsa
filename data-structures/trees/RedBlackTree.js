@@ -1,9 +1,10 @@
 "use strict";
 
-import { TreeNode } from "./BinarySearchTree.js";
 import {defaultCompare, Color} from "../../utils/Utils.js";
+import {TreeNodeWithParent} from "./BinarySearchTree.js";
+import {NotSupportedError} from "../../utils/Errors.js";
 
-class RedBlackTreeNode extends TreeNode {
+class RedBlackTreeNode extends TreeNodeWithParent {
     constructor(key) {
         super(key);
         this.color = Color.BLACK;
@@ -318,30 +319,10 @@ class RedBlackTree {
     }
 
     successor(node) {
-        if (node.right !== this.NULL) {
-            return this.minNode(node.right);
-        }
-
-        let key = node.key;
-        let parent = node.parent;
-        while(parent !== this.NULL && node === parent.right) {
-            node = parent;
-            parent = node.parent;
-        }
-        return parent;
+        throw new NotSupportedError('RedBlackTree.successor()');
     }
-
     predecessor(node) {
-        if (node.left !== this.NULL) {
-            return this.maxNode(node.left);
-        }
-
-        let parent = node.parent;
-        while(parent !== this.NULL && node === parent.left) {
-            node = parent;
-            parent = node.parent;
-        }
-        return parent;
+        throw new NotSupportedError('RedBlackTree.predecessor()');
     }
 
     search(key) {

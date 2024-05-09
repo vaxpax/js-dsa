@@ -8,6 +8,12 @@ import { CircularSinglyLinkedList } from "./data-structures/linked-lists/Circula
 import { CircularDoublyLinkedList } from "./data-structures/linked-lists/CircularDoublyLinkedList.js";
 
 import { BinarySearchTree } from "./data-structures/trees/BinarySearchTree.js";
+import { RedBlackTree } from "./data-structures/trees/RedBlackTree.js";
+import { AVLTree } from "./data-structures/trees/AVLTree.js";
+import { SplayTree } from "./data-structures/trees/SplayTree.js";
+
+
+import { NotImplementedError, NotSupportedError, IndexOutOfBounds} from "./utils/Errors.js"
 
 import { defaultCompare, Order} from "./utils/Utils.js";
 
@@ -20,6 +26,13 @@ export {
     CircularSinglyLinkedList,
 
     BinarySearchTree,
+    RedBlackTree,
+    AVLTree,
+    SplayTree,
+
+    NotImplementedError,
+    NotSupportedError,
+    IndexOutOfBounds,
 
     defaultCompare,
     Order,

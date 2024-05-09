@@ -1,7 +1,7 @@
 "use strict";
 
 import { assert } from "chai";
-import {asserHeadAndTail, assertIterator, assertArrays} from "../../TestHelpers.js";
+import { asserHeadAndTail, assertIterator, assertArrays } from "../../TestHelpers.js";
 import { SinglyLinkedList } from "../../../index.js";
 
 export default function test() {

@@ -1,8 +1,8 @@
 "use strict";
 
 import { assert } from "chai";
-import {asserHeadAndTail, assertIterator, assertArrays} from "../../TestHelpers.js";
-import {DoublyLinkedList} from "../../../index.js";
+import { asserHeadAndTail, assertArrays } from "../../TestHelpers.js";
+import { DoublyLinkedList } from "../../../index.js";
 
 export default function test() {
     describe('DoublyLinkedList Tests', () => {

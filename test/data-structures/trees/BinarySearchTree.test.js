@@ -2,7 +2,7 @@
 
 import { assert } from "chai";
 import { assertArrays } from "../../TestHelpers.js";
-import { BinarySearchTree, TreeNode } from "../../../data-structures/trees/BinarySearchTree.js";
+import { BinarySearchTree } from "../../../index.js";
 
 
 

@@ -3,12 +3,11 @@
 import { defaultCompare } from "../../utils/Utils.js";
 import { BinarySearchTree } from "./BinarySearchTree.js";
 import { NotSupportedError } from "../../utils/Errors.js";
+import {TreeNode} from "./TreeNode.js";
 
-class AVLTreeNode {
+class AVLTreeNode extends TreeNode{
     constructor(key) {
-        this.key = key;
-        this.left = null;
-        this.right = null;
+        super(key);
         this.height = 1;
     }
 

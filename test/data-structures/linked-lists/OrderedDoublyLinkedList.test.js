@@ -1,10 +1,8 @@
 "use strict";
 
 import { assert } from "chai";
-import {asserHeadAndTail, assertIterator, assertArrays} from "../../TestHelpers.js";
-import {OrderedDoublyLinkedList, defaultCompare, Order} from "../../../index.js";
-import {NotSupportedError} from "../../../utils/Errors.js";
-
+import { asserHeadAndTail, assertArrays } from "../../TestHelpers.js";
+import { OrderedDoublyLinkedList, NotSupportedError, defaultCompare, Order } from "../../../index.js";
 
 export default function test() {
     describe('OrderedDoublyLinkedList Tests', () => {

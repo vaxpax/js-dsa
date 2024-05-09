@@ -2,8 +2,8 @@
 
 import { assert } from "chai";
 import { assertArrays } from "../../TestHelpers.js";
-import { AVLTree, AVLTreeNode } from "../../../data-structures/trees/AVLTree.js";
-import {NotSupportedError} from "../../../utils/Errors.js";
+import { AVLTreeNode } from "../../../data-structures/trees/AVLTree.js";
+import { AVLTree, NotSupportedError } from "../../../index.js";
 
 export default function test() {
     describe('AVLTree Tests', () => {

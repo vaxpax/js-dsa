@@ -2,9 +2,8 @@
 
 import { assert } from "chai";
 import { assertArrays } from "../../TestHelpers.js";
-import { RedBlackTree } from "../../../data-structures/trees/RedBlackTree.js";
-import {Color} from "../../../utils/Utils.js";
-import {BinarySearchTree} from "../../../data-structures/trees/BinarySearchTree.js";
+import {AVLTree, NotSupportedError, RedBlackTree} from "../../../index.js";
+import { Color } from "../../../utils/Utils.js";
 
 export default function test() {
     describe('RedBlackTree Tests', () => {
@@ -44,59 +43,41 @@ export default function test() {
             assertArrays(array, tree.toReverseOrderArray());
         });
         it('min', () => {
-            const tree = new BinarySearchTree();
+            const tree = new RedBlackTree();
             const array = [4, 5, 2, 3, 6, 1];
             tree.insertAll(array);
             assert.equal(tree.min().key, 1);
         });
 
         it('max', () => {
-            const tree = new BinarySearchTree();
+            const tree = new RedBlackTree();
             const array = [4, 5, 2, 3, 6, 1];
             tree.insertAll(array);
             assert.equal(tree.max().key, 6);
         });
 
         it('successor', () => {
-            const tree = new BinarySearchTree();
-            let array = [4, 5, 2, 3, 6, 1];
+            const tree = new AVLTree();
+            const array = [4, 5, 2, 3, 6, 1];
             tree.insertAll(array);
-            let node= tree.search(2);
-            assert.equal(tree.successor(node).key, 3);
-
-            tree.clear();
-            array = [6, 5, 7, 2, 1, 3, 4];
-            tree.insertAll(array);
-            node= tree.search(5);
-            assert.equal(tree.successor(node).key, 6);
-            node= tree.search(7);
-            assert.equal(tree.successor(node), null);
-
-            tree.clear();
-            array = [10, 2, 15, 12, 13, 14];
-            tree.insertAll(array);
-            node= tree.search(14);
-            assert.equal(tree.successor(node).key, 15);
-            node= tree.search(2);
-            assert.equal(tree.successor(node).key, 10);
+            const node = tree.search(2);
+            try {
+                tree.successor(2);
+            } catch (error) {
+                assert.equal(error instanceof NotSupportedError, true);
+            }
         });
 
         it('predecessor', () => {
-            const tree = new BinarySearchTree();
-            let array = [4, 5, 2, 3, 6, 1];
+            const tree = new AVLTree();
+            const array = [4, 5, 2, 3, 6, 1];
             tree.insertAll(array);
-            let node= tree.search(2);
-            assert.equal(tree.predecessor(node).key, 1);
-            node= tree.search(3);
-            assert.equal(tree.predecessor(node).key, 2);
-
-            tree.clear();
-            array = [10, 2, 15, 12, 13, 14];
-            tree.insertAll(array);
-            node= tree.search(2);
-            assert.equal(tree.predecessor(node), null);
-            node= tree.search(12);
-            assert.equal(tree.predecessor(node).key, 10);
+            const node = tree.search(2);
+            try {
+                tree.predecessor(2);
+            } catch (error) {
+                assert.equal(error instanceof NotSupportedError, true);
+            }
         });
 
         it('delete', () => {

@@ -2,8 +2,7 @@
 
 import { assert } from "chai";
 import { asserHeadAndTail, assertIterator, assertArrays } from "../../TestHelpers.js";
-import {OrderedSinglyLinkedList, defaultCompare, Order} from "../../../index.js";
-import { NotSupportedError } from "../../../utils/Errors.js";
+import { OrderedSinglyLinkedList, NotSupportedError, defaultCompare, Order } from "../../../index.js";
 
 export default function test() {
     describe('OrderedSinglyLinkedList Tests', () => {

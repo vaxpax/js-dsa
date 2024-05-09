@@ -2,7 +2,7 @@
 
 import { assert } from "chai";
 import { assertHeadAndLast, assertArrays } from "../../TestHelpers.js";
-import { CircularSinglyLinkedList} from "../../../index.js";
+import { CircularSinglyLinkedList } from "../../../index.js";
 
 export default function test() {
     describe('CircularSinglyLinkedList Tests', () => {
