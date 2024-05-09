@@ -2,24 +2,24 @@
 
 import { assert } from "chai";
 import { assertHeadAndLast, assertArrays } from "../../TestHelpers.js";
-import { CircularLinkedList } from "../../../index.js";
+import { CircularDoublyLinkedList } from "../../../index.js";
 
 export default function test() {
-    describe('CircularLinkedList Tests', () => {
+    describe('CircularDoublyLinkedList Tests', () => {
         it('create an empty list', () => {
-            const list = new CircularLinkedList();
+            const list = new CircularDoublyLinkedList();
             assert.equal(list.isEmpty(), true);
         });
 
         it('one element list', () => {
-            const list = new CircularLinkedList();
+            const list = new CircularDoublyLinkedList();
             list.append(1);
             assertHeadAndLast(list, 1, 1);
             assert.equal(list.isCircular(), true);
         });
 
         it('two element list', () => {
-            const list = new CircularLinkedList();
+            const list = new CircularDoublyLinkedList();
             list.append(1);
             list.append(2);
             assertHeadAndLast(list, 1, 2);
@@ -27,7 +27,7 @@ export default function test() {
         });
 
         it('appendAll', () => {
-            const list = new CircularLinkedList();
+            const list = new CircularDoublyLinkedList();
             const array = [1, 2, 3, 4, 5];
             list.appendAll(array);
             assert.equal(list.isCircular(), true);
@@ -35,7 +35,7 @@ export default function test() {
         });
 
         it('removeAt', () => {
-            const list = new CircularLinkedList();
+            const list = new CircularDoublyLinkedList();
             let array = [1, 2, 3, 4, 5, 6, 7];
             list.appendAll(array);
 
@@ -80,7 +80,7 @@ export default function test() {
         });
 
         it('removeData', () => {
-            const list = new CircularLinkedList();
+            const list = new CircularDoublyLinkedList();
             let array = [1, 2, 3, 4, 5, 6, 7];
             list.appendAll(array);
 
@@ -127,7 +127,7 @@ export default function test() {
         });
 
         it('indexOf', () => {
-            const list = new CircularLinkedList();
+            const list = new CircularDoublyLinkedList();
             const array = [1, 2, 3, 4, 5];
             list.appendAll(array);
             assert.equal(list.indexOf(1), 0);
@@ -144,7 +144,7 @@ export default function test() {
         });
 
         it('lastIndexOf', () => {
-            const list = new CircularLinkedList();
+            const list = new CircularDoublyLinkedList();
             const array = [1, 2, 3, 4, 4, 5];
             list.appendAll(array);
             assert.equal(list.lastIndexOf(1), 0);
@@ -154,7 +154,7 @@ export default function test() {
         });
 
         it('contains', () => {
-            const list = new CircularLinkedList();
+            const list = new CircularDoublyLinkedList();
             const array = [1, 2, 3, 4, 5];
             list.appendAll(array);
             assert.equal(list.contains(4), true);
@@ -162,7 +162,7 @@ export default function test() {
         });
 
         it('set', () => {
-            const list = new CircularLinkedList();
+            const list = new CircularDoublyLinkedList();
             const array = [1, 2, 3, 4, 5];
             list.appendAll(array);
 
@@ -176,7 +176,7 @@ export default function test() {
         });
 
         it('removeRange', () => {
-            const list = new CircularLinkedList();
+            const list = new CircularDoublyLinkedList();
             let array = [1, 2, 3, 4, 5];
             list.appendAll(array);
 

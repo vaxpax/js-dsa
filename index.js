@@ -5,7 +5,7 @@ import { OrderedSinglyLinkedList } from "./data-structures/linked-lists/OrderedS
 import { DoublyLinkedList } from "./data-structures/linked-lists/DoublyLinkedList.js";
 import { OrderedDoublyLinkedList } from "./data-structures/linked-lists/OrderedDoublyLinkedList.js";
 import { CircularSinglyLinkedList } from "./data-structures/linked-lists/CircularSinglyLinkedList.js";
-import { CircularLinkedList } from "./data-structures/linked-lists/CircularLinkedList.js";
+import { CircularDoublyLinkedList } from "./data-structures/linked-lists/CircularDoublyLinkedList.js";
 
 import { BinarySearchTree } from "./data-structures/trees/BinarySearchTree.js";
 
@@ -16,7 +16,7 @@ export {
     OrderedSinglyLinkedList,
     DoublyLinkedList,
     OrderedDoublyLinkedList,
-    CircularLinkedList,
+    CircularDoublyLinkedList,
     CircularSinglyLinkedList,
 
     BinarySearchTree,

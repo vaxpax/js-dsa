@@ -2,7 +2,7 @@
 
 import { Node } from "./DoublyLinkedList.js";
 
-class CircularLinkedList {
+class CircularDoublyLinkedList {
     constructor() {
         this.head = null;
         this.last = null;
@@ -238,6 +238,6 @@ class CircularLinkedList {
 }
 
 export {
-    CircularLinkedList,
+    CircularDoublyLinkedList,
 };
 
