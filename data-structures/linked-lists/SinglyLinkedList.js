@@ -1,19 +1,31 @@
 "use strict";
 
+/** Class representing a Node of SinglyLinkedList */
 class Node {
+    /**
+     * Create a Node.
+     * @param {*} data - The data to store in Node.
+     */
     constructor(data) {
         this.data = data;
         this.next = null;
     }
 }
 
+/** Class representing SinglyLinkedList */
 class SinglyLinkedList {
+    /**
+     * Create a SinglyLinkedList.
+     */
     constructor() {
         this.head = null;
         this.tail = null; // We track tail to speed up add data to the end of list
     }
 
-    // Appends data to the end of this list.
+    /**
+     * Appends data to the end of this list.
+     * @param {Object|type} data - The data to store in new Node.
+      */
     append(data) {
         const node = new Node(data);
         if (!this.head) {
@@ -25,13 +37,20 @@ class SinglyLinkedList {
         }
     }
 
-    // Append all elements of provided array
+    /**
+     * Appends element of an array to the end of this list.
+     * @param {array} dataArray - The array of data to be appended to the list.
+     */
     appendAll(dataArray) {
         for (let data of dataArray) {
             this.append(data);
         }
     }
 
+    /**
+     * Inserts the specified element at the beginning of this list.
+     * @param {Object|type} data - The data to be added at head of the list.
+     */
     // Inserts the specified element at the beginning of this list.
     addFirst(data) {
         const node = new Node(data);
@@ -44,20 +63,29 @@ class SinglyLinkedList {
         }
     }
 
-    // Remove all elements from the list
+    /**
+     *  Remove all elements from the list.
+     */
     clear() {
         this.head = null;
         this.tail = null;
     }
 
-    // Returns true if this list contains the specified data.
+    /**
+     * To check if list contains some data
+     * @param {Object|type} data
+     * @returns {boolean} true if this list contains the specified data.
+     */
     contains(data) {
         let index = this.indexOf(data);
         return index !== -1;
     }
 
-    // Returns the index of the first occurrence of the data in this list,
-    // or -1 if this list does not contain the element.
+    /**
+     * To find index of first occurrence of the data in the List.
+     * @param {Object|type} data - The data to be found in the list
+     * @returns {number} the index of the first occurrence of the data in this list, or -1 if this list does not contain the element
+     */
     indexOf(data) {
         let index = -1;
         let counter = 0;
@@ -73,12 +101,19 @@ class SinglyLinkedList {
         return index;
     }
 
+    /**
+     * To check if list is empty.
+     * @returns {boolean} true if list is empty
+     */
     isEmpty() {
         return this.head == null && this.tail == null;
     }
 
-    // Returns the index of the last occurrence of the data in this list,
-    // or -1 if this list does not contain the element.
+    /**
+     * To find index of last occurrence of the data in the List.
+     * @param {Object|type} data - The data to be found in the list
+     * @returns {number} the index of the last occurrence of the data in this list, or -1 if this list does not contain the element
+     */
     lastIndexOf(data) {
         let index = -1;
         let counter = 0;
@@ -93,7 +128,10 @@ class SinglyLinkedList {
         return index;
     }
 
-    // Retrieves and removes the head of this list
+    /**
+     * To remove the head of this list.
+     * @returns {*|null} Node data if list is not empty. Otherwise, returns null
+     */
     remove() {
         if (!this.head) {
             return null;
@@ -108,7 +146,10 @@ class SinglyLinkedList {
         return node.data;
     }
 
-    // Retrieves and removes the tail of this list
+    /**
+     * To remove the tail of this list
+     * @returns {*|null} tail data if list is not empty. Otherwise, returns null
+     */
     removeLast() {
         if (!this.head) {
             return null;
@@ -130,7 +171,11 @@ class SinglyLinkedList {
         return current.data;
     }
 
-    // Removes the first occurrence of the specified data from list, if it is present
+    /**
+     * To remove first occurrence of the specified data from list
+     * @param data - The data to be removed
+     * @returns {boolean} true if data is present. Otherwise, it returns false
+     */
     removeData(data) {
         if (!this.head) {
             return false;
@@ -168,6 +213,12 @@ class SinglyLinkedList {
     }
 
 
+    /**
+     * Replace data at specified position in the list
+     * @param index - The position in the list where to replace data
+     * @param data - The data to replace
+     * @returns {*|null} if found data of the node, otherwise null
+     */
     // Replaces the data at the specified position in list with the specified data
     // Returns previous data on specific index
     set(index, data) {
@@ -212,6 +263,10 @@ class SinglyLinkedList {
         }
     }
 
+    /**
+     * Dump list to the array
+     * @returns {Object[]|type[]} array of list elements
+     */
     toArray() {
         let current = this.head;
         const result = [];
