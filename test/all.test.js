@@ -7,6 +7,7 @@ import orderedDoublyLinkedListTest from "./data-structures/linked-lists/OrderedD
 import binarySearchTreeTest from "./data-structures/trees/BinarySearchTree.test.js"
 import redBlackTreeTest from "./data-structures/trees/RedBlackTree.test.js"
 import avlTreeTest from "./data-structures/trees/AVLTree.test.js"
+import splayTreeTest from "./data-structures/trees/splayTree.test.js"
 
 describe('All Tests', () =>{
     singlyLinkedListTest();
@@ -20,4 +21,5 @@ describe('All Tests', () =>{
     binarySearchTreeTest();
     redBlackTreeTest();
     avlTreeTest();
+    splayTreeTest();
 });
