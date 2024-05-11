@@ -4,6 +4,7 @@
 
 /**
  * @summary Class representing a Node of SinglyLinkedList
+ * @variation SinglyLinkedList
  * @classdesc
  */
 class Node {
@@ -263,12 +264,10 @@ class SinglyLinkedList {
      * Replace data at specified position in the list
      * @param {number}index - The position in the list where to replace data. Must be positive integer
      * @param {*}data - The data to replace
-     * @returns {*|null} if found data of the node, otherwise null
+     * @returns {*|null} previous data on specific index
      * @method
      * @instance
      */
-    // Replaces the data at the specified position in list with the specified data
-    // Returns previous data on specific index
     set(index, data) {
         if (!this.head) {
             let node = new Node(data);
