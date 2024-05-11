@@ -24,7 +24,7 @@ class SinglyLinkedList {
 
     /**
      * Appends data to the end of this list.
-     * @param {Object|type} data - The data to store in new Node.
+     * @param {*} data - The data to store in new Node.
       */
     append(data) {
         const node = new Node(data);
@@ -49,7 +49,7 @@ class SinglyLinkedList {
 
     /**
      * Inserts the specified element at the beginning of this list.
-     * @param {Object|type} data - The data to be added at head of the list.
+     * @param {*} data - The data to be added at head of the list.
      */
     // Inserts the specified element at the beginning of this list.
     addFirst(data) {
@@ -73,7 +73,7 @@ class SinglyLinkedList {
 
     /**
      * To check if list contains some data
-     * @param {Object|type} data
+     * @param {*} data
      * @returns {boolean} true if this list contains the specified data.
      */
     contains(data) {
@@ -83,7 +83,7 @@ class SinglyLinkedList {
 
     /**
      * To find index of first occurrence of the data in the List.
-     * @param {Object|type} data - The data to be found in the list
+     * @param {*} data - The data to be found in the list
      * @returns {number} the index of the first occurrence of the data in this list, or -1 if this list does not contain the element
      */
     indexOf(data) {
@@ -111,7 +111,7 @@ class SinglyLinkedList {
 
     /**
      * To find index of last occurrence of the data in the List.
-     * @param {Object|type} data - The data to be found in the list
+     * @param {*} data - The data to be found in the list
      * @returns {number} the index of the last occurrence of the data in this list, or -1 if this list does not contain the element
      */
     lastIndexOf(data) {
@@ -215,8 +215,8 @@ class SinglyLinkedList {
 
     /**
      * Replace data at specified position in the list
-     * @param index - The position in the list where to replace data
-     * @param data - The data to replace
+     * @param {number}index - The position in the list where to replace data. Must be positive integer
+     * @param {*}data - The data to replace
      * @returns {*|null} if found data of the node, otherwise null
      */
     // Replaces the data at the specified position in list with the specified data
@@ -265,7 +265,7 @@ class SinglyLinkedList {
 
     /**
      * Dump list to the array
-     * @returns {Object[]|type[]} array of list elements
+     * @returns {array} array of list elements
      */
     toArray() {
         let current = this.head;
