@@ -8,14 +8,17 @@
   },
   "source": {
     "include": [
-      "data-structures"
+      "index.js",
+      "LICENSE.md",
+      "README.md",
+      "data-structures",
+      "utils"
     ],
     "includePattern": ".+\\.js(doc)?$",
     "excludePattern": "(^|\\/|\\\\)_"
   },
   "opts": {
-    "template": "./node_modules/tidy-jsdoc",
-    "prism-theme": "prism-custom",
+    "template": "./node_modules/clean-jsdoc-theme",
     "encoding": "utf8",
     "destination": "./docs/",
     "recurse": true
@@ -29,6 +32,6 @@
     "monospaceLinks": false
   },
   "metadata": {
-    "title": "Usingbytes DSA"
+    "title": "usingbytes-dsa"
   }
 }

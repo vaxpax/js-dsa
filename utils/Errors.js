@@ -1,3 +1,7 @@
+"use strict";
+
+/** @module Errors */
+
 class NotImplementedError extends Error {
     constructor(message) {
         super(message);

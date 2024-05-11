@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/all.test.js",
-    "dox": "open docs/index.html"
+    "generate-docs": "jsdoc --configure jsdoc.json --verbose"
   },
   "keywords": [],
   "author": "Vanja Petkovic (vanja.petkovic@gmail.com)",
@@ -16,5 +16,8 @@
     "jsdoc": "^4.0.3",
     "mocha": "^10.4.0",
     "tidy-jsdoc": "^1.4.1"
+  },
+  "dependencies": {
+    "clean-jsdoc-theme": "^4.3.0"
   }
 }
