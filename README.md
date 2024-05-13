@@ -1,4 +1,4 @@
-# Usingbytes-dsa library
+# usingbytes-dsa #
 
 Welcome to **usingbytes-dsa**, a comprehensive JavaScript library for common data structures and algorithms. 
 This library is designed to be both educational and practical, 
@@ -7,7 +7,7 @@ that can be used in a variety of contexts, from learning computer
 science concepts to solving real-world problems in
 commercial projects.
 
-## Features
+## Features ##
 1. Data Structures: Implementations of essential data structures such
 as linked lists, stacks, queues, trees, heaps, and graphs.
 
@@ -19,7 +19,7 @@ and more.
 3. Easy Integration: Modular and flexible design allows easy 
 integration into both educational projects and commercial applications.
 
-## Installation
+## Installation ##
 
 
 ### Clone the repository
@@ -39,11 +39,3 @@ npm install usingbytes-dsa
 ```bash
 yarn add usingbytes-dsa
 ```
-
-## Usage
-
-TODO
-
-## Contributing
-
-TODO
