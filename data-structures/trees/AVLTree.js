@@ -5,37 +5,19 @@ import { BinarySearchTree } from "./BinarySearchTree.js";
 import { NotSupportedError } from "../../utils/Errors.js";
 import {TreeNode} from "./TreeNode.js";
 
-/**
- * @summary Class representing a Node of AVLTreeNode
- * @variation AVLTreeNode
- * @classdesc
- * @extends TreeNode
- */
 class AVLTreeNode extends TreeNode {
-    /**
-     * @class Create a new Node.
-     * @param {*} key - The data to store in Node.
-     * @alias AVLTreeNode
-     * @constructor
-     */
     constructor(key) {
         super(key);
         this.height = 1;
     }
 
-    /**
-     *
-     * @param node
-     * @returns {*|number} height of the node if node not null, otherwise it returns 0
-     * @static
-     */
     static height(node) {
         return (node !== null) ? node.height : 0;
     }
 }
 
 /**
- * @summary Class representing BinarySearchTree
+ * @summary Class representing AVLTree
  * @classdesc
  * @extends BinarySearchTree
  * */

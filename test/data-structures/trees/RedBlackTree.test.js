@@ -2,8 +2,8 @@
 
 import { assert } from "chai";
 import { assertArrays } from "../../TestHelpers.js";
-import {AVLTree, NotSupportedError, RedBlackTree} from "../../../index.js";
-import { Color } from "../../../utils/Utils.js";
+import {Color} from "../../../data-structures/trees/RedBlackTree.js"
+import {NotSupportedError, RedBlackTree} from "../../../index.js";
 
 export default function test() {
     describe('RedBlackTree Tests', () => {
@@ -57,7 +57,7 @@ export default function test() {
         });
 
         it('successor', () => {
-            const tree = new AVLTree();
+            const tree = new RedBlackTree();
             const array = [4, 5, 2, 3, 6, 1];
             tree.insertAll(array);
             const node = tree.search(2);
@@ -69,7 +69,7 @@ export default function test() {
         });
 
         it('predecessor', () => {
-            const tree = new AVLTree();
+            const tree = new RedBlackTree();
             const array = [4, 5, 2, 3, 6, 1];
             tree.insertAll(array);
             const node = tree.search(2);

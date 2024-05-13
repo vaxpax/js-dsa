@@ -1,23 +1,13 @@
 "use strict";
 
-/** @module BinarySearchTree */
+/**
+ * @module BinarySearchTree
+ */
 
 import { defaultCompare } from "../../utils/Utils.js";
 import {TreeNode} from "./TreeNode.js";
 
-/**
- * @summary Class representing a Node of BinarySearchTree
- * @variation TreeNodeWithParent
- * @classdesc
- * @extends TreeNode
- */
 class TreeNodeWithParent extends TreeNode {
-    /**
-     * @class Create a new Node.
-     * @param {*} key - The data to store in Node.
-     * @alias TreeNodeWithParent
-     * @constructor
-     */
     constructor(key) {
         super(key)
         this.parent = null;
@@ -27,6 +17,7 @@ class TreeNodeWithParent extends TreeNode {
 /**
  * @summary Class representing BinarySearchTree
  * @classdesc
+ * @
  * */
 class BinarySearchTree {
     /**

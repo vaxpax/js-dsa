@@ -2,19 +2,7 @@
 
 /** @module DoublyLinkedList */
 
-
-/**
- * @summary Class representing a Node of DoublyLinkedList
- * @variation DoublyLinkedList
- * @classdesc
- */
 class Node {
-    /**
-     * @class Create a new Node.
-     * @param {*} data - The data to store in Node.
-     * @alias Node
-     * @constructor
-     */
     constructor(data) {
         this.data = data;
         this.next = null;

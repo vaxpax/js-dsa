@@ -2,18 +2,7 @@
 
 /** @module SinglyLinkedList */
 
-/**
- * @summary Class representing a Node of SinglyLinkedList
- * @variation SinglyLinkedList
- * @classdesc
- */
 class Node {
-    /**
-     * @class Create a new Node.
-     * @param {*} data - The data to store in Node.
-     * @alias Node
-     * @constructor
-     */
     constructor(data) {
         this.data = data;
         this.next = null;

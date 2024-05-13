@@ -2,23 +2,11 @@
 
 /** @module RedBlackTree */
 
-import {defaultCompare, Color} from "../../utils/Utils.js";
+import {defaultCompare} from "../../utils/Utils.js";
 import {TreeNodeWithParent} from "./BinarySearchTree.js";
 import {NotSupportedError} from "../../utils/Errors.js";
 
-/**
- * @summary Class representing a Node of RedBlackTree
- * @variation RedBlackTreeNode
- * @classdesc
- * @extends TreeNodeWithParent
- */
 class RedBlackTreeNode extends TreeNodeWithParent {
-    /**
-     * @class Create a new Node.
-     * @param {*} key - The data to store in Node.
-     * @alias TreeNodeWithParent
-     * @constructor
-     */
     constructor(key) {
         super(key);
         this.color = Color.BLACK;
@@ -422,7 +410,14 @@ class RedBlackTree {
     }
 }
 
+
+const Color = Object.freeze({
+    RED: 0,
+    BLACK: 1
+})
+
 export {
     RedBlackTree,
     RedBlackTreeNode,
+    Color,
 };
