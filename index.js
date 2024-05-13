@@ -1,16 +1,5 @@
 "use strict";
 
-/**
- * @file index.js
- * This JavaScript file contains foo bar baz...
- *
- * @projectname usingbytes-dsa
- * @version 1.1.0
- * @author Vanja Petkovic
- * @copyright 2024
- *
- */
-
 import { SinglyLinkedList } from "./data-structures/linked-lists/SinglyLinkedList.js";
 import { OrderedSinglyLinkedList } from "./data-structures/linked-lists/OrderedSinglyLinkedList.js";
 import { DoublyLinkedList } from "./data-structures/linked-lists/DoublyLinkedList.js";

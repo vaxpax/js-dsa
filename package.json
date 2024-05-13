@@ -1,16 +1,32 @@
 {
   "name": "usingbytes-dsa",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "prepack": "npmignore --auto",
     "test": "mocha test/all.test.js",
     "generate-docs": "jsdoc --configure jsdoc.json --verbose"
   },
-  "keywords": [],
-  "author": "Vanja Petkovic (vanja.petkovic@gmail.com)",
+  "publishConfig": {
+    "ignore": [
+      "out/",
+      "docs/"
+    ]
+  },
+  "keywords": [
+    "data-structures",
+    "algorithms",
+    "javascript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vaxpax/usingbytes-dsa.git",
+    "ssh": "git@github.com:vaxpax/usingbytes-dsa.git"
+  },
+  "author": "Vanja Petkovic",
   "license": "MIT",
-  "description": "",
+  "description": "usingbytes-dsa is comprehensive JavaScript library for common data structures and algorithms. This library is designed to be both educational and practical, providing implementations of fundamental data structures and algorithms that can be used in a variety of contexts, from learning computer science concepts to solving real-world problems incommercial projects.",
   "devDependencies": {
     "chai": "^5.1.0",
     "clean-jsdoc-theme": "^4.3.0",
