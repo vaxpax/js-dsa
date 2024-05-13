@@ -1,33 +1,79 @@
 "use strict";
 
+/** @module BinarySearchTree */
+
 import { defaultCompare } from "../../utils/Utils.js";
 import {TreeNode} from "./TreeNode.js";
 
+/**
+ * @summary Class representing a Node of BinarySearchTree
+ * @variation TreeNodeWithParent
+ * @classdesc
+ * @extends TreeNode
+ */
 class TreeNodeWithParent extends TreeNode {
+    /**
+     * @class Create a new Node.
+     * @param {*} key - The data to store in Node.
+     * @alias TreeNodeWithParent
+     * @constructor
+     */
     constructor(key) {
         super(key)
         this.parent = null;
     }
 }
 
+/**
+ * @summary Class representing BinarySearchTree
+ * @classdesc
+ * */
 class BinarySearchTree {
+    /**
+     * @class Creates a new BinarySearchTree.
+     * @param {function} compare - Function to compare two keys in tree
+     * @alias BinarySearchTree
+     */
     constructor(compare = defaultCompare) {
         this.root = null;
         this.compare = compare;
     }
 
+    /**
+     * @summary To check if tree is empty.
+     * @returns {boolean} true if tree is empty
+     * @method
+     * @instance
+     */
     isEmpty() {
         return this.root === null;
     }
 
+    /**
+     * @summary Remove all elements from the list.
+     * @method
+     * @instance
+     */
     clear() {
         this.root = null;
     }
 
+    /**
+     * @summary Inserts key into tree
+     * @param {*} key - key to be inserted
+     * @instance
+     * @method
+     */
     insert(key) {
         this.root = this.insertKey(this.root, null, key);
     }
 
+    /**
+     * @summary Inserts array of key into tree
+     * @param {array} keysArray - array of keys to add to the tree
+     * @instance
+     * @method
+     */
     insertAll(keysArray) {
         for (let key of keysArray) {
             this.insert(key);
@@ -48,6 +94,12 @@ class BinarySearchTree {
         return node;
     }
 
+    /**
+     * @summary Dumps tree keys into array (ordered ASC)
+     * @returns {array}
+     * @instance
+     * @method
+     */
     toInOrderArray() {
         const array = [];
         if (this.root != null) {
@@ -64,6 +116,12 @@ class BinarySearchTree {
         }
     }
 
+    /**
+     * @summary Dumps tree keys into array (ordered DESC)
+     * @returns {array}
+     * @instance
+     * @method
+     */
     toReverseOrderArray() {
         const array = [];
         if (this.root != null) {
@@ -80,6 +138,13 @@ class BinarySearchTree {
         }
     }
 
+    /**
+     * @summary Search for node.
+     * @param {*} key - Key to be found in Tree
+     * @returns {*|null} node with given key if found. Otherwise, returns null
+     * @instance
+     * @method
+     */
     search(key) {
         return this.searchNode(this.root, key);
     }
@@ -95,6 +160,10 @@ class BinarySearchTree {
         }
     }
 
+    /**
+     * Finds min (node) in tree
+     * @returns {*|null} node with minimal key in tree. If tree is empty it return null;
+     */
     min() {
         if (this.root == null) {
             return null;
@@ -109,6 +178,11 @@ class BinarySearchTree {
         return node;
     }
 
+    /**
+     * Finds max (node) in tree
+     * @returns {*|null} node with maximal key in tree. If tree is empty it return null
+     * @method
+     */
     max() {
         if (this.root == null) {
             return null;
@@ -123,6 +197,12 @@ class BinarySearchTree {
         return node;
     }
 
+    /**
+     * @summary Finds successor of the node
+     * @param {*} node - node to find successor from
+     * @returns {*} successor node of provided node
+     * @method
+     */
     successor(node) {
         if (node.right != null) {
             return this.minNode(node.right);
@@ -137,6 +217,12 @@ class BinarySearchTree {
         return parent;
     }
 
+    /**
+     * @summary Finds predecessor of the node
+     * @param {*} node - node to find successor from
+     * @returns {*} predecessor node of provided node
+     * @method
+     */
     predecessor(node) {
         if (node.left != null) {
             return this.maxNode(node.left);
@@ -150,6 +236,11 @@ class BinarySearchTree {
         return parent;
     }
 
+    /**
+     * @summary Delete node from tree.
+     * @param {*} key - key of the node to be removed from tree
+     * @method
+     */
     delete(key) {
         const node = this.search(key);
         if (node) {

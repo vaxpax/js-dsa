@@ -15,7 +15,7 @@ import { NotSupportedError } from "../../utils/Errors.js";
 class OrderedDoublyLinkedList extends DoublyLinkedList {
     /**
      * @class Creates a new OrderedDoublyLinkedList.
-     * @param {function} compare - Function to compare two objects in document
+     * @param {function} compare - Function to compare two objects in list
      * @param {Order} ordering - Defines if list items should be in ASC or DESC order
      * @alias OrderedSinglyLinkedList
      * @augments DoublyLinkedList

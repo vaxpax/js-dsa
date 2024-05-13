@@ -1,17 +1,41 @@
 "use strict";
 
+/** @module RedBlackTree */
+
 import {defaultCompare, Color} from "../../utils/Utils.js";
 import {TreeNodeWithParent} from "./BinarySearchTree.js";
 import {NotSupportedError} from "../../utils/Errors.js";
 
+/**
+ * @summary Class representing a Node of RedBlackTree
+ * @variation RedBlackTreeNode
+ * @classdesc
+ * @extends TreeNodeWithParent
+ */
 class RedBlackTreeNode extends TreeNodeWithParent {
+    /**
+     * @class Create a new Node.
+     * @param {*} key - The data to store in Node.
+     * @alias TreeNodeWithParent
+     * @constructor
+     */
     constructor(key) {
         super(key);
         this.color = Color.BLACK;
     }
 }
 
+/**
+ * @summary Class representing RedBlackTree
+ * @classdesc
+ * */
 class RedBlackTree {
+    /**
+     * @class Creates a new RedBlackTree.
+     * @param {function} compare - Function to compare two keys in tree
+     * @alias RedBlackTree
+     * @constructor
+     */
     constructor(compare = defaultCompare) {
         this.compare = compare;
         this.NULL = this.createNullNode();
@@ -24,18 +48,41 @@ class RedBlackTree {
         return NULLNode;
     }
 
+    /**
+     * @summary To check if tree is empty.
+     * @returns {boolean} true if tree is empty
+     * @method
+     * @instance
+     */
     isEmpty() {
         return this.root === this.NULL;
     }
 
+    /**
+     * @summary Remove all elements from the list.
+     * @method
+     * @instance
+     */
     clear() {
         this.root = this.NULL;
     }
 
+    /**
+     * @summary Inserts key into tree
+     * @param {*} key - key to be inserted
+     * @instance
+     * @method
+     */
     insert(key) {
         this.root = this.insertKey(this.root, key);
     }
 
+    /**
+     * @summary Inserts array of key into tree
+     * @param {array} keysArray - array of keys to add to the tree
+     * @instance
+     * @method
+     */
     insertAll(keysArray) {
         for (let key of keysArray) {
             this.insert(key);
@@ -153,6 +200,11 @@ class RedBlackTree {
         z.parent = y;
     }
 
+    /**
+     * @summary Delete node from tree.
+     * @param {*} key - key of the node to be removed from tree
+     * @method
+     */
     delete(key) {
         let node = this.search(key);
         if (node !== this.NULL) {
@@ -258,6 +310,12 @@ class RedBlackTree {
         y.parent = x.parent;
     }
 
+    /**
+     * @summary Dumps tree keys into array (ordered ASC)
+     * @returns {array}
+     * @instance
+     * @method
+     */
     toInOrderArray() {
         const array = [];
         if (this.root !== this.NULL) {
@@ -274,6 +332,12 @@ class RedBlackTree {
         }
     }
 
+    /**
+     * @summary Dumps tree keys into array (ordered DESC)
+     * @returns {array}
+     * @instance
+     * @method
+     */
     toReverseOrderArray() {
         const array = [];
         if (this.root !== this.NULL) {
@@ -290,6 +354,11 @@ class RedBlackTree {
         }
     }
 
+    /**
+     * Finds min (node) in tree
+     * @returns {*|null} node with minimal key in tree. If tree is empty it return null;
+     * @method
+     */
     min() {
         if (this.root === this.NULL) {
             return null;
@@ -304,6 +373,11 @@ class RedBlackTree {
         return node;
     }
 
+    /**
+     * Finds max (node) in tree
+     * @returns {*|null} node with maximal key in tree. If tree is empty it return null
+     * @method
+     */
     max() {
         if (this.root === this.NULL) {
             return null;
@@ -325,6 +399,13 @@ class RedBlackTree {
         throw new NotSupportedError('RedBlackTree.predecessor()');
     }
 
+    /**
+     * @summary Search for node.
+     * @param {*} key - Key to be found in Tree
+     * @returns {*|null} node with given key if found. Otherwise, returns null
+     * @instance
+     * @method
+     */
     search(key) {
         return this.searchNode(this.root, key);
     }

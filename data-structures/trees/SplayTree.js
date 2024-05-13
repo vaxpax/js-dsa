@@ -3,11 +3,27 @@
 import { defaultCompare } from "../../utils/Utils.js";
 import { BinarySearchTree, TreeNodeWithParent } from "./BinarySearchTree.js";
 
+/**
+ * @summary Class representing SplayTree
+ * @classdesc
+ * @extends BinarySearchTree
+ * */
 class SplayTree extends BinarySearchTree {
+    /**
+     * @class Creates a new AVLTree.
+     * @param {function} [compare=defaultCompare] compare - Function to compare two keys in tree
+     * @alias AVLTree
+     */
     constructor(compare = defaultCompare) {
         super(compare);
     }
 
+    /**
+     * @summary Inserts key into tree
+     * @param {*} key - key to be inserted
+     * @instance
+     * @method
+     */
     insert(key) {
         this.insertNode(new TreeNodeWithParent(key));
     }
@@ -106,6 +122,13 @@ class SplayTree extends BinarySearchTree {
         x.parent = y;
     }
 
+    /**
+     * @summary Search for node.
+     * @param {*} key - Key to be found in Tree
+     * @returns {*|null} node with given key if found. Otherwise, returns null
+     * @instance
+     * @method
+     */
     search(key) {
         return this.searchNode(this.root, key);
     }
@@ -135,6 +158,11 @@ class SplayTree extends BinarySearchTree {
         return null;
     }
 
+    /**
+     * @summary Remove node from tree.
+     * @param {*} key - key of the node to be removed from tree
+     * @method
+     */
     delete(key) {
         const node = this.findNode(this.root, key, false);
         if (node) {

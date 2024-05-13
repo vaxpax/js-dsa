@@ -5,19 +5,46 @@ import { BinarySearchTree } from "./BinarySearchTree.js";
 import { NotSupportedError } from "../../utils/Errors.js";
 import {TreeNode} from "./TreeNode.js";
 
-class AVLTreeNode extends TreeNode{
+/**
+ * @summary Class representing a Node of AVLTreeNode
+ * @variation AVLTreeNode
+ * @classdesc
+ * @extends TreeNode
+ */
+class AVLTreeNode extends TreeNode {
+    /**
+     * @class Create a new Node.
+     * @param {*} key - The data to store in Node.
+     * @alias AVLTreeNode
+     * @constructor
+     */
     constructor(key) {
         super(key);
         this.height = 1;
     }
 
+    /**
+     *
+     * @param node
+     * @returns {*|number} height of the node if node not null, otherwise it returns 0
+     * @static
+     */
     static height(node) {
         return (node !== null) ? node.height : 0;
     }
 }
 
-
+/**
+ * @summary Class representing BinarySearchTree
+ * @classdesc
+ * @extends BinarySearchTree
+ * */
 class AVLTree extends BinarySearchTree {
+    /**
+     * @class Creates a new AVLTree.
+     * @param {function} [compare=defaultCompare] compare - Function to compare two keys in tree
+     * @alias AVLTree
+     */
     constructor(compare = defaultCompare) {
         super(compare);
     }
@@ -55,6 +82,12 @@ class AVLTree extends BinarySearchTree {
         return AVLTreeNode.height(node.left) - AVLTreeNode.height(node.right);
     }
 
+    /**
+     * @summary Inserts key into tree
+     * @param {*} key - key to be inserted
+     * @instance
+     * @method
+     */
     insert(key) {
         this.root = this.insertNode(this.root, key)
     }
@@ -71,6 +104,11 @@ class AVLTree extends BinarySearchTree {
         return this.balance(node);
     }
 
+    /**
+     * @summary Remove node from tree.
+     * @param {*} key - key of the node to be removed from tree
+     * @method
+     */
     delete(key) {
         this.root = this.deleteNode(this.root, key);
     }

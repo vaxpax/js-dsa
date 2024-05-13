@@ -9,7 +9,6 @@
   "source": {
     "include": [
       "index.js",
-      "LICENSE.md",
       "README.md",
       "data-structures",
       "utils"
@@ -33,5 +32,8 @@
   },
   "metadata": {
     "title": "usingbytes-dsa"
+  },
+  "markdown": {
+    "idInHeadings": true
   }
 }
