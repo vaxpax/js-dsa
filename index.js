@@ -5,7 +5,7 @@
  * This JavaScript file contains foo bar baz...
  *
  * @projectname usingbytes-dsa
- * @version 0.1
+ * @version 1.1.0
  * @author Vanja Petkovic
  * @copyright 2024
  *
