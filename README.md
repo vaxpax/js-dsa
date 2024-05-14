@@ -25,7 +25,7 @@ integration into both educational projects and commercial applications.
 ### Clone the repository
 
 ```bash
-git clone git@github.com:vaxpax/usingbytes-dsa.git
+git clone git@github.com:vaxpax/usingbytes-js-dsa.git
 ```
 
 ### Using npm

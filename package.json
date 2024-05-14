@@ -11,22 +11,24 @@
   "publishConfig": {
     "ignore": [
       "out/",
-      "docs/"
+      "docs/",
+      "jsdoc.json"
     ]
   },
   "keywords": [
-    "data-structures",
-    "algorithms",
-    "javascript"
+    "data-structures", "algorithms", "javascript", "list", "tree",
+    "SinglylinkedList", "DoublyLinkedList", "OrderedSinglyLinkedList", "OrderedDoublyLinkedList",
+    "CircularSinglyLinkedList", "CircularDoublyLinkedList",
+    "AVLTree", "RedBlackTree", "SplayTree"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/vaxpax/usingbytes-dsa.git",
-    "ssh": "git@github.com:vaxpax/usingbytes-dsa.git"
+    "url": "https://github.com/vaxpax/usingbytes-js-dsa.git",
+    "ssh": "git@github.com:vaxpax/usingbytes-js-dsa.git"
   },
   "author": "Vanja Petkovic",
   "license": "MIT",
-  "description": "usingbytes-dsa is comprehensive JavaScript library for common data structures and algorithms. This library is designed to be both educational and practical, providing implementations of fundamental data structures and algorithms that can be used in a variety of contexts, from learning computer science concepts to solving real-world problems incommercial projects.",
+  "description": "usingbytes-dsa is comprehensive JavaScript library for common data structures and algorithms. This library is designed to be both educational and practical, providing implementations of fundamental data structures and algorithms that can be used in a variety of contexts, from learning computer science concepts to solving real-world problems in commercial projects.",
   "devDependencies": {
     "chai": "^5.1.0",
     "clean-jsdoc-theme": "^4.3.0",
