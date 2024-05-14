@@ -55,71 +55,71 @@ class SplayTree extends BinarySearchTree {
         this.splay(node);
     }
 
-    splay(x) {
-        while (x.parent !== null) {
-            if (x.parent.parent === null) {
-                if (x === x.parent.left) {
+    splay(node) {
+        while (node.parent !== null) {
+            if (node.parent.parent === null) {
+                if (node === node.parent.left) {
                     // zig rotation
-                    this.rightRotate(x.parent);
+                    this.rightRotate(node.parent);
                 } else {
                     // zag rotation
-                    this.leftRotate(x.parent);
+                    this.leftRotate(node.parent);
                 }
-            } else if (x === x.parent.left && x.parent === x.parent.parent.left) {
+            } else if (node === node.parent.left && node.parent === node.parent.parent.left) {
                 // zig-zig rotation
-                this.rightRotate(x.parent.parent);
-                this.rightRotate(x.parent);
-            } else if (x === x.parent.right && x.parent === x.parent.parent.right) {
+                this.rightRotate(node.parent.parent);
+                this.rightRotate(node.parent);
+            } else if (node === node.parent.right && node.parent === node.parent.parent.right) {
                 // zag-zag rotation
-                this.leftRotate(x.parent.parent);
-                this.leftRotate(x.parent);
-            } else if (x === x.parent.right && x.parent === x.parent.parent.left) {
+                this.leftRotate(node.parent.parent);
+                this.leftRotate(node.parent);
+            } else if (node === node.parent.right && node.parent === node.parent.parent.left) {
                 // zig-zag rotation
-                this.leftRotate(x.parent);
-                this.rightRotate(x.parent);
+                this.leftRotate(node.parent);
+                this.rightRotate(node.parent);
             } else {
                 // zag-zig rotation
-                this.rightRotate(x.parent);
-                this.leftRotate(x.parent);
+                this.rightRotate(node.parent);
+                this.leftRotate(node.parent);
             }
         }
     }
 
-    rightRotate(x) {
-        let y = x.left;
-        x.left = y.right;
+    rightRotate(node) {
+        let y = node.left;
+        node.left = y.right;
         if(y.right !== null) {
-            y.right.parent = x;
+            y.right.parent = node;
         }
-        y.parent = x.parent;
-        if(x.parent === null) { //x is root
+        y.parent = node.parent;
+        if(node.parent === null) { //x is root
             this.root = y;
-        } else if(x === x.parent.right) { //x is left child
-            x.parent.right = y;
+        } else if(node === node.parent.right) { //x is left child
+            node.parent.right = y;
         }
         else { //x is right child
-            x.parent.left = y;
+            node.parent.left = y;
         }
-        y.right = x;
-        x.parent = y;
+        y.right = node;
+        node.parent = y;
     }
 
-    leftRotate(x) {
-        let y = x.right;
-        x.right = y.left;
+    leftRotate(node) {
+        let y = node.right;
+        node.right = y.left;
         if(y.left !== null) {
-            y.left.parent = x;
+            y.left.parent = node;
         }
-        y.parent = x.parent;
-        if(x.parent === null) { //x is root
+        y.parent = node.parent;
+        if(node.parent === null) { //x is root
             this.root = y;
-        } else if(x === x.parent.left) { //x is left child
-            x.parent.left = y;
+        } else if(node === node.parent.left) { //x is left child
+            node.parent.left = y;
         } else {
-            x.parent.right = y;
+            node.parent.right = y;
         }
-        y.left = x;
-        x.parent = y;
+        y.left = node;
+        node.parent = y;
     }
 
     /**
@@ -133,26 +133,26 @@ class SplayTree extends BinarySearchTree {
         return this.searchNode(this.root, key);
     }
 
-    searchNode(n, x) {
-        return this.findNode(n, x, true);
+    searchNode(node, key) {
+        return this.findNode(node, key, true);
     }
 
-    findNode(n, x, splay) {
-        if (n === null) {
+    findNode(node, key, splay) {
+        if (node === null) {
             return null;
         }
 
-        if(x === n.key) {
+        if(key === node.key) {
             if (splay) {
-                this.splay(n);
+                this.splay(node);
             }
-            return n;
+            return node;
         }
-        else if(this.compare(x, n.key) < 0) {
-            return this.findNode(n.left, x, splay);
+        else if(this.compare(key, node.key) < 0) {
+            return this.findNode(node.left, key, splay);
         }
-        else if(this.compare(x, n.key) > 0) {
-            return this.findNode(n.right, x, splay);
+        else if(this.compare(key, node.key) > 0) {
+            return this.findNode(node.right, key, splay);
         }
 
         return null;
@@ -170,18 +170,18 @@ class SplayTree extends BinarySearchTree {
         }
     }
 
-    deleteNode(x) {
+    deleteNode(node) {
         let t, s;
-        this.splay(x);
-        if (x.right !== null) {
-            t = x.right;
+        this.splay(node);
+        if (node.right !== null) {
+            t = node.right;
             t.parent = null;
         } else {
             t = null;
         }
-        s = x;
+        s = node;
         s.right = null;
-        x = null;
+        node = null;
 
         // join operation
         if (s.left != null){ // remove x

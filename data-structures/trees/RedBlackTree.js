@@ -85,65 +85,65 @@ class RedBlackTree {
         return this.insertNode(newNode);
     }
 
-    insertNode(z) {
+    insertNode(node) {
         let x = this.root;
         let y = this.NULL;
         while(x !== this.NULL) {
             y = x;
-            if (this.compare(z.key, x.key) < 0) {
+            if (this.compare(node.key, x.key) < 0) {
                 x = x.left;
             } else {
                 x = x.right;
             }
         }
-        z.parent = y;
+        node.parent = y;
         if (y === this.NULL) {
-            this.root = z;
-        } else if (this.compare(z.key, y.key) < 0) {
-            y.left = z;
+            this.root = node;
+        } else if (this.compare(node.key, y.key) < 0) {
+            y.left = node;
         } else {
-            y.right = z;
+            y.right = node;
         }
-        z.left = this.NULL;
-        z.right = this.NULL;
-        z.color = Color.RED;
-        return this.insertFixup(z);
+        node.left = this.NULL;
+        node.right = this.NULL;
+        node.color = Color.RED;
+        return this.insertFixup(node);
     }
 
-    insertFixup(z) {
+    insertFixup(node) {
         let y;
-        while (z.parent.color === Color.RED){
-            if (z.parent === z.parent.parent.left) {
-                y = z.parent.parent.right;
+        while (node.parent.color === Color.RED){
+            if (node.parent === node.parent.parent.left) {
+                y = node.parent.parent.right;
                 if (y !== null && y.color === Color.RED) {
-                    z.parent.color = Color.BLACK;
+                    node.parent.color = Color.BLACK;
                     y.color = Color.BLACK;
-                    z.parent.parent.color = Color.RED;
-                    z = z.parent.parent;
+                    node.parent.parent.color = Color.RED;
+                    node = node.parent.parent;
                 } else {
-                    if (z === z.parent.right) {
-                        z = z.parent;
-                        this.leftRotate(z);
+                    if (node === node.parent.right) {
+                        node = node.parent;
+                        this.leftRotate(node);
                     }
-                    z.parent.color = Color.BLACK;
-                    z.parent.parent.color = Color.RED;
-                    this.rightRotate(z.parent.parent);
+                    node.parent.color = Color.BLACK;
+                    node.parent.parent.color = Color.RED;
+                    this.rightRotate(node.parent.parent);
                 }
             } else {
-                y = z.parent.parent.left;
+                y = node.parent.parent.left;
                 if (y!== null && y.color === Color.RED) {
-                    z.parent.color = Color.BLACK;
+                    node.parent.color = Color.BLACK;
                     y.color = Color.BLACK;
-                    z.parent.parent.color = Color.RED;
-                    z = z.parent.parent;
+                    node.parent.parent.color = Color.RED;
+                    node = node.parent.parent;
                 } else {
-                    if (z = z.parent.left) {
-                        z = z.parent;
-                        this.rightRotate(z);
+                    if (node = node.parent.left) {
+                        node = node.parent;
+                        this.rightRotate(node);
                     }
-                    z.parent.color = Color.BLACK;
-                    z.parent.parent.color = Color.RED;
-                    this.leftRotate(z.parent.parent);
+                    node.parent.color = Color.BLACK;
+                    node.parent.parent.color = Color.RED;
+                    this.leftRotate(node.parent.parent);
                 }
             }
         }
@@ -151,41 +151,41 @@ class RedBlackTree {
         return this.root;
     }
 
-    leftRotate(z) {
-        let y = z.right;
-        z.right = y.left;
+    leftRotate(node) {
+        let y = node.right;
+        node.right = y.left;
         if (y.left !== this.NULL) {
-            y.left.parent = z;
+            y.left.parent = node;
         }
-        y.parent = z.parent;
-        if (z.parent === this.NULL) {
+        y.parent = node.parent;
+        if (node.parent === this.NULL) {
             this.root = y;
-        } else if (z === z.parent.left) {
-            z.parent.left = y;
+        } else if (node === node.parent.left) {
+            node.parent.left = y;
         } else {
-            z.parent.right = y;
+            node.parent.right = y;
         }
-        y.left = z;
-        z.parent = y;
+        y.left = node;
+        node.parent = y;
     }
 
-    rightRotate(z) {
-        let y = z.left;
-        z.left = y.right;
+    rightRotate(node) {
+        let y = node.left;
+        node.left = y.right;
         if (y.right !== this.NULL) {
-            y.right.parent = z;
+            y.right.parent = node;
         }
-        y.parent = z.parent;
+        y.parent = node.parent;
 
-        if (z.parent === this.NULL) {
+        if (node.parent === this.NULL) {
             this.root = y;
-        } else if (z === z.parent.left) {
-            z.parent.left = y;
+        } else if (node === node.parent.left) {
+            node.parent.left = y;
         } else {
-            z.parent.right = y;
+            node.parent.right = y;
         }
-        y.right = z;
-        z.parent = y;
+        y.right = node;
+        node.parent = y;
     }
 
     /**
@@ -200,91 +200,91 @@ class RedBlackTree {
         }
     }
 
-    deleteNode(z) {
-        let y = z, x = this.NULL;
+    deleteNode(node) {
+        let y = node, x = this.NULL;
         let yOriginalColor = y.color;
-        if (z.left === this.NULL) {
-            x = z.right;
-            this.transplant(z, z.right);
-        } else if (z.right === this.NULL) {
-            x = z.left;
-            this.transplant(z, z.left);
+        if (node.left === this.NULL) {
+            x = node.right;
+            this.transplant(node, node.right);
+        } else if (node.right === this.NULL) {
+            x = node.left;
+            this.transplant(node, node.left);
         } else {
-            y = this.minNode(z.right);
+            y = this.minNode(node.right);
             yOriginalColor = y.color;
             x = y.right;
-            if (y.parent === z) {
+            if (y.parent === node) {
                 x.parent = y;
             } else {
                 this.transplant(y, y.right);
-                y.right = z.right;
+                y.right = node.right;
                 y.right.parent = y;
             }
 
-            this.transplant(z, y);
-            y.left = z.left;
+            this.transplant(node, y);
+            y.left = node.left;
             y.left.parent = y;
-            y.color = z.color;
+            y.color = node.color;
         }
         if (yOriginalColor === Color.BLACK) {
             this.deleteFixup(x);
         }
     }
 
-    deleteFixup(z) {
+    deleteFixup(node) {
         let y;
-        while (z !== this.root && z.color === Color.BLACK) {
-            if (z === z.parent.left) {
-                y = z.parent.right;
+        while (node !== this.root && node.color === Color.BLACK) {
+            if (node === node.parent.left) {
+                y = node.parent.right;
                 if (y.color === Color.RED) {
                     y.color = Color.BLACK;
-                    z.parent.color = Color.RED;
-                    this.leftRotate(z.parent);
-                    y = z.parent.right;
+                    node.parent.color = Color.RED;
+                    this.leftRotate(node.parent);
+                    y = node.parent.right;
                 }
                 if (y.left.color === Color.BLACK && y.right.color === Color.BLACK) {
                     y.color = Color.RED;
-                    z = z.parent;
+                    node = node.parent;
                 } else {
                     if (y.right.color === Color.BLACK) {
                         y.left.color = Color.BLACK;
                         y.color = Color.RED;
                         this.rightRotate(y);
-                        y = z.parent.right;
+                        y = node.parent.right;
                     }
-                    y.color = z.parent.color;
-                    z.parent.color = Color.BLACK;
+                    y.color = node.parent.color;
+                    node.parent.color = Color.BLACK;
                     y.right.color = Color.BLACK;
-                    this.leftRotate(z.parent);
-                    z = this.root;
+                    this.leftRotate(node.parent);
+                    node = this.root;
                 }
             } else {
-                y = z.parent.left;
+                y = node.parent.left;
                 if (y.color === Color.RED) {
                     y.color = Color.BLACK;
-                    z.parent.color = Color.RED;
-                    this.rightRotate(z.parent);
-                    y = z.parent.left;
+                    node.parent.color = Color.RED;
+                    this.rightRotate(node.parent);
+                    y = node.parent.left;
                 }
                 if (y.left.color === Color.BLACK && y.right.color === Color.BLACK) {
                     y.color = Color.RED;
-                    z = z.parent;
+                    node = node.parent;
                 } else {
                     if (y.left.color === Color.BLACK) {
                         y.right.color = Color.BLACK;
                         y.color = Color.RED;
                         this.leftRotate(y);
-                        y = z.parent.left;
+                        y = node.parent.left;
                     }
-                    y.color = z.parent.color;
-                    z.parent.color = Color.BLACK;
+                    y.color = node.parent.color;
+                    node.parent.color = Color.BLACK;
                     y.left.color = Color.BLACK;
-                    this.rightRotate(z.parent);
-                    z = this.root;
+                    this.rightRotate(node.parent);
+                    node = this.root;
                 }
             }
         }
-        z.color = Color.BLACK;
+        node.color = Color.BLACK;
     }
 
     transplant(x, y) {
