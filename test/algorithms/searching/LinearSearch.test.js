@@ -8,7 +8,7 @@ export default function test() {
     searchTest(LinearSearch, 'LinearSearch Tests');
 }
 
-describe('LinearSearch', () => {
-    test();
-});
+// describe('LinearSearch', () => {
+//     test();
+// });
 

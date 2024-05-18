@@ -15,6 +15,7 @@ import {SplayTree} from "./data-structures/trees/SplayTree.js";
 import {LinearSearch} from "./algorithms/searching/LinearSearch.js";
 import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
 import {InterpolationSearch} from "./algorithms/searching/InterpolationSearch.js";
+import {FibonacciSearch} from "./algorithms/searching/FibonacciSearch.js";
 
 import { NotImplementedError, NotSupportedError, IndexOutOfBounds} from "./utils/Errors.js"
 
@@ -36,6 +37,7 @@ export {
     LinearSearch,
     BinarySearch,
     InterpolationSearch,
+    FibonacciSearch,
 
     NotImplementedError,
     NotSupportedError,

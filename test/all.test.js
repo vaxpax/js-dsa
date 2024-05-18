@@ -15,6 +15,7 @@ import splayTreeTest from "./data-structures/trees/splayTree.test.js";
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
 import binarySearchTest from "./algorithms/searching/BinarySearch.test.js";
 import interpolationSearchTest from "./algorithms/searching/InterpolationSearch.test.js";
+import fibonacciSearchTest from "./algorithms/searching/FibonacciSearch.test.js";
 
 
 describe('All Tests', () =>{
@@ -34,4 +35,5 @@ describe('All Tests', () =>{
     linearSearchTest();
     binarySearchTest();
     interpolationSearchTest();
+    fibonacciSearchTest();
 });

@@ -8,7 +8,7 @@ export default function test() {
     searchTest(InterpolationSearch, 'InterpolationSearch Tests');
 }
 
-// describe('BinarySearch', () => {
+// describe('InterpolationSearch', () => {
 //     test();
 // });
 

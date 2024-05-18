@@ -2,10 +2,8 @@
 
 /** @module InterpolationSearch */
 
-import {defaultCompare} from "../../utils/Utils.js";
-
 /**
- * @summary Class encapsulating BinarySearch algorithm
+ * @summary Class encapsulating InterpolationSearch algorithm
  * @classdesc
  */
 class InterpolationSearch {
