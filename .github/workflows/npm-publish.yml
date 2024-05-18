@@ -29,13 +29,9 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
-      - uses: step-security/wait-for-secrets@v2
-        id: wait-for-secrets
+      - uses: mmarchini-oss/npm-otp-publish@v0
         with:
-          secrets: |
-            OTP: 
-              name: 'OTP to publish package'
-              description: 'OTP from authenticator app'
+          npm_token: ${{ secrets.NPM_PUBLISH_TOKEN }}
       - run: npm ci
       - run: npm publish
         env:
