@@ -10,7 +10,7 @@ import orderedDoublyLinkedListTest from "./data-structures/linked-lists/OrderedD
 import binarySearchTreeTest from "./data-structures/trees/BinarySearchTree.test.js";
 import redBlackTreeTest from "./data-structures/trees/RedBlackTree.test.js";
 import avlTreeTest from "./data-structures/trees/AVLTree.test.js";
-import splayTreeTest from "./data-structures/trees/splayTree.test.js";
+import splayTreeTest from "./data-structures/trees/SplayTree.test.js";
 
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
 import jumpSearchTest from "./algorithms/searching/JumpSearch.test.js";
