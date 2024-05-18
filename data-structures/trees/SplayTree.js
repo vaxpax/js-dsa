@@ -11,7 +11,7 @@ import { BinarySearchTree, TreeNodeWithParent } from "./BinarySearchTree.js";
 class SplayTree extends BinarySearchTree {
     /**
      * @class Creates a new AVLTree.
-     * @param {function} [compare=defaultCompare] compare - Function to compare two keys in tree
+     * @param {function} [compare=defaultCompare] function to compare two keys in tree
      * @alias AVLTree
      */
     constructor(compare = defaultCompare) {

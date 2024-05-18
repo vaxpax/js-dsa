@@ -11,6 +11,7 @@
       "index.js",
       "README.md",
       "data-structures",
+      "algorithms",
       "utils"
     ],
     "includePattern": ".+\\.js(doc)?$",

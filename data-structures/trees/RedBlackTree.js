@@ -20,7 +20,7 @@ class RedBlackTreeNode extends TreeNodeWithParent {
 class RedBlackTree {
     /**
      * @class Creates a new RedBlackTree.
-     * @param {function} compare - Function to compare two keys in tree
+     * @param {function} [compare=defaultCompare] - function to compare two keys in tree
      * @alias RedBlackTree
      * @constructor
      */

@@ -22,7 +22,7 @@ class TreeNodeWithParent extends TreeNode {
 class BinarySearchTree {
     /**
      * @class Creates a new BinarySearchTree.
-     * @param {function} compare - Function to compare two keys in tree
+     * @param {function} [compare=defaultCompare] - function to compare two keys in tree
      * @alias BinarySearchTree
      */
     constructor(compare = defaultCompare) {

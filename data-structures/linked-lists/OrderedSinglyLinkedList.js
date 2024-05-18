@@ -17,7 +17,7 @@ class OrderedSinglyLinkedList extends SinglyLinkedList {
 
     /**
      * @class Creates a new OrderedSinglyLinkedList.
-     * @param {function} compare - Function to compare two objects in document
+     * @param {function} [compare=defaultCompare] function to compare two objects in document
      * @param {Order} ordering - Defines if list items should be in ASC or DESC order
      * @alias OrderedSinglyLinkedList
      * @augments SinglyLinkedList

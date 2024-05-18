@@ -12,6 +12,7 @@ import { RedBlackTree } from "./data-structures/trees/RedBlackTree.js";
 import { AVLTree } from "./data-structures/trees/AVLTree.js";
 import { SplayTree } from "./data-structures/trees/SplayTree.js";
 
+import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
 
 import { NotImplementedError, NotSupportedError, IndexOutOfBounds} from "./utils/Errors.js"
 
@@ -29,6 +30,8 @@ export {
     RedBlackTree,
     AVLTree,
     SplayTree,
+
+    BinarySearch,
 
     NotImplementedError,
     NotSupportedError,
