@@ -12,8 +12,9 @@ import redBlackTreeTest from "./data-structures/trees/RedBlackTree.test.js";
 import avlTreeTest from "./data-structures/trees/AVLTree.test.js";
 import splayTreeTest from "./data-structures/trees/splayTree.test.js";
 
-import binarySearchTest from "./algorithms/searching/BinarySearch.test.js";
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
+import binarySearchTest from "./algorithms/searching/BinarySearch.test.js";
+import interpolationSearchTest from "./algorithms/searching/InterpolationSearch.test.js";
 
 
 describe('All Tests', () =>{
@@ -32,4 +33,5 @@ describe('All Tests', () =>{
 
     linearSearchTest();
     binarySearchTest();
+    interpolationSearchTest();
 });
