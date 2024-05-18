@@ -13,6 +13,7 @@ import avlTreeTest from "./data-structures/trees/AVLTree.test.js";
 import splayTreeTest from "./data-structures/trees/splayTree.test.js";
 
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
+import jumpSearchTest from "./algorithms/searching/JumpSearch.test.js";
 import binarySearchTest from "./algorithms/searching/BinarySearch.test.js";
 import exponentialSearchTest from "./algorithms/searching/ExponentialSearch.test.js";
 import ternarySearchTest from "./algorithms/searching/TernarySearch.test.js";
@@ -35,6 +36,7 @@ describe('All Tests', () =>{
     splayTreeTest();
 
     linearSearchTest();
+    jumpSearchTest();
     binarySearchTest();
     exponentialSearchTest();
     ternarySearchTest();

@@ -15,6 +15,7 @@ import {SplayTree} from "./data-structures/trees/SplayTree.js";
 import {LinearSearch} from "./algorithms/searching/LinearSearch.js";
 import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
 import {ExponentialSearch} from "./algorithms/searching/ExponentialSearch.js";
+import {JumpSearch} from "./algorithms/searching/JumpSearch.js";
 import {TernarySearch} from "./algorithms/searching/TernarySearch.js";
 import {InterpolationSearch} from "./algorithms/searching/InterpolationSearch.js";
 import {FibonacciSearch} from "./algorithms/searching/FibonacciSearch.js";
@@ -37,6 +38,7 @@ export {
     SplayTree,
 
     LinearSearch,
+    JumpSearch,
     BinarySearch,
     ExponentialSearch,
     TernarySearch,
