@@ -20,7 +20,7 @@
     "SinglylinkedList", "DoublyLinkedList", "OrderedSinglyLinkedList", "OrderedDoublyLinkedList",
     "CircularSinglyLinkedList", "CircularDoublyLinkedList",
     "BinarySearchTree","AVLTree", "RedBlackTree", "SplayTree",
-    "LinearSearch","BinarySearch", "ExponentialSearch", "InterpolationSearch", "FibonacciSearch"
+    "LinearSearch","BinarySearch", "ExponentialSearch", "TernarySearch","InterpolationSearch", "FibonacciSearch"
   ],
   "repository": {
     "type": "git",
