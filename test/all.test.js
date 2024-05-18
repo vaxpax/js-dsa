@@ -10,7 +10,7 @@ import redBlackTreeTest from "./data-structures/trees/RedBlackTree.test.js";
 import avlTreeTest from "./data-structures/trees/AVLTree.test.js";
 import splayTreeTest from "./data-structures/trees/splayTree.test.js";
 
-import binarySearchTest from "./algorithms/BinarySearch.test.js";
+import binarySearchTest from "./algorithms/searching/BinarySearch.test.js";
 
 
 describe('All Tests', () =>{

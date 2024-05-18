@@ -1,7 +1,7 @@
 "use strict";
 
 import { assert } from "chai";
-import {BinarySearch} from "../../index.js"
+import {BinarySearch} from "../../../index.js"
 
 let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 23, 45, 76, 234, 567, 1234];
 let stringArray = ["Antony", "Beatris", "Cindy", "John", "Mark", "Nate", "Peter"]
