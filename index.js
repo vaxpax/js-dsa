@@ -13,6 +13,7 @@ import { AVLTree } from "./data-structures/trees/AVLTree.js";
 import { SplayTree } from "./data-structures/trees/SplayTree.js";
 
 import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
+import {LinearSearch} from "./algorithms/searching/LinearSearch.js";
 
 import { NotImplementedError, NotSupportedError, IndexOutOfBounds} from "./utils/Errors.js"
 
@@ -32,6 +33,7 @@ export {
     SplayTree,
 
     BinarySearch,
+    LinearSearch,
 
     NotImplementedError,
     NotSupportedError,

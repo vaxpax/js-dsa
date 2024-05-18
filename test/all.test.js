@@ -1,3 +1,5 @@
+"use strict";
+
 import singlyLinkedListTest from "./data-structures/linked-lists/SinglyLinkedList.test.js";
 import circularSinglyLinkedListTest from "./data-structures/linked-lists/CircularSinglyLinkedList.test.js";
 import orderedSinglyLinkedListTest from "./data-structures/linked-lists/OrderedSinglyLinkedList.test.js";
@@ -11,6 +13,7 @@ import avlTreeTest from "./data-structures/trees/AVLTree.test.js";
 import splayTreeTest from "./data-structures/trees/splayTree.test.js";
 
 import binarySearchTest from "./algorithms/searching/BinarySearch.test.js";
+import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
 
 
 describe('All Tests', () =>{
@@ -27,5 +30,6 @@ describe('All Tests', () =>{
     avlTreeTest();
     splayTreeTest();
 
+    linearSearchTest();
     binarySearchTest();
 });

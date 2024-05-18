@@ -11,7 +11,7 @@ import {defaultCompare} from "../../utils/Utils.js";
 class BinarySearch {
     /**
      * @class Creates a new BinarySearch algorithm instance.
-     * @param {array} array - array of object to search in
+     * @param {array} array - array of object to search in. Must be sorted array (ASC)
      * @param {function} [compare=defaultCompare] function to compare two objects in array
      * @alias BinarySearch
      */
