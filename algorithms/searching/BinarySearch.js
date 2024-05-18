@@ -11,7 +11,7 @@ import {defaultCompare} from "../../utils/Utils.js";
 class BinarySearch {
     /**
      * @class Creates a new BinarySearch algorithm instance.
-     * @param {array} array - array of object to search in. Must be sorted array (ASC)
+     * @param {array} array - array of objects to search in. Must be sorted array (ASC)
      * @param {function} [compare=defaultCompare] function to compare two objects in array
      * @alias BinarySearch
      */
@@ -26,8 +26,10 @@ class BinarySearch {
      * @return {number} index of object in array if found. Otherwise, returns -1
      */
     search(x) {
-        let low = 0;
-        let high = this.array.length - 1;
+        return this.searchAlgorithm(x, 0, this.array.length - 1);
+    }
+
+    searchAlgorithm(x, low, high) {
         let mid;
         while (low <= high) {
             mid = low + Math.floor((high -low) / 2);

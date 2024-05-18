@@ -19,8 +19,8 @@
     "data-structures", "algorithms", "javascript", "list", "tree",
     "SinglylinkedList", "DoublyLinkedList", "OrderedSinglyLinkedList", "OrderedDoublyLinkedList",
     "CircularSinglyLinkedList", "CircularDoublyLinkedList",
-    "AVLTree", "RedBlackTree", "SplayTree",
-    "LinearSearch","BinarySearch", "InterpolationSearch"
+    "BinarySearchTree","AVLTree", "RedBlackTree", "SplayTree",
+    "LinearSearch","BinarySearch", "ExponentialSearch", "InterpolationSearch", "FibonacciSearch"
   ],
   "repository": {
     "type": "git",
