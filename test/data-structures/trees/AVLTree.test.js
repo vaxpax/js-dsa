@@ -139,6 +139,6 @@ function isAVLTree(node) {
     return Math.abs(leftHeight - rightHeight) <= 1 && isAVLTree(node.left) && isAVLTree(node.right);
 }
 
-// describe('RedBlackTree', () => {
+// describe('AVLTree', () => {
 //     test();
 // });

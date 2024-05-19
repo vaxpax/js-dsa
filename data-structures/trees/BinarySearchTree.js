@@ -41,7 +41,7 @@ class BinarySearchTree {
     }
 
     /**
-     * @summary Remove all elements from the list.
+     * @summary Remove all elements from the tree.
      * @method
      * @instance
      */

@@ -21,6 +21,7 @@
     "SinglylinkedList", "DoublyLinkedList", "OrderedSinglyLinkedList", "OrderedDoublyLinkedList",
     "CircularSinglyLinkedList", "CircularDoublyLinkedList",
     "BinarySearchTree","AVLTree", "RedBlackTree", "SplayTree",
+    "Trie",
     "LinearSearch", "JumpSearch", "BinarySearch", "ExponentialSearch", "TernarySearch",
     "InterpolationSearch", "FibonacciSearch"
   ],

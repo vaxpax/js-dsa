@@ -1,5 +1,7 @@
 "use strict";
 
+/** @module AVLTree */
+
 import { defaultCompare } from "../../utils/Utils.js";
 import { BinarySearchTree } from "./BinarySearchTree.js";
 import { NotSupportedError } from "../../utils/Errors.js";
