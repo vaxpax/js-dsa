@@ -12,6 +12,8 @@ import redBlackTreeTest from "./data-structures/trees/RedBlackTree.test.js";
 import avlTreeTest from "./data-structures/trees/AVLTree.test.js";
 import splayTreeTest from "./data-structures/trees/SplayTree.test.js";
 
+import trieTest from "./data-structures/trie/Trie.test.js";
+
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
 import jumpSearchTest from "./algorithms/searching/JumpSearch.test.js";
 import binarySearchTest from "./algorithms/searching/BinarySearch.test.js";
@@ -34,6 +36,8 @@ describe('All Tests', () =>{
     redBlackTreeTest();
     avlTreeTest();
     splayTreeTest();
+
+    trieTest();
 
     linearSearchTest();
     jumpSearchTest();

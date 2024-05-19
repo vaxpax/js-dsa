@@ -12,6 +12,8 @@ import {RedBlackTree} from "./data-structures/trees/RedBlackTree.js";
 import {AVLTree} from "./data-structures/trees/AVLTree.js";
 import {SplayTree} from "./data-structures/trees/SplayTree.js";
 
+import {Trie} from "./data-structures/trie/Trie.js";
+
 import {LinearSearch} from "./algorithms/searching/LinearSearch.js";
 import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
 import {ExponentialSearch} from "./algorithms/searching/ExponentialSearch.js";
@@ -36,6 +38,8 @@ export {
     RedBlackTree,
     AVLTree,
     SplayTree,
+
+    Trie,
 
     LinearSearch,
     JumpSearch,
