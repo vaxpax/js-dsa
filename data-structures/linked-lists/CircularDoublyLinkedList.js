@@ -1,12 +1,11 @@
 "use strict";
 
-/** @module CircularDoublyLinkedList */
-
 import { Node } from "./DoublyLinkedList.js";
 
 /**
  * @summary Class representing CircularDoublyLinkedList
  * @classdesc
+ * @memberof linked-lists
  * */
 class CircularDoublyLinkedList {
     /**

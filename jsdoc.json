@@ -21,7 +21,13 @@
     "template": "./node_modules/clean-jsdoc-theme",
     "encoding": "utf8",
     "destination": "./docs/",
-    "recurse": true
+    "recurse": true,
+    "theme_opts": {
+      "default_theme": "dark",
+      "search": true,
+      "title": "UsingBytes.com",
+      "base_url": "file:///Users/pvan/Projects/usingbytes-dsa/docs/"
+    }
   },
   "plugins": [
     "plugins/markdown",
@@ -29,7 +35,10 @@
   ],
   "templates": {
     "cleverLinks": false,
-    "monospaceLinks": false
+    "monospaceLinks": false,
+    "default": {
+      "useLongnameInNav": true
+    }
   },
   "metadata": {
     "title": "usingbytes-dsa"

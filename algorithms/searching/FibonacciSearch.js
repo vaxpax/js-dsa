@@ -1,10 +1,9 @@
 "use strict";
 
-/** @module FibonacciSearch */
-
 /**
  * @summary Class encapsulating FibonacciSearch algorithm
  * @classdesc
+ * @memberof searching
  */
 class FibonacciSearch {
     /**

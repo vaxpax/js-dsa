@@ -1,10 +1,9 @@
 "use strict";
 
-/** @module queues */
-
 /**
  * @summary Class encapsulating Stack. Stack orders elements in LIFO manner.
  * @classdesc
+ * @memberof queues
  */
 class Stack {
     /**

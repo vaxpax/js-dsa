@@ -1,7 +1,5 @@
 "use strict";
 
-/** @module Errors */
-
 /**
  * @summary Class representing not implemented error. It is thrown if some method is not implemented in class
  */

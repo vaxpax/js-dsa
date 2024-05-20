@@ -1,7 +1,5 @@
 "use strict";
 
-/** @module Utils */
-
 /**
  * @summary
  * Default implementation of compare function

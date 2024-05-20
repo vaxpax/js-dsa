@@ -1,10 +1,11 @@
 "use strict";
 
-/** @module queues */
+/**@namespace queues*/
 
 /**
  * @summary Class encapsulating Queue. Queue orders elements in FIFO manner.
  * @classdesc
+ * @memberof queues
  */
 class Queue {
     /**

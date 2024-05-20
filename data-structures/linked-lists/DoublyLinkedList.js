@@ -1,7 +1,5 @@
 "use strict";
 
-/** @module DoublyLinkedList */
-
 class Node {
     constructor(data) {
         this.data = data;
@@ -13,6 +11,7 @@ class Node {
 /**
  * @summary Class representing DoublyLinkedList
  * @classdesc
+ * @memberof linked-lists
  * */
 class DoublyLinkedList {
     constructor() {

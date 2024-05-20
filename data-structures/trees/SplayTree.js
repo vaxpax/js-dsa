@@ -7,6 +7,7 @@ import { BinarySearchTree, TreeNodeWithParent } from "./BinarySearchTree.js";
  * @summary Class representing SplayTree
  * @classdesc
  * @extends BinarySearchTree
+ * @memberof trees
  * */
 class SplayTree extends BinarySearchTree {
     /**

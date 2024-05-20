@@ -1,5 +1,7 @@
 "use strict";
 
+/**@namespace trie*/
+
 class TrieNode {
     constructor() {
         this.children = new Map();
@@ -10,6 +12,7 @@ class TrieNode {
 /**
  * @summary Class representing Trie
  * @classdesc
+ * @memberof trie
  * */
 class Trie {
     /**

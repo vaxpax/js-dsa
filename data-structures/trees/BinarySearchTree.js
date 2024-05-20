@@ -1,8 +1,6 @@
 "use strict";
 
-/**
- * @module BinarySearchTree
- */
+/**@namespace trees*/
 
 import { defaultCompare } from "../../utils/Utils.js";
 import {TreeNode} from "./TreeNode.js";
@@ -17,7 +15,7 @@ class TreeNodeWithParent extends TreeNode {
 /**
  * @summary Class representing BinarySearchTree
  * @classdesc
- * @
+ * @memberof trees
  * */
 class BinarySearchTree {
     /**

@@ -1,12 +1,11 @@
 "use strict";
 
-/** @module LinearSearch */
-
 import {defaultCompare} from "../../utils/Utils.js";
 
 /**
  * @summary Class encapsulating LinearSearch algorithm
  * @classdesc
+ * @memberof searching
  */
 class LinearSearch {
     /**

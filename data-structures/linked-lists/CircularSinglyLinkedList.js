@@ -1,12 +1,11 @@
 "use strict";
 
-/** @module CircularSinglyLinkedList */
-
 import { Node } from "./SinglyLinkedList.js";
 
 /**
  * @summary Class representing CircularSinglyLinkedList
  * @classdesc
+ * @memberof linked-lists
  * */
 class CircularSinglyLinkedList {
     /**

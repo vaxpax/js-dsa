@@ -1,7 +1,5 @@
 "use strict";
 
-/** @module RedBlackTree */
-
 import {defaultCompare} from "../../utils/Utils.js";
 import {TreeNodeWithParent} from "./BinarySearchTree.js";
 import {NotSupportedError} from "../../utils/Errors.js";
@@ -16,6 +14,7 @@ class RedBlackTreeNode extends TreeNodeWithParent {
 /**
  * @summary Class representing RedBlackTree
  * @classdesc
+ * @memberof trees
  * */
 class RedBlackTree {
     /**

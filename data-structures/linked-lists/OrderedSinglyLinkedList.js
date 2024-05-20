@@ -1,8 +1,5 @@
 "use strict";
 
-/** @module OrderedSinglyLinkedList */
-
-
 import { SinglyLinkedList, Node } from "./SinglyLinkedList.js";
 import { defaultCompare, Order } from "../../utils/Utils.js";
 import { NotSupportedError } from "../../utils/Errors.js";
@@ -12,6 +9,7 @@ import { NotSupportedError } from "../../utils/Errors.js";
  * Class representing OrderedSinglyLinkedList
  * @classdesc
  * @inheritDoc
+ * @memberof linked-lists
  */
 class OrderedSinglyLinkedList extends SinglyLinkedList {
 

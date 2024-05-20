@@ -1,7 +1,5 @@
 "use strict";
 
-/** @module AVLTree */
-
 import { defaultCompare } from "../../utils/Utils.js";
 import { BinarySearchTree } from "./BinarySearchTree.js";
 import { NotSupportedError } from "../../utils/Errors.js";
@@ -22,6 +20,7 @@ class AVLTreeNode extends TreeNode {
  * @summary Class representing AVLTree
  * @classdesc
  * @extends BinarySearchTree
+ * @memberof trees
  * */
 class AVLTree extends BinarySearchTree {
     /**

@@ -1,12 +1,13 @@
 "use strict";
 
-/** @module BinarySearch */
+/**@namespace searching*/
 
 import {defaultCompare} from "../../utils/Utils.js";
 
 /**
  * @summary Class encapsulating BinarySearch algorithm
  * @classdesc
+ * @memberof searching
  */
 class BinarySearch {
     /**

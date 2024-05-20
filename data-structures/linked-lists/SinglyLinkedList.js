@@ -1,6 +1,6 @@
 "use strict";
 
-/** @module SinglyLinkedList */
+/**@namespace linked-lists*/
 
 class Node {
     constructor(data) {
@@ -13,6 +13,7 @@ class Node {
  * @summary
  * Class representing SinglyLinkedList
  * @classdesc
+ * @memberof lists
  * */
 class SinglyLinkedList {
     /**

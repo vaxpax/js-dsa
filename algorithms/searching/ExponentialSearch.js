@@ -1,13 +1,12 @@
 "use strict";
 
-/** @module ExponentialSearch */
-
 import {defaultCompare} from "../../utils/Utils.js";
 import {BinarySearch} from "./BinarySearch.js";
 
 /**
  * @summary Class encapsulating ExponentialSearch algorithm
  * @classdesc
+ * @memberof searching
  */
 class ExponentialSearch {
     /**

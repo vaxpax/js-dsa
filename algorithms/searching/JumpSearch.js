@@ -1,12 +1,11 @@
 "use strict";
 
-/** @module JumpSearch */
-
 import {defaultCompare} from "../../utils/Utils.js";
 
 /**
  * @summary Class encapsulating JumpSearch algorithm
  * @classdesc
+ * @memberof searching
  */
 class JumpSearch {
     /**

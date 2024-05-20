@@ -1,12 +1,11 @@
 "use strict";
 
-/** @module TernarySearch */
-
 import {defaultCompare} from "../../utils/Utils.js";
 
 /**
  * @summary Class encapsulating TernarySearch algorithm
  * @classdesc
+ * @memberof searching
  */
 class TernarySearch {
     /**

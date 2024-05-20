@@ -1,10 +1,9 @@
 "use strict";
 
-/** @module InterpolationSearch */
-
 /**
  * @summary Class encapsulating InterpolationSearch algorithm
  * @classdesc
+ * @memberof searching
  */
 class InterpolationSearch {
     /**

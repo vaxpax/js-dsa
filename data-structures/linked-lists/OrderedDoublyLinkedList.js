@@ -1,7 +1,5 @@
 "use strict";
 
-/** @module OrderedDoublyLinkedList */
-
 import { DoublyLinkedList, Node } from "./DoublyLinkedList.js";
 import { defaultCompare, Order } from "../../utils/Utils.js";
 import { NotSupportedError } from "../../utils/Errors.js";
@@ -11,6 +9,7 @@ import { NotSupportedError } from "../../utils/Errors.js";
  * Class representing DoublyLinkedList
  * @classdesc
  * @inheritDoc
+ * @memberof linked-lists
  */
 class OrderedDoublyLinkedList extends DoublyLinkedList {
     /**
