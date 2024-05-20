@@ -14,6 +14,8 @@ import splayTreeTest from "./data-structures/trees/SplayTree.test.js";
 
 import trieTest from "./data-structures/trie/Trie.test.js";
 
+import queueTest from "./data-structures/queues/Queue.test.js";
+
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
 import jumpSearchTest from "./algorithms/searching/JumpSearch.test.js";
 import binarySearchTest from "./algorithms/searching/BinarySearch.test.js";
@@ -38,6 +40,8 @@ describe('All Tests', () =>{
     splayTreeTest();
 
     trieTest();
+
+    queueTest();
 
     linearSearchTest();
     jumpSearchTest();
