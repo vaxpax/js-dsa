@@ -15,6 +15,7 @@ import {SplayTree} from "./data-structures/trees/SplayTree.js";
 import {Trie} from "./data-structures/trie/Trie.js";
 
 import {Queue} from "./data-structures/queues/Queue.js";
+import {Stack} from "./data-structures/queues/Stack.js";
 
 import {LinearSearch} from "./algorithms/searching/LinearSearch.js";
 import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
@@ -44,6 +45,7 @@ export {
     Trie,
 
     Queue,
+    Stack,
 
     LinearSearch,
     JumpSearch,
