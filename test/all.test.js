@@ -17,6 +17,7 @@ import trieTest from "./data-structures/trie/Trie.test.js";
 import queueTest from "./data-structures/queues/ArrayQueue.test.js";
 import stackTest from "./data-structures/queues/ArrayStack.test.js";
 import linkedListQueueTest from "./data-structures/queues/LinkedListQueue.test.js"
+import linkedListStackTest from "./data-structures/queues/LinkedListStack.test.js"
 
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
 import jumpSearchTest from "./algorithms/searching/JumpSearch.test.js";
@@ -46,6 +47,7 @@ describe('All Tests', () =>{
     queueTest();
     stackTest();
     linkedListQueueTest()
+    linkedListStackTest();
 
     linearSearchTest();
     jumpSearchTest();

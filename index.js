@@ -17,6 +17,7 @@ import {Trie} from "./data-structures/trie/Trie.js";
 import {ArrayQueue} from "./data-structures/queues/ArrayQueue.js";
 import {ArrayStack} from "./data-structures/queues/ArrayStack.js";
 import {LinkedListQueue} from "./data-structures/queues/LinkedListQueue.js";
+import {LinkedListStack} from "./data-structures/queues/LinkedListStack.js";
 
 import {LinearSearch} from "./algorithms/searching/LinearSearch.js";
 import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
@@ -48,6 +49,7 @@ export {
     ArrayQueue,
     ArrayStack,
     LinkedListQueue,
+    LinkedListStack,
 
     LinearSearch,
     JumpSearch,

@@ -223,6 +223,7 @@ class DoublyLinkedList {
             this.tail = this.tail.previous;
             this.tail.next = null
         }
+        return node.data;
     }
 
     /**

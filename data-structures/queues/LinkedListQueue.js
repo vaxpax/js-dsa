@@ -6,6 +6,7 @@ import {SinglyLinkedList} from "../linked-lists/SinglyLinkedList.js";
 
 /**
  * @summary Class encapsulating LinkedListQueue. LinkedListQueue orders elements in FIFO manner.
+ * As underlying data-structure SinglyLinkedList is used.
  * @classdesc
  * @memberof queues
  */
