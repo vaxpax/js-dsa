@@ -1,17 +1,17 @@
 "use strict";
 
-import {Queue} from "../../../index.js";
+import {ArrayQueue} from "../../../index.js";
 import {assert} from "chai";
 import {assertArrays} from "../../TestHelpers.js";
 
 export default function test() {
-    describe('Queue Tests', () => {
+    describe('ArrayQueue Tests', () => {
         it('create an empty queue', () => {
-            const queue = new Queue();
+            const queue = new ArrayQueue();
             assert.equal(queue.isEmpty(), true);
         });
         it('add, clear', () => {
-            const queue = new Queue();
+            const queue = new ArrayQueue();
             queue.add(1);
             queue.add(2);
             queue.add(3);
@@ -22,7 +22,7 @@ export default function test() {
             assert.equal(queue.isEmpty(), true);
         });
         it('insert, peek', () => {
-            const queue = new Queue();
+            const queue = new ArrayQueue();
             queue.add(1);
             queue.add(2);
             queue.add(4);
@@ -36,7 +36,7 @@ export default function test() {
             assert.equal(null, queue.peek());
         });
         it('remove', () => {
-            const queue = new Queue();
+            const queue = new ArrayQueue();
             queue.add(1);
             queue.add(2);
             queue.add(3);
@@ -49,6 +49,6 @@ export default function test() {
     });
 }
 
-// describe('Queue', () => {
+// describe('ArrayQueue', () => {
 //     test();
 // });

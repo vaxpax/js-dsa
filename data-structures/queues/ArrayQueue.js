@@ -1,14 +1,16 @@
 "use strict";
 
+/**@namespace queues*/
+
 /**
- * @summary Class encapsulating Stack. Stack orders elements in LIFO manner.
+ * @summary Class encapsulating ArrayQueue. ArrayQueue orders elements in FIFO manner.
  * @classdesc
  * @memberof queues
  */
-class Stack {
+class ArrayQueue {
     /**
-     * @class Creates a new Stack.
-     * @alias Stack
+     * @class Creates a new ArrayQueue.
+     * @alias ArrayQueue
      * @constructor
      */
     constructor() {
@@ -16,8 +18,8 @@ class Stack {
     }
 
     /**
-     * @summary Checks if stack is empty
-     * @return {boolean} true if stack is empty.
+     * @summary Checks if queue is empty
+     * @return {boolean} true if queue is empty.
      * @method
      * @instance
      */
@@ -26,7 +28,7 @@ class Stack {
     }
 
     /**
-     * @summary Removes all elements of the stack
+     * @summary Removes all elements of the queue
      * @method
      * @instance
      */
@@ -35,17 +37,17 @@ class Stack {
     }
 
     /**
-     * @summary Adds the specified element into this stack (to the top)
+     * @summary Adds the specified element into this queue (to the end)
      * @param {any}element - the element to add
      * @method
      * @instance
      */
-    push(element) {
+    add(element) {
         this.elements.push(element);
     }
 
     /**
-     * @summary Inserts the specified element, on specific index into this stack
+     * @summary Inserts the specified element, on specific index into this queue
      * @param {any} element - the element to add
      * @param {number} index - index where to insert an element
      * @method
@@ -56,21 +58,21 @@ class Stack {
     }
 
     /**
-     * @summary Removes the object at the top of this stack and returns that object
-     * @returns {any} head element if stack is not empty. Otherwise, returns null
+     * @summary Retrieves and removes the head of this queue
+     * @returns {any} head element if queue is not empty. Otherwise, returns null
      * @method
      * @instance
      */
-    pop() {
+    remove() {
         if (this.isEmpty()) {
             return null;
         }
-        return this.elements.pop();
+        return this.elements.shift();
     }
 
     /**
-     * @summary Looks at the object at the top of this stack without removing it from the stack
-     * @returns {any} head element if stack is not empty. Otherwise, returns null
+     * @summary Retrieves the head of this queue
+     * @returns {any} head element if queue is not empty. Otherwise, returns null
      * @method
      * @instance
      */
@@ -78,10 +80,10 @@ class Stack {
         if (this.isEmpty()) {
             return null;
         }
-        return this.elements[this.elements.length - 1];
+        return this.elements[0];
     }
 }
 
 export {
-    Stack
+    ArrayQueue
 }

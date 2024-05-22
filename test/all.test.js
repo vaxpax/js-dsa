@@ -14,8 +14,8 @@ import splayTreeTest from "./data-structures/trees/SplayTree.test.js";
 
 import trieTest from "./data-structures/trie/Trie.test.js";
 
-import queueTest from "./data-structures/queues/Queue.test.js";
-import stackTest from "./data-structures/queues/Stack.test.js";
+import queueTest from "./data-structures/queues/ArrayQueue.test.js";
+import stackTest from "./data-structures/queues/ArrayStack.test.js";
 
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
 import jumpSearchTest from "./algorithms/searching/JumpSearch.test.js";

@@ -1,17 +1,17 @@
 "use strict";
 
-import {Stack} from "../../../index.js";
+import {ArrayStack} from "../../../index.js";
 import {assert} from "chai";
 import {assertArrays} from "../../TestHelpers.js";
 
 export default function test() {
-    describe('Stack Tests', () => {
+    describe('ArrayStack Tests', () => {
         it('create an empty stack', () => {
-            const stack = new Stack();
+            const stack = new ArrayStack();
             assert.equal(stack.isEmpty(), true);
         });
         it('push, clear', () => {
-            const stack = new Stack();
+            const stack = new ArrayStack();
             stack.push(1);
             stack.push(2);
             stack.push(3);
@@ -22,7 +22,7 @@ export default function test() {
             assert.equal(stack.isEmpty(), true);
         });
         it('insert, peek', () => {
-            const stack = new Stack();
+            const stack = new ArrayStack();
             stack.push(1);
             stack.push(2);
             stack.push(4);
@@ -36,7 +36,7 @@ export default function test() {
             assert.equal(null, stack.peek());
         });
         it('pop', () => {
-            const stack = new Stack();
+            const stack = new ArrayStack();
             stack.push(1);
             stack.push(2);
             stack.push(3);
@@ -49,6 +49,6 @@ export default function test() {
     });
 }
 
-// describe('Stack', () => {
+// describe('ArrayStack', () => {
 //     test();
 // });
