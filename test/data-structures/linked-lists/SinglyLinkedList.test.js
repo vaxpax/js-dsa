@@ -2,7 +2,7 @@
 
 import { assert } from "chai";
 import { asserHeadAndTail, assertIterator, assertArrays } from "../../TestHelpers.js";
-import { SinglyLinkedList } from "../../../index.js";
+import { SinglyLinkedList} from "../../../index.js";
 
 export default function test() {
     describe('SinglyLinkedList Tests', () => {
@@ -114,6 +114,18 @@ export default function test() {
             assert.equal(list.indexOf(1), 11);
             assert.equal(list.lastIndexOf(1), 11);
             assert.equal(list.indexOf(2), 12);
+        });
+
+        it('insert', () => {
+            const list = new SinglyLinkedList();
+            list.insert(2, 0);
+            assertArrays([2], list.toArray());
+            list.insert(0, 0);
+            assertArrays([0, 2], list.toArray());
+            list.insert(1, 1);
+            assertArrays([0, 1, 2], list.toArray());
+            list.insert(3, 10);
+            assertArrays([0, 1, 2, 3], list.toArray());
         });
 
         it('toArray', () => {

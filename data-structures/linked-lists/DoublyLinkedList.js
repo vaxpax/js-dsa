@@ -96,6 +96,37 @@ class DoublyLinkedList {
     }
 
     /**
+     * @summary Inserting data to the list on given position. If position to be inserted is after list tail we will just
+     * append this data to the list
+     * @param {*} data to bi inserted
+     * @param {number} position on which to insert
+     * @method
+     * @instance
+     */
+    insert(data, position) {
+        let counter = position;
+        if (counter <= 0) {
+            this.addFirst(data);
+            return;
+        }
+        let current = this.head;
+        while(counter > 0) {
+            current = current.next;
+            counter--;
+            if (current === this.tail && counter > 0) {
+                this.append(data);
+                return;
+            }
+        }
+        let node = new Node(data);
+        let temp = current.previous;
+        node.previous = temp
+        node.next = current;
+        current.previous = node;
+        temp.next = node;
+    }
+
+    /**
      * @summary
      * To find index of first occurrence of the data in the List.
      * @param {*} data - The data to be found in the list

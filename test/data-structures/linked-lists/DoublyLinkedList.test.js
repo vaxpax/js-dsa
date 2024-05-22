@@ -130,6 +130,18 @@ export default function test() {
             assertArrays(array, list.toArray());
         });
 
+        it('insert', () => {
+            const list = new DoublyLinkedList();
+            list.insert(2, 0);
+            assertArrays([2], list.toArray());
+            list.insert(0, 0);
+            assertArrays([0, 2], list.toArray());
+            list.insert(1, 1);
+            assertArrays([0, 1, 2], list.toArray());
+            list.insert(3, 10);
+            assertArrays([0, 1, 2, 3], list.toArray());
+        });
+
         it('toArray, toArrayFromTail', () => {
             const list = new DoublyLinkedList();
             const array = [1, 5, 25, 125, 625]

@@ -100,6 +100,36 @@ class SinglyLinkedList {
     }
 
     /**
+     * @summary Inserting data to the list on given position. If position to be inserted is after list tail we will just
+     * append this data to the list
+     * @param {*} data to bi inserted
+     * @param {number} position on which to insert
+     * @method
+     * @instance
+     */
+    insert(data, position) {
+        let counter = position;
+        if (counter <= 0) {
+            this.addFirst(data);
+            return;
+        }
+        let current = this.head;
+        let previous = null;
+        while(counter > 0) {
+            previous = current;
+            current = current.next;
+            counter--;
+            if (current === this.tail && counter > 0) {
+                this.append(data);
+                return;
+            }
+        }
+        let node = new Node(data);
+        previous.next = node;
+        node.next = current;
+    }
+
+    /**
      * @summary
      * To find index of first occurrence of the data in the List.
      * @param {*} data - The data to be found in the list
