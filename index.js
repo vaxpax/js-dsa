@@ -21,6 +21,8 @@ import {LinkedListQueue} from "./data-structures/queues/LinkedListQueue.js";
 import {LinkedListStack} from "./data-structures/queues/LinkedListStack.js";
 import {LinkedListDeque} from "./data-structures/queues/LinkedListDeque.js";
 
+import {MaxHeap} from "./data-structures/heaps/MaxHeap.js";
+
 import {LinearSearch} from "./algorithms/searching/LinearSearch.js";
 import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
 import {ExponentialSearch} from "./algorithms/searching/ExponentialSearch.js";
@@ -54,6 +56,8 @@ export {
     LinkedListQueue,
     LinkedListStack,
     LinkedListDeque,
+
+    MaxHeap,
 
     LinearSearch,
     JumpSearch,

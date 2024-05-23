@@ -21,6 +21,8 @@ import linkedListQueueTest from "./data-structures/queues/LinkedListQueue.test.j
 import linkedListStackTest from "./data-structures/queues/LinkedListStack.test.js"
 import linkedListDequeTest from "./data-structures/queues/LinkedListDeque.test.js"
 
+import maxHeapTest from "./data-structures/heaps/MaxHeap.test.js"
+
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
 import jumpSearchTest from "./algorithms/searching/JumpSearch.test.js";
 import binarySearchTest from "./algorithms/searching/BinarySearch.test.js";
@@ -52,6 +54,8 @@ describe('All Tests', () =>{
     linkedListQueueTest();
     linkedListStackTest();
     linkedListDequeTest();
+
+    maxHeapTest();
 
     linearSearchTest();
     jumpSearchTest();
