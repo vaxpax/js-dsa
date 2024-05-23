@@ -19,6 +19,7 @@ import {ArrayStack} from "./data-structures/queues/ArrayStack.js";
 import {ArrayDeque} from "./data-structures/queues/ArrayDeque.js";
 import {LinkedListQueue} from "./data-structures/queues/LinkedListQueue.js";
 import {LinkedListStack} from "./data-structures/queues/LinkedListStack.js";
+import {LinkedListDeque} from "./data-structures/queues/LinkedListDeque.js";
 
 import {LinearSearch} from "./algorithms/searching/LinearSearch.js";
 import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
@@ -52,6 +53,7 @@ export {
     ArrayDeque,
     LinkedListQueue,
     LinkedListStack,
+    LinkedListDeque,
 
     LinearSearch,
     JumpSearch,
