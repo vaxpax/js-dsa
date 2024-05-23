@@ -40,11 +40,11 @@ export default function test() {
             queue.add(1);
             queue.add(2);
             queue.add(3);
-            assert.equal(1, queue.remove());
+            assert.equal(1, queue.poll());
             assertArrays([2,3], queue.elements.toArray());
 
             queue.clear();
-            assert.equal(null, queue.remove());
+            assert.equal(null, queue.poll());
         });
     });
 }

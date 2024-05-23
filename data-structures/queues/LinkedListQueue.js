@@ -66,7 +66,7 @@ class LinkedListQueue {
      * @method
      * @instance
      */
-    remove() {
+    poll() {
         return this.elements.remove();
     }
 

@@ -16,6 +16,7 @@ import {Trie} from "./data-structures/trie/Trie.js";
 
 import {ArrayQueue} from "./data-structures/queues/ArrayQueue.js";
 import {ArrayStack} from "./data-structures/queues/ArrayStack.js";
+import {ArrayDeque} from "./data-structures/queues/ArrayDeque.js";
 import {LinkedListQueue} from "./data-structures/queues/LinkedListQueue.js";
 import {LinkedListStack} from "./data-structures/queues/LinkedListStack.js";
 
@@ -48,6 +49,7 @@ export {
 
     ArrayQueue,
     ArrayStack,
+    ArrayDeque,
     LinkedListQueue,
     LinkedListStack,
 

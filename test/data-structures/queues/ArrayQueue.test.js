@@ -10,7 +10,7 @@ export default function test() {
             const queue = new ArrayQueue();
             assert.equal(queue.isEmpty(), true);
         });
-        it('add, clear', () => {
+        it('addFirst, addLast, clear', () => {
             const queue = new ArrayQueue();
             queue.add(1);
             queue.add(2);
@@ -35,16 +35,16 @@ export default function test() {
             queue.clear();
             assert.equal(null, queue.peek());
         });
-        it('remove', () => {
+        it('poll', () => {
             const queue = new ArrayQueue();
             queue.add(1);
             queue.add(2);
             queue.add(3);
-            assert.equal(1, queue.remove());
+            assert.equal(1, queue.poll());
             assertArrays([2,3], queue.elements);
 
             queue.clear();
-            assert.equal(null, queue.remove());
+            assert.equal(null, queue.poll());
         });
     });
 }

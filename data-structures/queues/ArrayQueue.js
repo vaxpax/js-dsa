@@ -63,7 +63,7 @@ class ArrayQueue {
      * @method
      * @instance
      */
-    remove() {
+    poll() {
         if (this.isEmpty()) {
             return null;
         }
