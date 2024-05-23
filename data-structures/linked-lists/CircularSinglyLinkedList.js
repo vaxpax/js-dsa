@@ -57,7 +57,7 @@ class CircularSinglyLinkedList {
      */
     append(data) {
         let node = new Node(data);
-        if (this.head == null) {
+        if (!this.head) {
             this.head = node;
             this.last = node;
             this.head.next = this.last;
@@ -87,7 +87,7 @@ class CircularSinglyLinkedList {
      * @returns {*|null} - Object if found, otherwise null
      */
     removeAt(index) {
-        if (this.head == null) {
+        if (!this.head) {
             return null;
         }
         if (this.head === this.head.next && index === 0) {
@@ -125,7 +125,7 @@ class CircularSinglyLinkedList {
      * @instance
      */
     removeData(data) {
-        if (this.head == null) {
+        if (!this.head) {
             return false;
         }
 
@@ -232,7 +232,7 @@ class CircularSinglyLinkedList {
      * @instance
      */
     indexOf(data) {
-        if (this.head == null) {
+        if (!this.head) {
             return -1;
         }
         let current = this.head;
@@ -262,7 +262,7 @@ class CircularSinglyLinkedList {
      * @instance
      */
     lastIndexOf(data) {
-        if (this.head == null) {
+        if (!this.head) {
             return -1;
         }
 
@@ -293,7 +293,7 @@ class CircularSinglyLinkedList {
      * @instance
      */
     set(index, data) {
-        if (this.head == null) {
+        if (!this.head) {
             return null;
         }
         let counter = 0;

@@ -262,7 +262,7 @@ class SinglyLinkedList {
             return false;
         }
 
-        if(previous == null) {  // we found it on head
+        if(!previous) {  // we found it on head
             if (this.tail === this.head) {
                 clear();
                 return true;

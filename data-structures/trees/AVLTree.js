@@ -59,7 +59,7 @@ class AVLTree extends BinarySearchTree {
     }
 
     getBalance(node) {
-        if (node === null) {
+        if (!node) {
             return 0;
         }
         return AVLTreeNode.height(node.left) - AVLTreeNode.height(node.right);
@@ -97,7 +97,7 @@ class AVLTree extends BinarySearchTree {
     }
 
     deleteNode(root, key) {
-        if (root === null) {
+        if (!root) {
             return root;
         }
 
@@ -106,14 +106,14 @@ class AVLTree extends BinarySearchTree {
         } else if (this.compare(key, root.key) > 0) {
             root.right = this.deleteNode(root.right, key);
         } else {
-            if ((root.left === null) || (root.right === null)) {
+            if (!root.left || !root.right) {
                 let temp;
-                if (root.left === null) {
+                if (!root.left) {
                     temp = root.right;
                 } else {
                     temp = root.left;
                 }
-                if (temp == null) {
+                if (!temp) {
                     temp = root;
                     root = null;
                 } else {
@@ -127,7 +127,7 @@ class AVLTree extends BinarySearchTree {
             }
         }
 
-        if (root == null) {
+        if (!root) {
             return root;
         }
 

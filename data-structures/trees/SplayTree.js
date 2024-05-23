@@ -33,7 +33,7 @@ class SplayTree extends BinarySearchTree {
         let y = null;
         let x = this.root;
 
-        while (x !== null) {
+        while (x) {
             y = x;
             if (this.compare(node.key, x.key) < 0) {
                 x = x.left;
@@ -44,7 +44,7 @@ class SplayTree extends BinarySearchTree {
 
         // y is parent of x
         node.parent = y;
-        if (y === null) {
+        if (!y) {
             this.root = node;
         } else if (this.compare(node.key, y.key) < 0) {
             y.left = node;
@@ -57,8 +57,8 @@ class SplayTree extends BinarySearchTree {
     }
 
     splay(node) {
-        while (node.parent !== null) {
-            if (node.parent.parent === null) {
+        while (node.parent) {
+            if (!node.parent.parent) {
                 if (node === node.parent.left) {
                     // zig rotation
                     this.rightRotate(node.parent);
@@ -89,11 +89,11 @@ class SplayTree extends BinarySearchTree {
     rightRotate(node) {
         let y = node.left;
         node.left = y.right;
-        if(y.right !== null) {
+        if(y.right) {
             y.right.parent = node;
         }
         y.parent = node.parent;
-        if(node.parent === null) { //x is root
+        if(!node.parent) { //x is root
             this.root = y;
         } else if(node === node.parent.right) { //x is left child
             node.parent.right = y;
@@ -108,11 +108,11 @@ class SplayTree extends BinarySearchTree {
     leftRotate(node) {
         let y = node.right;
         node.right = y.left;
-        if(y.left !== null) {
+        if(y.left) {
             y.left.parent = node;
         }
         y.parent = node.parent;
-        if(node.parent === null) { //x is root
+        if(!node.parent) { //x is root
             this.root = y;
         } else if(node === node.parent.left) { //x is left child
             node.parent.left = y;
@@ -139,7 +139,7 @@ class SplayTree extends BinarySearchTree {
     }
 
     findNode(node, key, splay) {
-        if (node === null) {
+        if (!node) {
             return null;
         }
 
@@ -174,7 +174,7 @@ class SplayTree extends BinarySearchTree {
     deleteNode(node) {
         let t, s;
         this.splay(node);
-        if (node.right !== null) {
+        if (node.right) {
             t = node.right;
             t.parent = null;
         } else {
@@ -193,11 +193,11 @@ class SplayTree extends BinarySearchTree {
     }
 
     join(s, t){
-        if (s === null) {
+        if (!s) {
             return t;
         }
 
-        if (t === null) {
+        if (!t) {
             return s;
         }
         let x = this.maxNode(s);

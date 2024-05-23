@@ -86,7 +86,7 @@ class OrderedDoublyLinkedList extends DoublyLinkedList {
             }
 
             // fix tail
-            if (current == null) {
+            if (!current) {
                 // previous is tail
                 this.tail = node;
             }

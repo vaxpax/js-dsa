@@ -27,7 +27,7 @@ class CircularDoublyLinkedList {
      */
     append(data) {
         let node = new Node(data);
-        if (this.head == null) {
+        if (!this.head) {
             this.head = node;
             this.last = node;
             this.head.next = node;
@@ -62,7 +62,7 @@ class CircularDoublyLinkedList {
      * @returns {*|null} - Object if found, otherwise null
      */
     removeAt(index) {
-        if (this.head == null) {
+        if (!this.head) {
             return null;
         }
         if (this.head === this.head.next && index === 0) {
@@ -101,7 +101,7 @@ class CircularDoublyLinkedList {
      * @instance
      */
     removeData(data) {
-        if (this.head == null) {
+        if (!this.head) {
             return false;
         }
 
@@ -234,7 +234,7 @@ class CircularDoublyLinkedList {
      * @instance
      */
     indexOf(data) {
-        if (this.head == null) {
+        if (!this.head) {
             return -1;
         }
         let current = this.head;
@@ -264,7 +264,7 @@ class CircularDoublyLinkedList {
      * @instance
      */
     lastIndexOf(data) {
-        if (this.head == null) {
+        if (!this.head) {
             return -1;
         }
 
@@ -295,7 +295,7 @@ class CircularDoublyLinkedList {
      * @instance
      */
     set(index, data) {
-        if (this.head == null) {
+        if (!this.head) {
             return null;
         }
         let counter = 0;

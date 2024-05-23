@@ -70,7 +70,7 @@ class BinarySearchTree {
     }
 
     insertKey(node, parent, key) {
-        if (node === null) {
+        if (!node) {
             node = new TreeNodeWithParent(key);
             node.parent = parent;
             return node;
@@ -139,7 +139,7 @@ class BinarySearchTree {
     }
 
     searchNode(node, key) {
-        if (node == null || key === node.key) {
+        if (!node || key === node.key) {
             return node;
         }
         if (this.compare(key, node.key) < 0 ) {
@@ -154,7 +154,7 @@ class BinarySearchTree {
      * @returns {*|null} node with minimal key in tree. If tree is empty it return null;
      */
     min() {
-        if (this.root == null) {
+        if (!this.root) {
             return null;
         }
         return this.minNode(this.root);
@@ -173,7 +173,7 @@ class BinarySearchTree {
      * @method
      */
     max() {
-        if (this.root == null) {
+        if (!this.root) {
             return null;
         }
         return this.maxNode(this.root);
@@ -238,9 +238,9 @@ class BinarySearchTree {
     }
 
     deleteNode(node) {
-        if (node.left === null) {
+        if (!node.left) {
             this.transplant(node, node.right);
-        } else if (node.right === null) {
+        } else if (!node.right) {
             this.transplant(node, node.left)
         } else {
             let temp = this.minNode(node.right);
@@ -256,14 +256,14 @@ class BinarySearchTree {
     }
 
     transplant(x, y) {
-        if (x.parent === null) {
+        if (!x.parent) {
             this.root = y;
         } else if (x === x.parent.left) {
             x.parent.left = y;
         } else {
             x.parent.right = y;
         }
-        if (y !== null) {
+        if (y) {
             y.parent = x.parent
         }
     }

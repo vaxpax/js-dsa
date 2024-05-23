@@ -114,7 +114,7 @@ class RedBlackTree {
         while (node.parent.color === Color.RED){
             if (node.parent === node.parent.parent.left) {
                 y = node.parent.parent.right;
-                if (y !== null && y.color === Color.RED) {
+                if (y && y.color === Color.RED) {
                     node.parent.color = Color.BLACK;
                     y.color = Color.BLACK;
                     node.parent.parent.color = Color.RED;
@@ -130,7 +130,7 @@ class RedBlackTree {
                 }
             } else {
                 y = node.parent.parent.left;
-                if (y!== null && y.color === Color.RED) {
+                if (y && y.color === Color.RED) {
                     node.parent.color = Color.BLACK;
                     y.color = Color.BLACK;
                     node.parent.parent.color = Color.RED;

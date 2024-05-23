@@ -94,7 +94,7 @@ class OrderedSinglyLinkedList extends SinglyLinkedList {
             }
 
             // fix tail
-            if (current == null) {
+            if (!current) {
                 // previous is tail
                 this.tail = node;
             }
