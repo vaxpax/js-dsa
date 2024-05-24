@@ -34,6 +34,7 @@ import interpolationSearchTest from "./algorithms/searching/InterpolationSearch.
 import fibonacciSearchTest from "./algorithms/searching/FibonacciSearch.test.js";
 
 import primeTest from "./algorithms/number-theoretical/Prime.test.js";
+import gcdTest from "./algorithms/number-theoretical/GCD.test.js";
 
 describe('All Tests', () =>{
     singlyLinkedListTest();
@@ -71,4 +72,5 @@ describe('All Tests', () =>{
     fibonacciSearchTest();
 
     primeTest();
+    gcdTest();
 });

@@ -34,6 +34,7 @@ import {InterpolationSearch} from "./algorithms/searching/InterpolationSearch.js
 import {FibonacciSearch} from "./algorithms/searching/FibonacciSearch.js";
 
 import {Prime} from "./algorithms/number-theoretical/Prime.js";
+import {GCD} from "./algorithms/number-theoretical/GCD.js";
 
 import { NotImplementedError, NotSupportedError, IndexOutOfBounds} from "./utils/Errors.js"
 
@@ -75,6 +76,7 @@ export {
     FibonacciSearch,
 
     Prime,
+    GCD,
 
     NotImplementedError,
     NotSupportedError,

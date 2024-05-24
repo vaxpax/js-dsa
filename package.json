@@ -1,6 +1,6 @@
 {
   "name": "usingbytes-dsa",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
     "Heap", "MaxHeap", "MinHeap",
     "LinearSearch", "JumpSearch", "BinarySearch", "ExponentialSearch", "TernarySearch",
     "InterpolationSearch", "FibonacciSearch",
-    "Prime"
+    "Prime", "GCD", "Greatest Common Divisor"
   ],
   "repository": {
     "type": "git",
