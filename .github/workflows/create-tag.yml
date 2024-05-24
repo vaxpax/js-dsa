@@ -12,9 +12,10 @@ jobs:
           sparse-checkout: |
             package.json
           sparse-checkout-cone-mode: false
-      - uses: jaywcjlove/github-action-package@v2.0.0
-      - run: echo "steps - ${{ steps }}"
-      - run: echo "info - ${{ steps.info }}"
-      - run: echo "version - ${{ steps.info.outputs }}"      
-      - run: echo "version - ${{ steps.info.outputs.version }}"
-            
+      - name: package.json info
+        id: info
+        uses: jaywcjlove/github-action-package@main
+          - run: echo "name - ${{ steps.info.outputs.name }}"
+          - run: echo "version - ${{ steps.info.outputs.version }}"
+          - run: echo "description - ${{ steps.info.outputs.description }}"
+          - run: echo "author - ${{ steps.info.outputs.author }}"            
