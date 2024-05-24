@@ -20,6 +20,7 @@ import dequeTest from "./data-structures/queues/ArrayDeque.test.js";
 import linkedListQueueTest from "./data-structures/queues/LinkedListQueue.test.js"
 import linkedListStackTest from "./data-structures/queues/LinkedListStack.test.js"
 import linkedListDequeTest from "./data-structures/queues/LinkedListDeque.test.js"
+import priorityQueueTest from "./data-structures/queues/PriorityQueue.test.js"
 
 import maxHeapTest from "./data-structures/heaps/MaxHeap.test.js"
 import minHeapTest from "./data-structures/heaps/MinHeap.test.js"
@@ -54,6 +55,7 @@ describe('All Tests', () =>{
     linkedListQueueTest();
     linkedListStackTest();
     linkedListDequeTest();
+    priorityQueueTest();
 
     maxHeapTest();
     minHeapTest();

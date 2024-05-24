@@ -31,7 +31,7 @@ class MaxHeap {
     }
 
     /**
-     * @summary Pushes an element to the heap
+     * @summary Check if heap is empty
      * @returns {boolean} True if heap i empty
      * @method
      * @instance
@@ -66,7 +66,6 @@ class MaxHeap {
         this.heap.pop();
         this._heapifyDown(0);
         return root;
-
     }
 
     /**

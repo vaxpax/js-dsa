@@ -20,6 +20,7 @@ import {ArrayDeque} from "./data-structures/queues/ArrayDeque.js";
 import {LinkedListQueue} from "./data-structures/queues/LinkedListQueue.js";
 import {LinkedListStack} from "./data-structures/queues/LinkedListStack.js";
 import {LinkedListDeque} from "./data-structures/queues/LinkedListDeque.js";
+import {PriorityQueue, PriorityQueueType} from "./data-structures/queues/PriorityQueue.js";
 
 import {MaxHeap} from "./data-structures/heaps/MaxHeap.js";
 import {MinHeap} from "./data-structures/heaps/MinHeap.js";
@@ -57,6 +58,8 @@ export {
     LinkedListQueue,
     LinkedListStack,
     LinkedListDeque,
+    PriorityQueue,
+    PriorityQueueType,
 
     MaxHeap,
     MinHeap,
