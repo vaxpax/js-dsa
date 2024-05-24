@@ -22,6 +22,7 @@ import {LinkedListStack} from "./data-structures/queues/LinkedListStack.js";
 import {LinkedListDeque} from "./data-structures/queues/LinkedListDeque.js";
 
 import {MaxHeap} from "./data-structures/heaps/MaxHeap.js";
+import {MinHeap} from "./data-structures/heaps/MinHeap.js";
 
 import {LinearSearch} from "./algorithms/searching/LinearSearch.js";
 import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
@@ -58,6 +59,7 @@ export {
     LinkedListDeque,
 
     MaxHeap,
+    MinHeap,
 
     LinearSearch,
     JumpSearch,

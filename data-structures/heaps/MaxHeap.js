@@ -30,6 +30,12 @@ class MaxHeap {
         }
     }
 
+    /**
+     * @summary Pushes an element to the heap
+     * @returns {boolean} True if heap i empty
+     * @method
+     * @instance
+     */
     isEmpty() {
         return this.heap.length === 0;
     }

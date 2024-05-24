@@ -22,6 +22,7 @@ import linkedListStackTest from "./data-structures/queues/LinkedListStack.test.j
 import linkedListDequeTest from "./data-structures/queues/LinkedListDeque.test.js"
 
 import maxHeapTest from "./data-structures/heaps/MaxHeap.test.js"
+import minHeapTest from "./data-structures/heaps/MinHeap.test.js"
 
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
 import jumpSearchTest from "./algorithms/searching/JumpSearch.test.js";
@@ -30,7 +31,6 @@ import exponentialSearchTest from "./algorithms/searching/ExponentialSearch.test
 import ternarySearchTest from "./algorithms/searching/TernarySearch.test.js";
 import interpolationSearchTest from "./algorithms/searching/InterpolationSearch.test.js";
 import fibonacciSearchTest from "./algorithms/searching/FibonacciSearch.test.js";
-
 
 describe('All Tests', () =>{
     singlyLinkedListTest();
@@ -56,6 +56,7 @@ describe('All Tests', () =>{
     linkedListDequeTest();
 
     maxHeapTest();
+    minHeapTest();
 
     linearSearchTest();
     jumpSearchTest();

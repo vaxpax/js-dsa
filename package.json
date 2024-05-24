@@ -1,6 +1,6 @@
 {
   "name": "usingbytes-dsa",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,7 @@
     "Queue", "Stack", "Deque",
     "ArrayQueue", "ArrayStack", "ArrayDeque",
     "LinkedListQueue", "LinkedListStack", "LinkedListDeque",
-    "Heap", "MaxHeap",
+    "Heap", "MaxHeap", "MinHeap",
     "LinearSearch", "JumpSearch", "BinarySearch", "ExponentialSearch", "TernarySearch",
     "InterpolationSearch", "FibonacciSearch"
   ],
