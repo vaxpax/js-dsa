@@ -10,23 +10,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: npm ci
-      - run: npm test
+    - uses: ./.github/workflows/all_test.yml
+      # - uses: actions/checkout@v4
+      # - uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 22
+      # - run: npm ci
+      # - run: npm test
 
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN_NO_2FA}}
+  # make-tag:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: ./.github/workflows/create-tag.yml
+  
+
+  # publish-npm:
+  #   needs: make-tag
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 22
+  #         registry-url: https://registry.npmjs.org/
+  #     - run: npm ci
+  #     - run: npm publish
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN_NO_2FA}}
