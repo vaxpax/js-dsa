@@ -14,15 +14,21 @@ jobs:
           sparse-checkout: |
             package.json
           sparse-checkout-cone-mode: false
-      # read package.json
+      # Read package.json
       - name: package.json info
         id: info
         uses: jaywcjlove/github-action-package@main
-      
-      - run: echo "name - ${{ steps.info.outputs.name }}"
+      # Print out version
       - run: echo "version - ${{ steps.info.outputs.version }}"
-      - run: echo "description - ${{ steps.info.outputs.description }}"
-      - run: echo "author - ${{ steps.info.outputs.author }}"
+      #Create and push tag
+      - uses: rickstaa/action-create-tag@v1
+        id: "tag_create"
+        with:
+          tag: ${{ steps.info.outputs.version }}
+          tag_exists_error: false
+          message: "Latest release"
+      
+
 
 
 
