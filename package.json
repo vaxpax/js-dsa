@@ -24,7 +24,7 @@
     "Trie",
     "Queue", "Stack", "Deque",
     "ArrayQueue", "ArrayStack", "ArrayDeque",
-    "LinkedListQueue", "LinkedListStack", "LinkedListDeque",
+    "LinkedListQueue", "LinkedListStack", "LinkedListDeque", "PriorityQueue",
     "Heap", "MaxHeap", "MinHeap",
     "LinearSearch", "JumpSearch", "BinarySearch", "ExponentialSearch", "TernarySearch",
     "InterpolationSearch", "FibonacciSearch"
