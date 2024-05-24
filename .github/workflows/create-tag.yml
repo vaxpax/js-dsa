@@ -1,0 +1,12 @@
+name: Create npm package version tag
+
+on:
+  workflow_dispatch:
+
+jobs:
+  make-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jaywcjlove/github-action-package@v2.0.0
+      - run: echo "version - ${{ steps.info.outputs.version }}"
+            
