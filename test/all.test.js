@@ -33,6 +33,8 @@ import ternarySearchTest from "./algorithms/searching/TernarySearch.test.js";
 import interpolationSearchTest from "./algorithms/searching/InterpolationSearch.test.js";
 import fibonacciSearchTest from "./algorithms/searching/FibonacciSearch.test.js";
 
+import primeTest from "./algorithms/number-theoretical/Prime.test.js";
+
 describe('All Tests', () =>{
     singlyLinkedListTest();
     circularSinglyLinkedListTest();
@@ -67,4 +69,6 @@ describe('All Tests', () =>{
     ternarySearchTest();
     interpolationSearchTest();
     fibonacciSearchTest();
+
+    primeTest();
 });

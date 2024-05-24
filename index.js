@@ -33,6 +33,8 @@ import {TernarySearch} from "./algorithms/searching/TernarySearch.js";
 import {InterpolationSearch} from "./algorithms/searching/InterpolationSearch.js";
 import {FibonacciSearch} from "./algorithms/searching/FibonacciSearch.js";
 
+import {Prime} from "./algorithms/number-theoretical/Prime.js";
+
 import { NotImplementedError, NotSupportedError, IndexOutOfBounds} from "./utils/Errors.js"
 
 import { defaultCompare, Order} from "./utils/Utils.js";
@@ -71,6 +73,8 @@ export {
     TernarySearch,
     InterpolationSearch,
     FibonacciSearch,
+
+    Prime,
 
     NotImplementedError,
     NotSupportedError,
