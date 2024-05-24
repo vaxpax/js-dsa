@@ -7,6 +7,11 @@ jobs:
   make-tag:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4.1.6
+        with:
+          sparse-checkout: |
+            package.json
+          sparse-checkout-cone-mode: false
       - uses: jaywcjlove/github-action-package@v2.0.0
       - run: echo "version - ${{ steps.info.outputs.version }}"
             
