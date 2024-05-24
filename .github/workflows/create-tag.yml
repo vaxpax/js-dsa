@@ -7,15 +7,24 @@ jobs:
   make-tag:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.6
+      # This step checks out a copy of your repository.
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.6
         with:
           sparse-checkout: |
             package.json
           sparse-checkout-cone-mode: false
+      # read package.json
       - name: package.json info
         id: info
         uses: jaywcjlove/github-action-package@main
-          - run: echo "name - ${{ steps.info.outputs.name }}"
-          - run: echo "version - ${{ steps.info.outputs.version }}"
-          - run: echo "description - ${{ steps.info.outputs.description }}"
-          - run: echo "author - ${{ steps.info.outputs.author }}"            
+      
+      - run: echo "name - ${{ steps.info.outputs.name }}"
+      - run: echo "version - ${{ steps.info.outputs.version }}"
+      - run: echo "description - ${{ steps.info.outputs.description }}"
+      - run: echo "author - ${{ steps.info.outputs.author }}"
+
+
+
+
+            
