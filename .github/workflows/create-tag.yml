@@ -13,5 +13,8 @@ jobs:
             package.json
           sparse-checkout-cone-mode: false
       - uses: jaywcjlove/github-action-package@v2.0.0
+      - run: echo "steps - ${{ steps }}"
+      - run: echo "info - ${{ steps.info }}"
+      - run: echo "version - ${{ steps.info.outputs }}"      
       - run: echo "version - ${{ steps.info.outputs.version }}"
             
