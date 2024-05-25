@@ -7,9 +7,9 @@
  */
 class Prime {
     /**
-     * @summary Cehcks if number is prime
+     * @summary Checks if number is prime
      * @param {number} number Number to check if it is prime
-     * @returns {boolean} True is number is prime, otherwise returns false
+     * @returns {boolean} True if number is prime, otherwise returns false
      * @static
      */
     static isPrime(number) {
