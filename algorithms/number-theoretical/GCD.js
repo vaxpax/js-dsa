@@ -34,13 +34,13 @@ class GCD {
         if (b === 0) {
             return a;
         }
-        return GCD.calculateEuclid(b, Math.abs(a-b));
+        return GCD.calculateEuclid(b, a % b);
     }
 
     /**
      * @summary Calculate greatest common divisor for array of numbers
      * @param {array} numbers Array of numbers to calculate GDC
-     * @returns {number} GDC of array of numbers
+     * @returns {number} GDC of an array of numbers
      * @static
      */
     static calculateForArray(numbers) {
