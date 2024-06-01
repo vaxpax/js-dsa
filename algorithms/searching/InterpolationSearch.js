@@ -44,7 +44,6 @@ class InterpolationSearch {
             }
             lowPrevious = low;
             highPrevious = high;
-            //console.log("position: " + position + " low: " + low + " high: " + high);
         }
         return -1;
     }

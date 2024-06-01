@@ -52,8 +52,9 @@ class FibonacciSearch {
             }
         }
 
-        if (fibN1 === 1 && this.array[this.array.length-1] === x)
+        if (fibN1 === 1 && this.array[this.array.length-1] === x) {
             return this.array.length - 1;
+        }
 
         return -1;
     }
