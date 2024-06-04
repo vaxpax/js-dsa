@@ -136,8 +136,6 @@ class AVLTree extends BinarySearchTree {
 
     balance(node) {
         node.height = 1 + Math.max(AVLTreeNode.height(node.left), AVLTreeNode.height(node.right));
-        const balance = this.getBalance(node);
-
         if (this.getBalance(node) > 1) {
             if (this.getBalance(node.left) < 0) {
                 node.left = this.leftRotate(node.left);
