@@ -4,6 +4,7 @@
 
 import { defaultCompare } from "../../utils/Utils.js";
 import {TreeNode} from "./TreeNode.js";
+import {ArrayQueue} from "../queues/ArrayQueue.js";
 
 class TreeNodeWithParent extends TreeNode {
     constructor(key) {
@@ -83,49 +84,6 @@ class BinarySearchTree {
         return node;
     }
 
-    /**
-     * @summary Dumps tree keys into array (ordered ASC)
-     * @returns {array}
-     * @instance
-     * @method
-     */
-    toInOrderArray() {
-        const array = [];
-        if (this.root != null) {
-            this.inOrderTreeWalk(this.root, array);
-        }
-        return  array;
-    }
-
-    inOrderTreeWalk(node, array) {
-        if (node != null) {
-            this.inOrderTreeWalk(node.left, array);
-            array.push(node.key);
-            this.inOrderTreeWalk(node.right, array);
-        }
-    }
-
-    /**
-     * @summary Dumps tree keys into array (ordered DESC)
-     * @returns {array}
-     * @instance
-     * @method
-     */
-    toReverseOrderArray() {
-        const array = [];
-        if (this.root != null) {
-            this.reverseOrderTreeWalk(this.root, array);
-        }
-        return  array;
-    }
-
-    reverseOrderTreeWalk(node, array) {
-        if (node != null) {
-            this.reverseOrderTreeWalk(node.right, array);
-            array.push(node.key);
-            this.reverseOrderTreeWalk(node.left, array);
-        }
-    }
 
     /**
      * @summary Search for node.
@@ -265,6 +223,86 @@ class BinarySearchTree {
         }
         if (y) {
             y.parent = x.parent
+        }
+    }
+
+    /**
+     * @summary Dumps tree keys into array (ordered ASC)
+     * @returns {array}
+     * @instance
+     * @method
+     */
+    toSortedArray() {
+        const array = [];
+        if (this.root != null) {
+            this.inorderTraverse(this.root, key => array.push(key));
+        }
+        return  array;
+    }
+
+    /**
+     * @summary Dumps tree keys into array (ordered DESC)
+     * @returns {array}
+     * @instance
+     * @method
+     */
+    toReverseArray() {
+        const array = [];
+        if (this.root != null) {
+            this.inorderTraverseReversed(this.root, key => array.push(key));
+        }
+        return  array;
+    }
+
+    inorderTraverse(node, onNodeVisit) {
+        if (node === null) {
+            return;
+        }
+        this.inorderTraverse(node.left, onNodeVisit);
+        onNodeVisit(node.key);
+        this.inorderTraverse(node.right, onNodeVisit);
+    }
+
+    inorderTraverseReversed(node, onNodeVisit) {
+        if (node === null) {
+            return;
+        }
+        this.inorderTraverseReversed(node.right, onNodeVisit);
+        onNodeVisit(node.key);
+        this.inorderTraverseReversed(node.left, onNodeVisit);
+    }
+
+    preorderTraverse(node, onNodeVisit) {
+        if (node === null) {
+            return;
+        }
+        onNodeVisit(node.key);
+        this.preorderTraverse(node.left, onNodeVisit);
+        this.preorderTraverse(node.right, onNodeVisit);
+    }
+
+    postorderTraverse(node, onNodeVisit) {
+        if (node === null) {
+            return;
+        }
+        this.postorderTraverse(node.left, onNodeVisit);
+        this.postorderTraverse(node.right, onNodeVisit);
+        onNodeVisit(node.key);
+    }
+
+    breadthFirstSearch(onNodeVisit) {
+        const queue = new ArrayQueue();
+        queue.add(this.root);
+        while(!queue.isEmpty()) {
+            const temp = queue.poll();
+            onNodeVisit(temp.key);
+
+            if (temp.left !== null) {
+                queue.add(temp.left);
+            }
+            if (temp.right !== null) {
+                queue.add(temp.right);
+            }
         }
     }
 }

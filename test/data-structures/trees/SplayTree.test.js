@@ -33,8 +33,8 @@ export default function test() {
             assert.equal(tree.isEmpty(), false);
             assert.equal(tree.root.key, 1);
             array.sort((a, b) => a - b);
-            assertArrays(array, tree.toInOrderArray());
-            assertArrays(array.reverse(), tree.toReverseOrderArray());
+            assertArrays(array, tree.toSortedArray());
+            assertArrays(array.reverse(), tree.toReverseArray());
         });
         it('search', () => {
             const tree = new SplayTree();
@@ -109,22 +109,22 @@ export default function test() {
             tree.delete(17);
             array.pop();
             array.sort((a, b) => a - b);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
 
             tree.delete(1000);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
 
             array.splice(array.indexOf(5), 1);
             tree.delete(5);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
 
             array.splice(array.indexOf(100), 1);
             tree.delete(100);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
 
             array.splice(array.indexOf(8), 1);
             tree.delete(8);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
         });
     });
 }

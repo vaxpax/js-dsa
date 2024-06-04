@@ -21,15 +21,15 @@ export default function test() {
             tree.clear();
             assert.equal(tree.isEmpty(), true);
         });
-        it('insertAll, toInOrderArray, toReverseOrderArray', () => {
+        it('insertAll, toArray, toReverseArray', () => {
             const tree = new BinarySearchTree();
             const array = [4, 5, 2, 3, 6, 1];
             tree.insertAll(array);
             assert.equal(tree.isEmpty(), false);
             assert.equal(tree.root.key, 4);
             array.sort((a, b) => a - b);
-            assertArrays(array, tree.toInOrderArray());
-            assertArrays(array.reverse(), tree.toReverseOrderArray());
+            assertArrays(array, tree.toSortedArray());
+            assertArrays(array.reverse(), tree.toReverseArray());
         });
 
         it('search', () => {
@@ -105,26 +105,50 @@ export default function test() {
             tree.delete(17);
             array.pop();
             array.sort((a, b) => a - b);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
 
             tree.delete(1000);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
 
             array.splice(array.indexOf(5), 1);
             tree.delete(5);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
 
             array.splice(array.indexOf(100), 1);
             tree.delete(100);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
 
             array.splice(array.indexOf(8), 1);
             tree.delete(8);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
+        });
+        it('preorderTraverse', () => {
+            const tree = new BinarySearchTree();
+            const array = [4, 5, 2, 3, 6, 1];
+            tree.insertAll(array);
+            const arrayIncreased = [];
+            tree.preorderTraverse(tree.root, key => arrayIncreased.push(key+1));
+            assertArrays([5, 6, 3, 4, 7, 2].sort(), arrayIncreased.sort());
+        });
+        it('postorderTraverse', () => {
+            const tree = new BinarySearchTree();
+            const array = [4, 5, 2, 3, 6, 1];
+            tree.insertAll(array);
+            const arrayIncreased = [];
+            tree.postorderTraverse(tree.root, key => arrayIncreased.push(key+1));
+            assertArrays([5, 6, 3, 4, 7, 2].sort(), arrayIncreased.sort());
+        });
+        it('breadthFirstSearch', () => {
+            const tree = new BinarySearchTree();
+            const array = [4, 5, 2, 3, 6, 1];
+            tree.insertAll(array);
+            const array2 = [];
+            tree.breadthFirstSearch(key => array2.push(key));
+            assertArrays(array.sort(), array2.sort());
         });
     });
 }
 
-// describe('SinglyLinkedList', () => {
+// describe('BinarySearchTree', () => {
 //      test();
 //  });

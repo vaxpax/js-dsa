@@ -30,7 +30,7 @@ export default function test() {
             assert.equal(tree.isEmpty(), false);
             assert.equal(isAVLTree(tree.root), true);
             array.sort((a, b) => a - b);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
         });
         it('insertAll', () => {
             const tree = new AVLTree();
@@ -38,9 +38,9 @@ export default function test() {
             tree.insertAll(array);
             assert.equal(isAVLTree(tree.root), true);
             array.sort((a, b) => a - b);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             array.reverse();
-            assertArrays(array, tree.toReverseOrderArray());
+            assertArrays(array, tree.toReverseArray());
         });
         it('min', () => {
             const tree = new AVLTree();
@@ -94,36 +94,36 @@ export default function test() {
 
             tree.delete(18);
             array.splice(array.indexOf(18), 1);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isAVLTree(tree.root), true);
 
             tree.delete(1000);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isAVLTree(tree.root), true);
 
             tree.delete(100);
             array.splice(array.indexOf(100), 1);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isAVLTree(tree.root), true);
 
             tree.delete(78);
             array.splice(array.indexOf(78), 1);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isAVLTree(tree.root), true);
 
             tree.delete(9);
             array.splice(array.indexOf(9), 1);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isAVLTree(tree.root), true);
 
             tree.delete(4);
             array.splice(array.indexOf(4), 1);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isAVLTree(tree.root), true);
 
             tree.delete(5);
             array.splice(array.indexOf(5), 1);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isAVLTree(tree.root), true);
         });
 
