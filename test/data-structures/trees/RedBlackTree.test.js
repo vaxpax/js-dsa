@@ -30,7 +30,7 @@ export default function test() {
             assert.equal(tree.isEmpty(), false);
             assert.equal(isRedBlackTree(tree), true);
             array.sort((a, b) => a - b);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
         });
         it('insertAll', () => {
             const tree = new RedBlackTree();
@@ -38,9 +38,9 @@ export default function test() {
             tree.insertAll(array);
             assert.equal(isRedBlackTree(tree), true);
             array.sort((a, b) => a - b);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             array.reverse();
-            assertArrays(array, tree.toReverseOrderArray());
+            assertArrays(array, tree.toReverseArray());
         });
         it('min', () => {
             const tree = new RedBlackTree();
@@ -94,38 +94,63 @@ export default function test() {
 
             tree.delete(18);
             array.splice(array.indexOf(18), 1);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isRedBlackTree(tree), true);
 
             tree.delete(1000);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isRedBlackTree(tree), true);
 
             tree.delete(100);
             array.splice(array.indexOf(100), 1);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isRedBlackTree(tree), true);
 
             tree.delete(78);
             array.splice(array.indexOf(78), 1);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isRedBlackTree(tree), true);
 
             tree.delete(9);
             array.splice(array.indexOf(9), 1);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isRedBlackTree(tree), true);
 
             tree.delete(4);
             array.splice(array.indexOf(4), 1);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isRedBlackTree(tree), true);
 
             tree.delete(5);
             array.splice(array.indexOf(5), 1);
-            assertArrays(array, tree.toInOrderArray());
+            assertArrays(array, tree.toSortedArray());
             assert.equal(isRedBlackTree(tree), true);
         });
+        it('preorderTraverse', () => {
+            const tree = new RedBlackTree();
+            const array = [4, 5, 2, 3, 6, 1];
+            tree.insertAll(array);
+            const arrayIncreased = [];
+            tree.preorderTraverse(tree.root, key => arrayIncreased.push(key+1));
+            assertArrays([5, 6, 3, 4, 7, 2].sort(), arrayIncreased.sort());
+        });
+        it('postorderTraverse', () => {
+            const tree = new RedBlackTree();
+            const array = [4, 5, 2, 3, 6, 1];
+            tree.insertAll(array);
+            const arrayIncreased = [];
+            tree.postorderTraverse(tree.root, key => arrayIncreased.push(key+1));
+            assertArrays([5, 6, 3, 4, 7, 2].sort(), arrayIncreased.sort());
+        });
+        it('breadthFirstSearch', () => {
+            const tree = new RedBlackTree();
+            const array = [4, 5, 2, 3, 6, 1];
+            tree.insertAll(array);
+            const array2 = [];
+            tree.breadthFirstSearch(key => array2.push(key));
+            assertArrays(array.sort(), array2.sort());
+        });
+
     });
 }
 
