@@ -25,6 +25,8 @@ import priorityQueueTest from "./data-structures/queues/PriorityQueue.test.js"
 import maxHeapTest from "./data-structures/heaps/MaxHeap.test.js"
 import minHeapTest from "./data-structures/heaps/MinHeap.test.js"
 
+import bubbleSortTest from "./algorithms/sorting/BubbleSort.test.js";
+
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
 import jumpSearchTest from "./algorithms/searching/JumpSearch.test.js";
 import binarySearchTest from "./algorithms/searching/BinarySearch.test.js";
@@ -62,6 +64,8 @@ describe('All Tests', () =>{
 
     maxHeapTest();
     minHeapTest();
+
+    bubbleSortTest();
 
     linearSearchTest();
     jumpSearchTest();

@@ -25,6 +25,8 @@ import {PriorityQueue, PriorityQueueType} from "./data-structures/queues/Priorit
 import {MaxHeap} from "./data-structures/heaps/MaxHeap.js";
 import {MinHeap} from "./data-structures/heaps/MinHeap.js";
 
+import {BubbleSort} from "./algorithms/sorting/BubbleSort.js";
+
 import {LinearSearch} from "./algorithms/searching/LinearSearch.js";
 import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
 import {ExponentialSearch} from "./algorithms/searching/ExponentialSearch.js";
@@ -66,6 +68,8 @@ export {
 
     MaxHeap,
     MinHeap,
+
+    BubbleSort,
 
     LinearSearch,
     JumpSearch,
