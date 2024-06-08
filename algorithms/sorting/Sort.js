@@ -34,11 +34,27 @@ class Sort {
         this.array[j] = temp;
     }
 
+    /**
+     * @summary Check if elements on given indexes should be swapped
+     * @param {number} i - index of a first element to check
+     * @param {number} j - index of a second element to check
+     * @return {boolean} true if elements should be swapped, otherwise it returns false
+     */
     shouldSwap(i, j) {
-        if (this.order === Order.ASC && this.compare(this.array[i], this.array[j]) > 0) {
+        return this.shouldSwapByValue(this.array[i], this.array[j]);
+    }
+
+    /**
+     * @summary Check if elements should be swapped
+     * @param {number} i - first element to check
+     * @param {number} j - second element to check
+     * @return {boolean} true if elements should be swapped, otherwise it returns false
+     */
+    shouldSwapByValue(a, b) {
+        if (this.order === Order.ASC && this.compare(a, b) > 0) {
             return true;
         }
-        if (this.order === Order.DESC && this.compare(this.array[i], this.array[j]) < 0) {
+        if (this.order === Order.DESC && this.compare(a, b) < 0) {
             return true;
         }
         return false;

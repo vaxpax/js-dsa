@@ -26,6 +26,7 @@ import {MaxHeap} from "./data-structures/heaps/MaxHeap.js";
 import {MinHeap} from "./data-structures/heaps/MinHeap.js";
 
 import {BubbleSort} from "./algorithms/sorting/BubbleSort.js";
+import {InsertionSort} from "./algorithms/sorting/InsertionSort.js";
 
 import {LinearSearch} from "./algorithms/searching/LinearSearch.js";
 import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
@@ -70,6 +71,7 @@ export {
     MinHeap,
 
     BubbleSort,
+    InsertionSort,
 
     LinearSearch,
     JumpSearch,

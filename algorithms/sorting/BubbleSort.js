@@ -27,7 +27,7 @@ class BubbleSort extends Sort {
      */
     sort() {
         let swapped;
-        for (let i = 0; i < this.array.length -1; i++) {
+        for (let i = 0; i < this.array.length - 1; i++) {
             swapped = false;
             for (let j = 0; j < this.array.length - i - 1; j++) {
                 if (this.shouldSwap(j, j+1)) {
