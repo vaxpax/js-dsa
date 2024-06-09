@@ -8,7 +8,7 @@ export default function test() {
     sortTest(InsertionSort, 'InsertionSort Tests');
 }
 
-// describe('InsertionSearch', () => {
+// describe('InsertionSort', () => {
 //     test();
 // });
 

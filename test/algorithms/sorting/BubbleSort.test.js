@@ -8,7 +8,7 @@ export default function test() {
     sortTest(BubbleSort, 'BubbleSort Tests');
 }
 
-// describe('BinarySearch', () => {
+// describe('BubbleSort', () => {
 //     test();
 // });
 
