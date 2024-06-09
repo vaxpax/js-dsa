@@ -1,14 +1,7 @@
 "use strict";
 
-import { assert } from "chai";
 import {assertArrays} from "../../TestHelpers.js";
 import {defaultCompare, Order} from "../../../utils/Utils.js";
-
-
-
-let stringArray = ["John", "Antony", "Peter", "Cindy", "Beatris",  "Mark", "Nate"]
-let stringArrayASC = stringArray.sort();
-let stringArrayDESC = stringArray.reverse();
 
 function compareStrings(a, b) {
     return a.localeCompare(b);
