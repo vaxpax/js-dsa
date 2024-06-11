@@ -35,7 +35,6 @@ class QuickSort extends Sort {
             this._quickSort(low, partitionIndex - 1);
             this._quickSort(partitionIndex + 1, high);
         }
-
     }
 
     // Function to partition the array and return the partition index
