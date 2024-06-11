@@ -26,7 +26,7 @@
       "default_theme": "dark",
       "search": true,
       "title": "UsingBytes.com",
-      "base_url": "file:///Users/pvan/Projects/usingbytes-dsa/docs/"
+      "base_url": "https://usingbytes.com/"
     }
   },
   "plugins": [
