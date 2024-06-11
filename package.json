@@ -1,6 +1,6 @@
 {
   "name": "usingbytes-dsa",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "ArrayQueue", "ArrayStack", "ArrayDeque",
     "LinkedListQueue", "LinkedListStack", "LinkedListDeque", "PriorityQueue",
     "Heap", "MaxHeap", "MinHeap",
-    "Sort", "BubbleSort", "InsertionSort", "SelectionSort",
+    "Sort", "BubbleSort", "InsertionSort", "SelectionSort", "QuickSort",
     "LinearSearch", "JumpSearch", "BinarySearch", "ExponentialSearch", "TernarySearch",
     "InterpolationSearch", "FibonacciSearch",
     "Prime", "GCD", "Greatest Common Divisor"

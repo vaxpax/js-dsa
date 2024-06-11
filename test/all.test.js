@@ -28,6 +28,7 @@ import minHeapTest from "./data-structures/heaps/MinHeap.test.js"
 import bubbleSortTest from "./algorithms/sorting/BubbleSort.test.js";
 import insertionSortTest from "./algorithms/sorting/InsertionSort.test.js";
 import selectionSortTest from "./algorithms/sorting/SelectionSort.test.js";
+import quickSortTest from "./algorithms/sorting/QuickSort.test.js";
 
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
 import jumpSearchTest from "./algorithms/searching/JumpSearch.test.js";
@@ -70,6 +71,7 @@ describe('All Tests', () =>{
     bubbleSortTest();
     insertionSortTest();
     selectionSortTest();
+    quickSortTest();
 
     linearSearchTest();
     jumpSearchTest();
