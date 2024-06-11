@@ -29,6 +29,7 @@ import bubbleSortTest from "./algorithms/sorting/BubbleSort.test.js";
 import insertionSortTest from "./algorithms/sorting/InsertionSort.test.js";
 import selectionSortTest from "./algorithms/sorting/SelectionSort.test.js";
 import quickSortTest from "./algorithms/sorting/QuickSort.test.js";
+import mergeSortTest from "./algorithms/sorting/MergeSort.test.js";
 
 import linearSearchTest from "./algorithms/searching/LinearSearch.test.js";
 import jumpSearchTest from "./algorithms/searching/JumpSearch.test.js";
@@ -72,6 +73,7 @@ describe('All Tests', () =>{
     insertionSortTest();
     selectionSortTest();
     quickSortTest();
+    mergeSortTest();
 
     linearSearchTest();
     jumpSearchTest();

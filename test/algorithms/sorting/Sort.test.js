@@ -36,7 +36,7 @@ export default function sortTest(sort, title) {
             sortAlgorithm.sort();
             assertArrays(sortAlgorithm.array, stringArrayASC)
         });
-        it('Sort numbers DESC', () => {
+        it('Sort strings DESC', () => {
             let stringArray = ["John", "Antony", "Peter", "Cindy", "Beatris",  "Mark", "Nate"];
             let stringArrayDESC = ["John", "Antony", "Peter", "Cindy", "Beatris",  "Mark", "Nate"].sort().reverse();
             const sortAlgorithm = new sort(stringArray, compareStrings, Order.DESC);

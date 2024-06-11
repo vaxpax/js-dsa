@@ -8,7 +8,7 @@ export default function test() {
     sortTest(QuickSort, 'QuickSort Tests');
 }
 
-describe('QuickSort', () => {
-    test();
-});
+// describe('QuickSort', () => {
+//     test();
+// });
 
