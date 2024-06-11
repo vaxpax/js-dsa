@@ -1,7 +1,5 @@
 "use strict";
 
-/**@namespace queues*/
-
 import {defaultCompare} from "../../utils/Utils.js";
 import {MaxHeap} from "../heaps/MaxHeap.js";
 import {MinHeap} from "../heaps/MinHeap.js";

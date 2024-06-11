@@ -1,7 +1,5 @@
 "use strict";
 
-/**@namespace queues*/
-
 /**
  * @summary Class encapsulating ArrayQueue. ArrayQueue orders elements in FIFO manner.
  * @classdesc

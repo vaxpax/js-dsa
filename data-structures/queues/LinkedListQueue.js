@@ -1,7 +1,5 @@
 "use strict";
 
-/**@namespace queues*/
-
 import {SinglyLinkedList} from "../linked-lists/SinglyLinkedList.js";
 
 /**

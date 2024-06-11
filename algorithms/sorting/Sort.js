@@ -1,7 +1,5 @@
 "use strict";
 
-/**@namespace sorting*/
-
 import {defaultCompare, Order} from "../../utils/Utils.js";
 
 /**

@@ -1,7 +1,5 @@
 "use strict";
 
-/**@namespace number-theoretical*/
-
 /**
  * @summary Class encapsulating functions related to prime numbers
  */

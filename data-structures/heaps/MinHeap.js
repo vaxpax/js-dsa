@@ -1,7 +1,5 @@
 "use strict";
 
-/**@namespace heaps */
-
 import {defaultCompare} from "../../utils/Utils.js";
 import {MaxHeap} from "./MaxHeap.js";
 

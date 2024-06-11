@@ -1,7 +1,5 @@
 "use strict";
 
-/**@namespace queues*/
-
 import {DoublyLinkedList} from "../linked-lists/DoublyLinkedList.js";
 
 /**
