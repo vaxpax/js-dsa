@@ -30,6 +30,7 @@ import {InsertionSort} from "./algorithms/sorting/InsertionSort.js";
 import {SelectionSort} from "./algorithms/sorting/SelectionSort.js";
 import {QuickSort} from "./algorithms/sorting/QuickSort.js";
 import {MergeSort} from "./algorithms/sorting/MergeSort.js";
+import {HeapSort} from "./algorithms/sorting/HeapSort.js";
 
 import {LinearSearch} from "./algorithms/searching/LinearSearch.js";
 import {BinarySearch} from "./algorithms/searching/BinarySearch.js";
@@ -78,6 +79,7 @@ export {
     SelectionSort,
     QuickSort,
     MergeSort,
+    HeapSort,
 
     LinearSearch,
     JumpSearch,

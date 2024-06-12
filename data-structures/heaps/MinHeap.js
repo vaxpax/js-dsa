@@ -46,21 +46,25 @@ class MinHeap extends MaxHeap {
     }
 
     _heapifyDown(index) {
+        this.heapify(this.heap.length, index);
+    }
+
+    heapify(length, index) {
         let largest = index;
         let left = (index << 1) + 1;
         let right = (index << 1) + 2;
 
-        if (left <= this.heap.length && this.compare(this.heap[left], this.heap[index]) < 0) {
+        if (left <= length && this.compare(this.heap[left], this.heap[index]) < 0) {
             largest = left;
         }
 
-        if (right <= this.heap.length && this.compare(this.heap[right], this.heap[largest]) < 0) {
+        if (right <= length && this.compare(this.heap[right], this.heap[largest]) < 0) {
             largest = right;
         }
 
         if (largest !== index) {
             this._swap(index, largest);
-            this._heapifyDown(largest);
+            this.heapify(length, largest);
         }
     }
 
