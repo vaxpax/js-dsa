@@ -39,3 +39,7 @@ npm install usingbytes-dsa
 ```bash
 yarn add usingbytes-dsa
 ```
+
+## Docs ##
+For documentation visit:
+**[Link](https://vaxpax.github.io/usingbytes-js-dsa/)**

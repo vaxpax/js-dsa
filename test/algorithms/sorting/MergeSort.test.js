@@ -8,7 +8,7 @@ export default function test() {
     sortTest(MergeSort, 'MergeSort Tests');
 }
 
-// describe('BubbleSort', () => {
+// describe('MergeSort', () => {
 //     test();
 // });
 
