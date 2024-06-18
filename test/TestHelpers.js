@@ -25,9 +25,17 @@ function assertArrays(arrayA, arrayB) {
     }
 }
 
+function assertMatrices(matrixA, matrixB) {
+    assert.equal(matrixA.length, matrixB.length);
+    for (let i = 0; i < matrixB.length; i++) {
+        assertArrays(matrixA[i], matrixB[i]);
+    }
+}
+
 export {
     asserHeadAndTail,
     assertHeadAndLast,
     assertIterator,
     assertArrays,
+    assertMatrices,
 };

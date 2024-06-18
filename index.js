@@ -25,6 +25,8 @@ import {PriorityQueue, PriorityQueueType} from "./data-structures/queues/Priorit
 import {MaxHeap} from "./data-structures/heaps/MaxHeap.js";
 import {MinHeap} from "./data-structures/heaps/MinHeap.js";
 
+import {AdjacencyMatrixGraph} from "./data-structures/graphs/AdjacencyMatrixGraph.js";
+
 import {BubbleSort} from "./algorithms/sorting/BubbleSort.js";
 import {InsertionSort} from "./algorithms/sorting/InsertionSort.js";
 import {SelectionSort} from "./algorithms/sorting/SelectionSort.js";
@@ -73,6 +75,8 @@ export {
 
     MaxHeap,
     MinHeap,
+
+    AdjacencyMatrixGraph,
 
     BubbleSort,
     InsertionSort,
