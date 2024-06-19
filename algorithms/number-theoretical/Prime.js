@@ -4,6 +4,7 @@
 
 /**
  * @summary Class encapsulating functions related to prime numbers
+ * @memberof number-theoretical
  */
 class Prime {
     /**

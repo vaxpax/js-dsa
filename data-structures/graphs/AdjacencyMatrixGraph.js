@@ -1,10 +1,13 @@
 "use strict";
 
+/**@namespace graphs*/
+
 import {ArrayQueue} from "../queues/ArrayQueue.js";
 
 /**
  *@summary Class encapsulating Graph represented with Adjacency Matrix.
  * @classdesc
+ * @memberof graphs
  */
 class AdjacencyMatrixGraph {
     /**

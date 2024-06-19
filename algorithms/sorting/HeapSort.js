@@ -1,7 +1,5 @@
 "use strict";
 
-/**@namespace sorting*/
-
 import {Sort} from "./Sort.js";
 import {defaultCompare, Order} from "../../utils/Utils.js";
 import {MinHeap} from "../../data-structures/heaps/MinHeap.js";
