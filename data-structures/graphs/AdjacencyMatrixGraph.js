@@ -11,7 +11,7 @@ import {ArrayQueue} from "../queues/ArrayQueue.js";
  */
 class AdjacencyMatrixGraph {
     /**
-     *
+     * @class Creates a new AdjacencyMatrixGraph.
      * @param verticesNumber - number of vertices in Graph. Default value is 0
      */
     constructor(verticesNumber = 0) {
@@ -47,10 +47,11 @@ class AdjacencyMatrixGraph {
      * Adding edge between vertices on index i and j
      * @param i - index of first Vertex
      * @param j - index of second Vertex
+     * @param weight - edge weight, default value is 1
      */
-    addEdge(i, j) {
-        this.adjacencyMatrix[i][j] = 1;
-        this.adjacencyMatrix[j][i] = 1;
+    addEdge(i, j, weight = 1) {
+        this.adjacencyMatrix[i][j] = weight;
+        this.adjacencyMatrix[j][i] = weight;
     }
 
     /**

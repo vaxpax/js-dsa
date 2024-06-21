@@ -25,6 +25,9 @@ import priorityQueueTest from "./data-structures/queues/PriorityQueue.test.js"
 import maxHeapTest from "./data-structures/heaps/MaxHeap.test.js"
 import minHeapTest from "./data-structures/heaps/MinHeap.test.js"
 
+import adjacencyMatrixGraphTest from "./data-structures/graphs/AdjancencyMatrixGraph.test.js"
+import dijkstraTest from "./algorithms/graphs/Dijkstra.test.js"
+
 import bubbleSortTest from "./algorithms/sorting/BubbleSort.test.js";
 import insertionSortTest from "./algorithms/sorting/InsertionSort.test.js";
 import selectionSortTest from "./algorithms/sorting/SelectionSort.test.js";
@@ -69,6 +72,9 @@ describe('All Tests', () =>{
 
     maxHeapTest();
     minHeapTest();
+
+    adjacencyMatrixGraphTest();
+    dijkstraTest();
 
     bubbleSortTest();
     insertionSortTest();

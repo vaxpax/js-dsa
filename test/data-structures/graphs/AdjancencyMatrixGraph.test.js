@@ -1,12 +1,12 @@
 "use strict";
 
 import {assert} from "chai";
-import {assertMatrices, assertArrays} from "../TestHelpers.js";
+import {assertMatrices, assertArrays} from "../../TestHelpers.js";
 
-import {AdjacencyMatrixGraph, Trie} from "../../index.js";
+import {AdjacencyMatrixGraph, Trie} from "../../../index.js";
 
 export default function test() {
-    describe('Trie Tests', () => {
+    describe('AdjacencyMatrixGraph Tests', () => {
         it('empty graph', () => {
             const graph = new AdjacencyMatrixGraph();
             let matrixCompare = [];
@@ -88,6 +88,6 @@ export default function test() {
     });
 }
 
-describe('Trie', () => {
-    test();
-});
+// describe('Trie', () => {
+//     test();
+// });

@@ -26,6 +26,7 @@ import {MaxHeap} from "./data-structures/heaps/MaxHeap.js";
 import {MinHeap} from "./data-structures/heaps/MinHeap.js";
 
 import {AdjacencyMatrixGraph} from "./data-structures/graphs/AdjacencyMatrixGraph.js";
+import {Dijkstra} from "./algorithms/graphs/Dijkstra.js";
 
 import {BubbleSort} from "./algorithms/sorting/BubbleSort.js";
 import {InsertionSort} from "./algorithms/sorting/InsertionSort.js";
@@ -77,6 +78,7 @@ export {
     MinHeap,
 
     AdjacencyMatrixGraph,
+    Dijkstra,
 
     BubbleSort,
     InsertionSort,
